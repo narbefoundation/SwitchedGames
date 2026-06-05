@@ -231,6 +231,21 @@
     }
     .arcade-sub { margin-top: 1.2rem; font-size: 0.82rem; opacity: 0.55; font-weight: 700; }
 
+    .benny-mascot {
+      width: 130px;
+      height: 130px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 1.25rem;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.35));
+      animation: bennyBob 3s ease-in-out infinite;
+    }
+
+    @keyframes bennyBob {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+
     /* ── GAMES GRID ── */
     .games {
       background: var(--off-white);
@@ -698,6 +713,7 @@
     <h2>Play at <em>Benny's Hub</em></h2>
     <p>Our free and open-source arcade — sports, puzzles, word games, and more. Every game is built from the ground up for one and two switch users. Spacebar, enter key, click, or touch — no account, no install, no barriers. Just press and play.</p>
     <p style="opacity:0.85; font-size:0.95rem; font-weight:600; max-width:560px; margin: -0.75rem auto 2rem;">The entire hub — menus, game selection, settings, everything — is navigatable with just one or two switches by design. A user who can only access one or two buttons can independently browse and play the full arcade on their own.</p>
+    <img src="images/branding/beamin-benny.png" alt="Beamin' Benny mascot" class="benny-mascot" />
     <a href="https://narbehouse.github.io/bennyshub" class="btn-primary" target="_blank" rel="noopener" style="font-size:1.1rem; padding: 1rem 2.6rem;">🕹️ Enter Benny's Hub →</a>
     <p class="arcade-sub">narbehouse.github.io/bennyshub · Open source · Developed by NARBE House &amp; community volunteers</p>
   </section>
