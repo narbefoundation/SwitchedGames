@@ -352,8 +352,11 @@
     .involved { background: var(--white); padding: 4.5rem 2rem; border-top: 2px solid var(--border); }
     .involved-header { text-align: center; margin-bottom: 2.5rem; }
     .involved-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      display: grid; grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem; max-width: 980px; margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+      .involved-grid { grid-template-columns: 1fr; }
     }
     .involve-card {
       background: var(--off-white); border: 2px solid var(--border);
@@ -362,6 +365,14 @@
     }
     .involve-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--blue-light); }
     .involve-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+    .involve-logo {
+      display: block;
+      height: 48px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+      margin-bottom: 0.85rem;
+    }
     .involve-card h3 { font-weight: 800; font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
     .involve-card p { font-size: 0.9rem; color: var(--text-mid); font-weight: 600; line-height: 1.55; margin-bottom: 1.2rem; }
 
@@ -989,21 +1000,21 @@
     <div class="involved-grid">
 
       <div class="involve-card">
-        <span class="involve-icon">🌿</span>
+        <img src="images/branding/narbe-foundation.png" alt="NARBE Foundation" class="involve-logo" />
         <h3>NARBE Foundation</h3>
         <p>Learn about our nonprofit mission, connect with us for switch kit donations, and find out how to get involved. Contact us for partnerships, programs, or more information.</p>
         <a href="https://narbefoundation.org" class="involve-link" target="_blank" rel="noopener">Visit NARBE Foundation →</a>
       </div>
 
       <div class="involve-card">
-        <span class="involve-icon">🧡</span>
+        <img src="images/branding/switched-toys.avif" alt="SwitchedToys.org" class="involve-logo" />
         <h3>SwitchedToys.org</h3>
         <p>Need a switch? Looking for adapted toys and assistive technology? SwitchedToys.org is our trusted partner for physical switches and adapted devices for people of all ages.</p>
         <a href="https://www.switchedtoys.org" class="involve-link orange" target="_blank" rel="noopener">Shop SwitchedToys.org →</a>
       </div>
 
       <div class="involve-card">
-        <span class="involve-icon">⚙️</span>
+        <img src="images/branding/NARBE.png" alt="NARBE LLC" class="involve-logo" />
         <h3>See More from NARBE LLC</h3>
         <p>Want to see how these games are built? NARBE LLC shares guides on developing for Ben, how we use AI to create accessible games, and the story behind our family and mission.</p>
         <a href="https://narbehouse.github.io" class="involve-link" target="_blank" rel="noopener">Visit NARBE House →</a>
