@@ -13,10 +13,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SwitchedGames – Free One &amp; Two Switch Games | Accessible Arcade for Switch Users</title>
-  <meta name="description" content="SwitchedGames is a free, open-source collection of games playable with one or two switches — spacebar, enter key, mouse click, or screen touch. Built for independence. Powered by NARBE Foundation. Play at Benny's Hub arcade, no downloads, no cost." />
+  <meta name="description" content="SwitchedGames is a free, growing library of browser games built for switch users — people who interact with a computer using a single button or input as their only means of control. No downloads, no account, always free." />
   <meta name="keywords" content="one switch games, two switch games, one button games, two button games, single switch games, dual switch games, switch access games, switch accessible games, accessible browser games, free accessible games, adaptive games, adapted games, switch adapted games, switch scanning games, auto scan games, AAC switch games, AAC games, spacebar games, enter key games, one click games, touch accessible games, keyboard accessible games, simple games for disabilities, fun games for switch users, engaging accessible games, independence games, independent play, assistive technology games, AT games, games for people with disabilities, cerebral palsy games, ALS games, muscular dystrophy games, spinal cord injury games, low motor function games, motor impairment games, occupational therapy games, OT games, physical therapy games, special education games, switch kit games, adaptive gaming, browser games no downloads, free disability games, NARBE Foundation, Benny's Hub arcade" />
   <meta property="og:title" content="SwitchedGames – Free One &amp; Two Switch Games | Accessible Arcade" />
-  <meta property="og:description" content="Games playable with spacebar, enter key, mouse click, or screen touch. Free, open-source, and built for independence. Play at Benny's Hub — powered by NARBE Foundation." />
+  <meta property="og:description" content="A free, growing library of browser games for switch users. Play fully and independently with one or two inputs. Powered by NARBE Foundation." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://switchedgames.org/images/branding/switchedgames_emblem_v5.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -35,7 +35,7 @@
     "@type": "WebSite",
     "name": "SwitchedGames",
     "url": "https://switchedgames.org",
-    "description": "Free browser-based games playable with one or two switches — spacebar, enter key, mouse click, or screen touch. Built for independence and accessible gaming.",
+    "description": "Free browser-based games playable with one or two switches — built for people who interact with a computer using a single button or input as their only means of control.",
     "publisher": {
       "@type": "Organization",
       "name": "NARBE Foundation",
@@ -76,6 +76,7 @@
       line-height: 1.6;
     }
 
+    /* ── NAV ── */
     nav {
       background: var(--white);
       border-bottom: 2px solid var(--border);
@@ -110,6 +111,7 @@
     .nav-btn-about { background: var(--off-white); color: var(--text-mid); border: 2px solid var(--border); }
     .nav-btn-about:hover { background: var(--border); }
 
+    /* ── HERO ── */
     .hero {
       background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
       color: var(--white);
@@ -137,7 +139,7 @@
     .hero h1 em { font-style: italic; color: var(--orange-light); }
     .hero p {
       font-size: clamp(1rem, 2.5vw, 1.2rem); opacity: 0.9;
-      max-width: 600px; margin: 0 auto 2.5rem;
+      max-width: 640px; margin: 0 auto 2.5rem;
       position: relative; font-weight: 600;
     }
     .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
@@ -161,6 +163,72 @@
     }
     .btn-secondary:hover { background: rgba(255,255,255,0.25); }
 
+    /* ── WHAT IS A SWITCH ── */
+    .what-is-switch {
+      background: var(--white);
+      border-bottom: 2px solid var(--border);
+      padding: 4rem 2rem;
+    }
+    .wis-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .wis-label {
+      font-size: 0.8rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--blue); margin-bottom: 0.5rem;
+    }
+    .wis-text h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+    .wis-text h2 em { font-style: italic; color: var(--blue); }
+    .wis-text p {
+      color: var(--text-mid);
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .wis-inputs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-content: flex-start;
+    }
+    .wis-pill {
+      background: var(--off-white);
+      border: 2px solid var(--border);
+      border-radius: 50px;
+      padding: 0.55rem 1.1rem;
+      font-weight: 700;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+    .wis-key {
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 6px;
+      padding: 0.1rem 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      font-family: monospace;
+    }
+    @media (max-width: 700px) {
+      .wis-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+    }
+
+    /* ── SHARED SECTION LABELS ── */
     .section-label {
       font-size: 0.8rem; font-weight: 800;
       text-transform: uppercase; letter-spacing: 0.1em;
@@ -173,60 +241,7 @@
     }
     .section-sub {
       color: var(--text-light); font-size: 1rem; font-weight: 600;
-      max-width: 560px; margin: 0 auto;
-    }
-
-    .why { background: var(--white); padding: 4.5rem 2rem; }
-    .why-inner {
-      max-width: 980px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3rem; align-items: center;
-    }
-    .why-text h2 {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-      line-height: 1.15; margin-bottom: 1rem; color: var(--text);
-    }
-    .why-text h2 em { font-style: italic; color: var(--blue); }
-    .why-text p { color: var(--text-mid); font-weight: 600; font-size: 1rem; margin-bottom: 1rem; line-height: 1.7; }
-
-    .why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .stat-card { background: var(--blue-pale); border-radius: var(--radius); padding: 1.5rem 1rem; text-align: center; }
-    .stat-card .stat-num {
-      font-family: 'Fraunces', serif; font-weight: 900; font-size: 2.4rem;
-      color: var(--blue); line-height: 1; display: block; margin-bottom: 0.3rem;
-    }
-    .stat-card .stat-label { font-size: 0.82rem; font-weight: 700; color: var(--text-mid); }
-
-    .arcade {
-      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
-      color: var(--white); padding: 4.5rem 2rem; text-align: center;
-    }
-    .arcade .section-label { color: var(--orange-light); }
-    .arcade h2 {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: clamp(2rem, 4.5vw, 3rem); margin-bottom: 1rem;
-    }
-    .arcade h2 em { font-style: italic; color: var(--orange-light); }
-    .arcade > p {
-      font-size: 1.05rem; opacity: 0.9; font-weight: 600;
-      max-width: 560px; margin: 0 auto 2rem;
-    }
-    .arcade-sub { margin-top: 1.2rem; font-size: 0.82rem; opacity: 0.55; font-weight: 700; }
-
-    .benny-mascot {
-      width: 130px;
-      height: 130px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 1.25rem;
-      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.35));
-      animation: bennyBob 3s ease-in-out infinite;
-    }
-
-    @keyframes bennyBob {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-8px); }
+      max-width: 680px; margin: 0 auto;
     }
 
     /* ── GAMES GRID ── */
@@ -238,7 +253,7 @@
 
     .games-header {
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
     .games-grid {
@@ -308,6 +323,93 @@
 
     .game-tile:hover .game-play { color: var(--orange); }
 
+    /* ── GAME FILTER BAR ── */
+    .game-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      max-width: 1100px;
+      margin: 0 auto 1.5rem;
+    }
+    .filter-btn {
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      border: 2px solid var(--blue);
+      background: transparent;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--blue);
+      transition: background 0.15s, color 0.15s;
+    }
+    .filter-btn:hover { background: var(--blue-pale); }
+    .filter-btn.active {
+      background: var(--blue);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+
+    .hub-cta {
+      max-width: 1100px;
+      margin: 2.5rem auto 0;
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
+      border-radius: var(--radius);
+      padding: 2.5rem 2.5rem;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+    }
+    .hub-cta img {
+      height: 140px;
+      width: auto;
+      flex-shrink: 0;
+      margin-bottom: 1.25rem;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+      animation: bennyBob 3s ease-in-out infinite;
+    }
+    .hub-cta-text {
+      text-align: center;
+    }
+    .hub-cta h3 {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin-bottom: 0.5rem;
+    }
+    .hub-cta h3 em { font-style: italic; color: var(--orange-light); }
+    .hub-cta p {
+      font-size: 0.95rem;
+      font-weight: 600;
+      opacity: 0.85;
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+    }
+    @media (max-width: 600px) {
+      .hub-cta { padding: 2rem 1.25rem; }
+    }
+
+    .game-request-cta {
+      text-align: center;
+      margin-top: 1.75rem;
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      font-weight: 600;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .game-request-cta a {
+      color: var(--blue);
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .game-request-cta a:hover { text-decoration: underline; }
+
+    /* ── WHO ── */
     .who {
       background: var(--orange-pale);
       border-top: 2px solid #f5d5bb;
@@ -326,6 +428,116 @@
     }
     .who-chip span { display: block; font-size: 1.5rem; margin-bottom: 0.35rem; }
 
+    /* ── SWITCH KIT ── */
+    .switchkit {
+      background: var(--blue-pale);
+      padding: 4.5rem 2rem;
+      border-top: 2px solid var(--border);
+      border-bottom: 2px solid var(--border);
+    }
+    .switchkit-inner { max-width: 1000px; margin: 0 auto; }
+    .switchkit-header { text-align: center; margin-bottom: 2.5rem; }
+    .switchkit-header h2 {
+      font-family: 'Fraunces', serif; font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--text); margin-bottom: 0.75rem; line-height: 1.15;
+    }
+    .switchkit-header h2 em { font-style: italic; color: var(--blue); }
+    .switchkit-header p {
+      color: var(--text-mid); font-weight: 600; font-size: 1rem;
+      max-width: 580px; margin: 0 auto;
+    }
+
+    .kit-photo-inuse {
+      border-radius: var(--radius); overflow: hidden;
+      border: 2px solid var(--border); background: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .kit-photo-inuse img {
+      width: 100%; max-height: 300px;
+      object-fit: cover; object-position: center 60%; display: block;
+    }
+
+    .kit-details {
+      max-width: 700px; margin: 0 auto 1.5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .kit-items {
+      list-style: none; display: flex;
+      flex-direction: column; gap: 0.65rem; grid-column: 1 / -1;
+    }
+    .kit-items li {
+      display: flex; align-items: flex-start; gap: 0.7rem;
+      background: var(--white); border: 2px solid var(--border);
+      border-radius: 12px; padding: 0.75rem 1rem;
+    }
+    .kit-items li .kit-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.05rem; }
+    .kit-items li strong { display: block; font-weight: 800; font-size: 0.92rem; color: var(--text); }
+    .kit-items li span { font-size: 0.82rem; color: var(--text-mid); font-weight: 600; }
+
+    .kit-mapping {
+      background: var(--white); border: 2px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.2rem; grid-column: 1 / -1;
+    }
+    .kit-mapping h4 {
+      font-weight: 800; font-size: 0.82rem;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--blue); margin-bottom: 0.6rem;
+    }
+    .mapping-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .mapping-pill {
+      display: flex; align-items: center; gap: 0.4rem;
+      background: var(--blue-pale); border-radius: 50px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.85rem; font-weight: 700; color: var(--text);
+    }
+    .mapping-pill .pill-key {
+      background: var(--blue); color: var(--white);
+      border-radius: 5px; padding: 0.1rem 0.5rem;
+      font-size: 0.78rem; font-weight: 900; font-family: monospace;
+    }
+
+    .switchkit-cta {
+      text-align: center; background: var(--white);
+      border: 2px solid var(--border); border-radius: var(--radius);
+      padding: 2rem 2rem 1.75rem;
+    }
+    .switchkit-cta h3 {
+      font-family: 'Fraunces', serif; font-weight: 900;
+      font-size: 1.5rem; color: var(--text); margin-bottom: 0.5rem;
+    }
+    .switchkit-cta p {
+      color: var(--text-mid); font-weight: 600; font-size: 0.92rem;
+      max-width: 460px; margin: 0 auto 1.25rem;
+    }
+    .notice-box {
+      background: #fff8e6; border: 2px solid #f5d78a;
+      border-radius: 10px; padding: 0.75rem 1rem;
+      font-size: 0.82rem; color: #5a4200; font-weight: 600;
+      line-height: 1.5; margin-top: 0.75rem;
+    }
+    .notice-box strong { font-weight: 800; }
+    .btn-apply {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--blue); color: var(--white);
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1.05rem;
+      padding: 0.85rem 2.2rem; border-radius: 50px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(30,96,179,0.25);
+    }
+    .btn-apply:hover { background: var(--blue-light); transform: translateY(-2px); }
+    .cta-fine {
+      margin-top: 0.85rem; font-size: 0.8rem;
+      color: var(--text-light); font-weight: 600;
+    }
+    .cta-fine a { color: var(--blue); font-weight: 700; text-decoration: none; }
+    .cta-fine a:hover { text-decoration: underline; }
+
+    @media (max-width: 700px) {
+      .kit-details { grid-template-columns: 1fr; }
+    }
+
+    /* ── DONATE ── */
     .donate {
       background: var(--off-white); padding: 4.5rem 2rem;
       text-align: center; border-top: 2px solid var(--border);
@@ -336,19 +548,17 @@
       font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--text); margin-bottom: 0.75rem;
     }
     .donate-inner > p { color: var(--text-mid); font-weight: 600; font-size: 1rem; margin-bottom: 2rem; }
-
     .givebutter-wrap {
       background: var(--white); border: 2px solid var(--border);
-      border-radius: var(--radius); padding: 2rem;
-      box-shadow: var(--shadow);
+      border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow);
       display: flex; justify-content: center; align-items: flex-start;
     }
     givebutter-widget { display: block; width: 100%; max-width: 480px; margin: 0 auto; }
-
     .donate-alt { margin-top: 1.2rem; font-size: 0.88rem; color: var(--text-light); font-weight: 600; }
     .donate-alt a { color: var(--blue); text-decoration: none; font-weight: 800; }
     .donate-alt a:hover { text-decoration: underline; }
 
+    /* ── GET INVOLVED ── */
     .involved { background: var(--white); padding: 4.5rem 2rem; border-top: 2px solid var(--border); }
     .involved-header { text-align: center; margin-bottom: 2.5rem; }
     .involved-grid {
@@ -364,18 +574,19 @@
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     }
     .involve-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--blue-light); }
+    .involve-card--full {
+      grid-column: 1 / -1;
+      background: var(--blue-pale);
+      border-color: var(--blue);
+    }
+    .involve-card--full p { max-width: 700px; line-height: 1.75; }
     .involve-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
     .involve-logo {
-      display: block;
-      height: 48px;
-      width: auto;
-      max-width: 160px;
-      object-fit: contain;
-      margin-bottom: 0.85rem;
+      display: block; height: 48px; width: auto;
+      max-width: 160px; object-fit: contain; margin-bottom: 0.85rem;
     }
     .involve-card h3 { font-weight: 800; font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
     .involve-card p { font-size: 0.9rem; color: var(--text-mid); font-weight: 600; line-height: 1.55; margin-bottom: 1.2rem; }
-
     .involve-link {
       display: inline-block; background: var(--blue); color: var(--white);
       font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.88rem;
@@ -386,6 +597,7 @@
     .involve-link.orange { background: var(--orange); }
     .involve-link.orange:hover { background: var(--orange-light); }
 
+    /* ── OSS STRIP + FOOTER ── */
     .oss-strip {
       background: var(--text); color: rgba(255,255,255,0.7);
       padding: 1.75rem 2rem; text-align: center;
@@ -408,6 +620,7 @@
     footer p { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem; }
     footer a { color: var(--orange-light); text-decoration: none; }
 
+    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -418,266 +631,10 @@
     .hero p       { animation-delay: 0.25s; }
     .hero-buttons { animation-delay: 0.35s; }
 
-    /* ── SWITCH KIT ── */
-    .switchkit {
-      background: var(--blue-pale);
-      padding: 4.5rem 2rem;
-      border-top: 2px solid var(--border);
-      border-bottom: 2px solid var(--border);
-    }
-
-    .switchkit-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .switchkit-header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .switchkit-header h2 {
-      font-family: 'Fraunces', serif;
-      font-weight: 900;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      color: var(--text);
-      margin-bottom: 0.75rem;
-      line-height: 1.15;
-    }
-
-    .switchkit-header h2 em { font-style: italic; color: var(--blue); }
-
-    .switchkit-header p {
-      color: var(--text-mid);
-      font-weight: 600;
-      font-size: 1rem;
-      max-width: 580px;
-      margin: 0 auto;
-    }
-
-    /* two-col: photo | details — equal-height */
-    .switchkit-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: stretch;
-      margin-bottom: 1.5rem;
-    }
-
-    .kit-photo-main {
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 2px solid var(--border);
-      background: var(--white);
-    }
-
-    .kit-photo-main img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* full-width in-use photo */
-    .kit-photo-inuse {
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 2px solid var(--border);
-      background: var(--white);
-      margin-bottom: 1.5rem;
-    }
-
-    .kit-photo-inuse img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      object-position: center 60%;
-      display: block;
-    }
-
-    .kit-details {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .kit-items {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .kit-items li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.7rem;
-      background: var(--white);
-      border: 2px solid var(--border);
-      border-radius: 12px;
-      padding: 0.75rem 1rem;
-    }
-
-    .kit-items li .kit-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.05rem; }
-    .kit-items li strong { display: block; font-weight: 800; font-size: 0.92rem; color: var(--text); }
-    .kit-items li span { font-size: 0.82rem; color: var(--text-mid); font-weight: 600; }
-
-    .kit-mapping {
-      background: var(--white);
-      border: 2px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.2rem;
-    }
-
-    .kit-mapping h4 {
-      font-weight: 800;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--blue);
-      margin-bottom: 0.6rem;
-    }
-
-    .mapping-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-
-    .mapping-pill {
-      display: flex; align-items: center; gap: 0.4rem;
-      background: var(--blue-pale); border-radius: 50px;
-      padding: 0.35rem 0.85rem;
-      font-size: 0.85rem; font-weight: 700; color: var(--text);
-    }
-
-    .mapping-pill .pill-key {
-      background: var(--blue); color: var(--white);
-      border-radius: 5px; padding: 0.1rem 0.5rem;
-      font-size: 0.78rem; font-weight: 900; font-family: monospace;
-    }
-
-    /* centered CTA bar */
-    .switchkit-cta {
-      text-align: center;
-      background: var(--white);
-      border: 2px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem 2rem 1.75rem;
-    }
-
-    .switchkit-cta h3 {
-      font-family: 'Fraunces', serif;
-      font-weight: 900; font-size: 1.5rem;
-      color: var(--text); margin-bottom: 0.5rem;
-    }
-
-    .switchkit-cta p {
-      color: var(--text-mid); font-weight: 600; font-size: 0.92rem;
-      max-width: 460px; margin: 0 auto 1.25rem;
-    }
-
-    .notice-box {
-      background: #fff8e6; border: 2px solid #f5d78a;
-      border-radius: 10px; padding: 0.75rem 1rem;
-      font-size: 0.82rem; color: #5a4200; font-weight: 600;
-      line-height: 1.5; margin-top: 0.75rem;
-    }
-    .notice-box strong { font-weight: 800; }
-
-    .btn-apply {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--blue); color: var(--white);
-      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1.05rem;
-      padding: 0.85rem 2.2rem; border-radius: 50px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      box-shadow: 0 4px 16px rgba(30,96,179,0.25);
-    }
-    .btn-apply:hover { background: var(--blue-light); transform: translateY(-2px); }
-
-    .cta-fine {
-      margin-top: 0.85rem; font-size: 0.8rem;
-      color: var(--text-light); font-weight: 600;
-    }
-    .cta-fine a { color: var(--blue); font-weight: 700; text-decoration: none; }
-    .cta-fine a:hover { text-decoration: underline; }
-
-    @media (max-width: 700px) {
-      .switchkit-layout { grid-template-columns: 1fr; }
-    }
-
-    /* ── INPUT STRIP ── */
-    .inputs {
-      background: var(--white);
-      padding: 3rem 2rem;
-      text-align: center;
-      border-top: 2px solid var(--border);
-    }
-    .inputs h2 {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      color: var(--text); margin-bottom: 0.5rem;
-    }
-    .inputs > p {
-      color: var(--text-light); font-weight: 600; font-size: 0.95rem;
-      margin-bottom: 1.75rem;
-    }
-    .input-pills {
-      display: flex; flex-wrap: wrap;
-      gap: 0.75rem; justify-content: center;
-    }
-    .pill {
-      background: var(--off-white); border: 2px solid var(--border);
-      border-radius: 50px; padding: 0.6rem 1.3rem;
-      font-weight: 700; font-size: 0.92rem;
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      color: var(--text);
-    }
-    .pill-key {
-      background: var(--blue); color: var(--white);
-      border-radius: 6px; padding: 0.1rem 0.55rem;
-      font-size: 0.78rem; font-weight: 900; font-family: monospace;
-    }
-
-    @media (max-width: 700px) { .why-inner { grid-template-columns: 1fr; } }
     @media (max-width: 480px) {
       .who-grid { grid-template-columns: 1fr 1fr; }
       .nav-btn span { display: none; }
     }
-
-    .partner-cta {
-      background: var(--blue-dark);
-      padding: 2.5rem 2rem;
-      text-align: center;
-    }
-    .partner-inner {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-    .partner-cta p {
-      color: rgba(255,255,255,0.9);
-      font-weight: 700;
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-    .partner-cta a {
-      display: inline-block;
-      background: var(--orange);
-      color: var(--white);
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 1rem;
-      padding: 0.75rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .partner-cta a:hover {
-      background: var(--orange-light);
-      transform: translateY(-2px);
-    }
-
   </style>
 </head>
 <body>
@@ -688,71 +645,63 @@
     </a>
     <div class="nav-actions">
       <a href="aboutus.html" class="nav-btn nav-btn-about">Our Story</a>
-      <a href="https://narbehouse.github.io/bennyshub" class="nav-btn nav-btn-arcade" target="_blank" rel="noopener"><img src="images/branding/beamin-benny.png" alt="" class="nav-benny-icon" aria-hidden="true" /> <span>Play Arcade</span></a>
+      <a href="https://narbehouse.github.io/bennyshub" class="nav-btn nav-btn-arcade" target="_blank" rel="noopener">
+        <img src="images/branding/beamin-benny.png" alt="" class="nav-benny-icon" aria-hidden="true" />
+        <span>Play Arcade</span>
+      </a>
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-badge">🎮 Free · Open Source · No Downloads · No Account</div>
-    <h1>Why <em>Switched Games?</em></h1>
-    <p>Most games require two hands, complex controllers, and fast reflexes. We build games that only need one or two inputs — <strong>spacebar, enter key, mouse click, or screen touch</strong> — and we host a free arcade to prove it.</p>
+    <h1>Free games built for <em>switch users.</em></h1>
+    <p>SwitchedGames is a free, growing library of browser games built for people who interact with a computer using a single button or input as their only means of control. Every game here plays fully and independently with one or two switches.</p>
     <div class="hero-buttons">
       <a href="https://narbehouse.github.io/bennyshub" class="btn-primary" target="_blank" rel="noopener">🕹️ Play Benny's Hub</a>
-      <a href="#why" class="btn-secondary">Learn More</a>
+      <a href="#games" class="btn-secondary">See the Games</a>
     </div>
   </section>
 
-  <section class="why" id="why">
-    <div class="why-inner">
-      <div class="why-text">
-        <div class="section-label">Our mission</div>
-        <h2>Games that need <em>one or two inputs.</em> Nothing more.</h2>
-        <p>SwitchedGames is dedicated to creating, collecting, and promoting browser-based games that are fully playable with a single switch or two. That means the <strong>spacebar</strong>, the <strong>enter key</strong>, a <strong>mouse click</strong>, a <strong>screen touch</strong>, or any external adaptive switch.</p>
-        <p>These games are designed with minimal inputs in mind — one or two buttons is all it takes. No setup, no downloads, no barriers. Independence is the goal.</p>
-        <p>We believe fun, engaging, and genuinely challenging games should be accessible to everyone — especially people who only have access to one or two switches. These games are built for <strong>independent play</strong>, not just participation.</p>
+  <!-- WHAT IS A SWITCH -->
+  <section class="what-is-switch" aria-label="What is a switch?">
+    <div class="wis-inner">
+      <div class="wis-text">
+        <div class="wis-label">What is a switch?</div>
+        <h2>Not Nintendo — <em>a different kind of switch.</em></h2>
+        <p>A switch is a single button — physical or on-screen — that someone uses as their only way to interact with a computer. For many people with physical disabilities, it's the only input they have access to. A large press button mounted to a wheelchair, a sip-and-puff device, or just the spacebar — all of these are switches. SwitchedGames is built so anyone using one can play real, engaging games fully and independently.</p>
       </div>
-      <div class="why-stats">
-        <div class="stat-card"><span class="stat-num">1</span><span class="stat-label">switch needed to play most games</span></div>
-        <div class="stat-card"><span class="stat-num">2</span><span class="stat-label">max inputs for any game</span></div>
-        <div class="stat-card"><span class="stat-num">🆓</span><span class="stat-label">always free, forever</span></div>
-        <div class="stat-card"><span class="stat-num">🌐</span><span class="stat-label">any browser, any device</span></div>
+      <div class="wis-inputs">
+        <div class="wis-pill"><span class="wis-key">SPACE</span> Spacebar</div>
+        <div class="wis-pill"><span class="wis-key">↵</span> Enter Key</div>
+        <div class="wis-pill">🖱️ Mouse Click</div>
+        <div class="wis-pill">📱 Screen Touch</div>
+        <div class="wis-pill">🔌 External Adaptive Switch</div>
+        <div class="wis-pill">🔄 Auto-Scan (built in)</div>
       </div>
     </div>
   </section>
 
-  <!-- INPUT METHODS -->
-  <section class="inputs" id="inputs" aria-label="Supported input methods">
-    <h2>Works With What You Have</h2>
-    <p>No special setup needed. If you can press one of these, you can play.</p>
-    <div class="input-pills">
-      <div class="pill"><span class="pill-key">SPACE</span> Spacebar</div>
-      <div class="pill"><span class="pill-key">↵</span> Enter / Return Key</div>
-      <div class="pill">🖱️ Mouse Click</div>
-      <div class="pill">📱 Screen Touch</div>
-      <div class="pill">🔌 External Adaptive Switch</div>
-      <div class="pill">🔄 Auto-Scan (built in)</div>
-    </div>
-  </section>
-
-  <section class="arcade" id="arcade">
-    <div class="section-label">Free arcade</div>
-    <h2>Play at <em>Benny's Hub</em></h2>
-    <p>Our free and open-source arcade — sports, puzzles, word games, and more. Every game is built from the ground up for one and two switch users. Spacebar, enter key, click, or touch — no account, no install, no barriers. Just press and play.</p>
-    <p style="opacity:0.85; font-size:0.95rem; font-weight:600; max-width:560px; margin: -0.75rem auto 2rem;">The entire hub — menus, game selection, settings, everything — is navigatable with just one or two switches by design. A user who can only access one or two buttons can independently browse and play the full arcade on their own.</p>
-    <img src="images/branding/beamin-benny.png" alt="Beamin' Benny mascot" class="benny-mascot" />
-    <a href="https://narbehouse.github.io/bennyshub" class="btn-primary" target="_blank" rel="noopener" style="font-size:1.1rem; padding: 1rem 2.6rem;">Enter Benny's Hub →</a>
-  </section>
-
-  <!-- GAMES SHOWCASE -->
+  <!-- GAMES -->
   <section class="games" id="games">
     <div class="games-header">
       <div class="section-label">The arcade</div>
       <h2 class="section-title">Games in Benny's Hub</h2>
-      <p class="section-sub">Every game plays with one or two inputs. Click any tile to play now. Most games are in active beta — they work, and they're getting better.</p>
+      <p class="section-sub">Benny's Hub is the flagship project NARBE LLC develops for Ben — releasing games through the hub and SwitchedGames alongside NARBE Foundation to keep growing a library of all types of accessible games. Every game plays with one or two inputs. Most are in active beta — they work, and they're getting better.</p>
     </div>
+
+    <div class="game-filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="sports">Sports</button>
+      <button class="filter-btn" data-filter="strategy">Strategy &amp; Board</button>
+      <button class="filter-btn" data-filter="arcade">Arcade &amp; Action</button>
+      <button class="filter-btn" data-filter="puzzle">Puzzle, Word &amp; Memory</button>
+      <button class="filter-btn" data-filter="casino">Casino</button>
+    </div>
+
     <div class="games-grid">
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASEBALL/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASEBALL/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennysbaseball.png" alt="Benny's Baseball" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Baseball</div>
@@ -761,7 +710,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFOOTBALL/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFOOTBALL/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennysfootball.png" alt="Benny's Football" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Football</div>
@@ -770,7 +719,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASKETBALLSHOOTER/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASKETBALLSHOOTER/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennysbasketball.png" alt="Benny's Basketball Shooter" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Basketball Shooter</div>
@@ -779,7 +728,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBOWLING/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBOWLING/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennysbowling.png" alt="Benny's Bowling" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Bowling</div>
@@ -788,7 +737,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSMINIGOLF/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSMINIGOLF/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennysminigolf.png" alt="Benny's Mini Golf" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Mini Golf</div>
@@ -797,7 +746,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBATTLEBOATS/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBATTLEBOATS/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/battleboats.png" alt="Benny's Battle Boats" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Battle Boats</div>
@@ -806,7 +755,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBUGBLASTER/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBUGBLASTER/index.html" class="game-tile" data-category="arcade" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennysbugblaster.png" alt="Benny's Bug Blaster" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Bug Blaster</div>
@@ -815,7 +764,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSPEGGLE/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSPEGGLE/index.html" class="game-tile" data-category="arcade" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennyspeggle.png" alt="Benny's P3GL Game" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's P3GL Game</div>
@@ -824,7 +773,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSLOTMACHINE/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSLOTMACHINE/index.html" class="game-tile" data-category="casino" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennysslotmachine.png" alt="Benny's Mega Slot" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Mega Slot</div>
@@ -833,7 +782,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSMATCHYMATCH/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSMATCHYMATCH/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennysmatchymatch.png" alt="Benny's Matchy Match" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Matchy Match</div>
@@ -842,7 +791,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCHESSCHECKERS/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCHESSCHECKERS/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennyscheckers.png" alt="Benny's Chess &amp; Checkers" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Chess &amp; Checkers</div>
@@ -851,7 +800,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCONNECTFOUR/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCONNECTFOUR/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/connectfour.png" alt="Benny's Connect Four" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Connect Four</div>
@@ -860,7 +809,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSTICTACTOE/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSTICTACTOE/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennystictactoe.png" alt="Benny's Tic Tac Toe" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Tic Tac Toe</div>
@@ -869,7 +818,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSDICE/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSDICE/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennysdice.png" alt="Benny's Dice" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Dice</div>
@@ -878,7 +827,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSWORDJUMBLE/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSWORDJUMBLE/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennyswordjumble.png" alt="Benny's Word Jumble" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Word Jumble</div>
@@ -887,7 +836,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSAYS/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSAYS/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/bennysays.png" alt="Benny Says" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny Says</div>
@@ -896,7 +845,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/TRIVIAMASTER/index.html" class="game-tile" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/TRIVIAMASTER/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
         <img class="game-thumb" src="images/games/triviamaster.png" alt="Trivia Master" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Trivia Master</div>
@@ -906,8 +855,20 @@
       </a>
 
     </div>
+
+    <p class="game-request-cta">Not seeing a game type you're looking for? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2bGKJdF-wUodX1JYJK03Mz3jqXV3y00dCzvaSa7DmvIVVDg/viewform" target="_blank" rel="noopener">Contact us to make a request!</a></p>
+
+    <div class="hub-cta">
+      <img src="images/branding/beamin-benny.png" alt="Beamin' Benny" />
+      <div class="hub-cta-text">
+        <h3>Get the Full <em>Benny's Hub</em> Experience</h3>
+        <p>The hub is its own full arcade — with menus, settings, and every game navigatable with just one or two switches. Browse and play independently, all in one place.</p>
+        <a href="https://narbehouse.github.io/bennyshub" class="btn-primary" target="_blank" rel="noopener" style="font-size:1rem; padding: 0.85rem 2.2rem;">Enter Benny's Hub →</a>
+      </div>
+    </div>
   </section>
 
+  <!-- WHO IS THIS FOR -->
   <section class="who" id="who">
     <div class="section-label">You belong here</div>
     <h2 class="section-title">Who Is This For?</h2>
@@ -937,15 +898,14 @@
         <p>NARBE Foundation raises funds to donate switch kits to individuals and families who need them. Each kit is everything you need to start playing immediately — no tech knowledge required.</p>
       </div>
 
-      <!-- kit details — full width -->
-      <div class="kit-details" style="max-width:700px; margin: 0 auto 1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-        <ul class="kit-items" style="grid-column:1/-1;">
+      <div class="kit-details">
+        <ul class="kit-items">
           <li><span class="kit-icon">🔘</span><div><strong>2 Accessibility Switches</strong><span>Large, easy-to-press buttons with 3.5mm connectors</span></div></li>
           <li><span class="kit-icon">🔌</span><div><strong>USB Adapter</strong><span>Converts switch presses into keyboard signals</span></div></li>
           <li><span class="kit-icon">🔀</span><div><strong>3.5mm Y-Splitter Cable</strong><span>Connects both switches to the adapter at once</span></div></li>
           <li><span class="kit-icon">📎</span><div><strong>Adhesive Velcro Strips</strong><span>Mount your switches wherever is most comfortable</span></div></li>
         </ul>
-        <div class="kit-mapping" style="grid-column:1/-1;">
+        <div class="kit-mapping">
           <h4>🎯 Default Input Mapping</h4>
           <div class="mapping-pills">
             <div class="mapping-pill">Switch 1 → <span class="pill-key">SPACE</span> Spacebar</div>
@@ -954,14 +914,12 @@
         </div>
       </div>
 
-      <!-- full-width kit contents photo -->
       <div class="kit-photo-inuse">
         <img src="images/switchkit/PXL_20260401_165514544.jpg"
              alt="NARBE Foundation 2-Switch Kit contents: two large accessibility switches, USB adapter, 3.5mm splitter cable, and velcro strips"
              loading="lazy" />
       </div>
 
-      <!-- centered CTA -->
       <div class="switchkit-cta">
         <h3>🎮 Apply for Your Free Kit</h3>
         <p>Kits are distributed quarterly on a first-come, first-served basis. United States only. No cost — just fill out the application.</p>
@@ -972,13 +930,7 @@
     </div>
   </section>
 
-  <section class="partner-cta">
-    <div class="partner-inner">
-      <p>Interested in partnering with us to help build better games for people who need them?</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2bGKJdF-wUodX1JYJK03Mz3jqXV3y00dCzvaSa7DmvIVVDg/viewform" target="_blank" rel="noopener">Get in touch →</a>
-    </div>
-  </section>
-
+  <!-- DONATE -->
   <section class="donate" id="donate">
     <div class="donate-inner">
       <div class="section-label">Support the mission</div>
@@ -991,6 +943,7 @@
     </div>
   </section>
 
+  <!-- GET INVOLVED -->
   <section class="involved" id="involved">
     <div class="involved-header">
       <div class="section-label">Get involved</div>
@@ -998,6 +951,13 @@
       <p class="section-sub">This is a community effort. Here's where to go next.</p>
     </div>
     <div class="involved-grid">
+
+      <div class="involve-card involve-card--full">
+        <span class="involve-icon">🌱</span>
+        <h3>This Library Grows With Your Support</h3>
+        <p>We use AI to develop and iterate on these games with <a href="aboutus.html" style="color:var(--blue); font-weight:800; text-decoration:none;">Ben</a> as our core tester — and the more support we have, the better we can make them and the faster we can grow the library. Our partners make this possible. We're always looking for feedback, collaborators, and people who believe in what we're building. If you'd like to help in any way, please reach out. We appreciate your support more than we can say. Let's keep growing these games so more people and families get to play.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2bGKJdF-wUodX1JYJK03Mz3jqXV3y00dCzvaSa7DmvIVVDg/viewform" class="involve-link orange" target="_blank" rel="noopener" style="margin-top:0.5rem;">Get in Touch →</a>
+      </div>
 
       <div class="involve-card">
         <img src="images/branding/narbe-foundation.png" alt="NARBE Foundation" class="involve-logo" />
@@ -1047,6 +1007,18 @@
     <p style="margin-top: 0.75rem; font-size: 0.75rem; opacity: 0.4;">© 2026 NARBE LLC. All rights reserved.</p>
   </footer>
 
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('[data-category]').forEach(tile => {
+          tile.style.display = (filter === 'all' || tile.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
