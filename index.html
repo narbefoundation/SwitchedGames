@@ -119,9 +119,23 @@
       text-align: center;
       position: relative; overflow: hidden;
     }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    .hero-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: saturate(0.45) brightness(0.5);
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(18,55,122,0.68) 0%, rgba(30,96,179,0.68) 100%);
+      mix-blend-mode: multiply;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
     }
     .hero-badge {
       display: inline-block;
@@ -625,7 +639,7 @@
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .hero > * { animation: fadeUp 0.5s ease both; }
+    .hero-content > * { animation: fadeUp 0.5s ease both; }
     .hero-badge   { animation-delay: 0.05s; }
     .hero h1      { animation-delay: 0.15s; }
     .hero p       { animation-delay: 0.25s; }
@@ -654,12 +668,18 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-badge">🎮 Free · Open Source · No Downloads · No Account</div>
-    <h1>Free games built for <em>switch users.</em></h1>
-    <p>SwitchedGames is a free, growing library of browser games built for people who interact with a computer using a single button or input as their only means of control. Every game here plays fully and independently with one or two switches.</p>
-    <div class="hero-buttons">
-      <a href="https://narbehouse.github.io/bennyshub" class="btn-primary" target="_blank" rel="noopener">🕹️ Play Benny's Hub</a>
-      <a href="#games" class="btn-secondary">See the Games</a>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="videos/BENNYS-HUB-PROMO.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">🎮 Free · Open Source · No Downloads · No Account</div>
+      <h1>Free games built for <em>switch users.</em></h1>
+      <p>SwitchedGames is a free, growing library of browser games built for people who interact with a computer using a single button or input as their only means of control. Every game here plays fully and independently with one or two switches.</p>
+      <div class="hero-buttons">
+        <a href="https://narbehouse.github.io/bennyshub" class="btn-primary" target="_blank" rel="noopener">🕹️ Play Benny's Hub</a>
+        <a href="#games" class="btn-secondary">See the Games</a>
+      </div>
     </div>
   </section>
 
