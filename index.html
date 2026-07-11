@@ -551,6 +551,45 @@
       .kit-details { grid-template-columns: 1fr; }
     }
 
+    /* ── SUBMIT GAMES ── */
+    .submit-games {
+      background: var(--off-white);
+      padding: 4.5rem 2rem;
+      border-top: 2px solid var(--border);
+      border-bottom: 2px solid var(--border);
+      text-align: center;
+    }
+    .submit-games-inner { max-width: 900px; margin: 0 auto; }
+    .submit-games-inner > .section-sub { max-width: 640px; margin: 0 auto 2.5rem; }
+    .submit-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+      text-align: left; margin-bottom: 2rem;
+    }
+    .submit-card {
+      background: var(--white); border: 2px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+    }
+    .submit-card h3 {
+      font-family: 'Fraunces', serif; font-weight: 900;
+      font-size: 1.25rem; color: var(--text); margin-bottom: 0.6rem;
+    }
+    .submit-card p {
+      color: var(--text-mid); font-weight: 600; font-size: 0.92rem;
+      margin-bottom: 1.1rem;
+    }
+    .submit-card a.btn-apply { font-size: 0.92rem; padding: 0.7rem 1.6rem; }
+    .submit-guide {
+      background: var(--white); border: 2px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem 1.5rem;
+      font-size: 0.92rem; color: var(--text-mid); font-weight: 600;
+      max-width: 640px; margin: 0 auto;
+    }
+    .submit-guide a { color: var(--blue); font-weight: 800; text-decoration: none; }
+    .submit-guide a:hover { text-decoration: underline; }
+    @media (max-width: 700px) {
+      .submit-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── DONATE ── */
     .donate {
       background: var(--off-white); padding: 4.5rem 2rem;
@@ -721,8 +760,8 @@
 
     <div class="games-grid">
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASEBALL/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennysbaseball.png" alt="Benny's Baseball" loading="lazy" />
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASEBALL2/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysbaseball.png" alt="Benny's Baseball" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Baseball</div>
           <div class="game-desc">Make choices and play a full season of baseball. No reactions needed.</div>
@@ -731,7 +770,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFOOTBALL/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennysfootball.png" alt="Benny's Football" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysfootball.png" alt="Benny's Football" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Football</div>
           <div class="game-desc">Call plays and lead your team through a full 16-game season.</div>
@@ -740,7 +779,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASKETBALLSHOOTER/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennysbasketball.png" alt="Benny's Basketball Shooter" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysbasketball.png" alt="Benny's Basketball Shooter" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Basketball Shooter</div>
           <div class="game-desc">Time your shot and chase the high score with bonus modes.</div>
@@ -749,7 +788,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBOWLING/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennysbowling.png" alt="Benny's Bowling" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysbowling.png" alt="Benny's Bowling" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Bowling</div>
           <div class="game-desc">Physics-based bowling with realistic sound and custom themes.</div>
@@ -758,7 +797,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSMINIGOLF/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennysminigolf.png" alt="Benny's Mini Golf" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysminigolf.png" alt="Benny's Mini Golf" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Mini Golf</div>
           <div class="game-desc">Top-down mini golf for up to 4 players with a built-in course editor.</div>
@@ -767,7 +806,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBATTLEBOATS/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/battleboats.png" alt="Benny's Battle Boats" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/battleboats.png" alt="Benny's Battle Boats" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Battle Boats</div>
           <div class="game-desc">Classic Battleship — place your fleet and sink the enemy's ships.</div>
@@ -776,7 +815,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBUGBLASTER/index.html" class="game-tile" data-category="arcade" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennysbugblaster.png" alt="Benny's Bug Blaster" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysbugblaster.png" alt="Benny's Bug Blaster" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Bug Blaster</div>
           <div class="game-desc">Tower defense — squash bugs and upgrade your defenses to survive.</div>
@@ -785,7 +824,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSPEGGLE/index.html" class="game-tile" data-category="arcade" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennyspeggle.png" alt="Benny's P3GL Game" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennyspeggle.png" alt="Benny's P3GL Game" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's P3GL Game</div>
           <div class="game-desc">Peggle-style peg blasting with a full campaign and level editor.</div>
@@ -794,7 +833,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSLOTMACHINE/index.html" class="game-tile" data-category="casino" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennysslotmachine.png" alt="Benny's Mega Slot" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysslotmachine.png" alt="Benny's Mega Slot" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Mega Slot</div>
           <div class="game-desc">Casino-style slot machine with multiple themes and bonus modes.</div>
@@ -803,7 +842,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSMATCHYMATCH/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennysmatchymatch.png" alt="Benny's Matchy Match" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysmatchymatch.png" alt="Benny's Matchy Match" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Matchy Match</div>
           <div class="game-desc">Memory matching with competitive modes and a built-in game editor.</div>
@@ -812,7 +851,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCHESSCHECKERS/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennyscheckers.png" alt="Benny's Chess &amp; Checkers" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennyscheckers.png" alt="Benny's Chess &amp; Checkers" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Chess &amp; Checkers</div>
           <div class="game-desc">Classic Chess or Checkers vs the computer or a friend.</div>
@@ -821,7 +860,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCONNECTFOUR/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/connectfour.png" alt="Benny's Connect Four" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/connectfour.png" alt="Benny's Connect Four" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Connect Four</div>
           <div class="game-desc">Drop pieces and connect four in a row to win.</div>
@@ -830,7 +869,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSTICTACTOE/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennystictactoe.png" alt="Benny's Tic Tac Toe" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennystictactoe.png" alt="Benny's Tic Tac Toe" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Tic Tac Toe</div>
           <div class="game-desc">Classic Tic Tac Toe vs the computer or a friend.</div>
@@ -839,7 +878,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSDICE/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennysdice.png" alt="Benny's Dice" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysdice.png" alt="Benny's Dice" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Dice</div>
           <div class="game-desc">3D dice with Yarkle, Fahtzee, and Free Throw modes.</div>
@@ -848,7 +887,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSWORDJUMBLE/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennyswordjumble.png" alt="Benny's Word Jumble" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennyswordjumble.png" alt="Benny's Word Jumble" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Word Jumble</div>
           <div class="game-desc">Rearrange the letters to solve the word puzzle and advance.</div>
@@ -857,7 +896,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSAYS/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/bennysays.png" alt="Benny Says" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysays.png" alt="Benny Says" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny Says</div>
           <div class="game-desc">Simon Says memory game — match the growing sequence each round.</div>
@@ -866,7 +905,7 @@
       </a>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/TRIVIAMASTER/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
-        <img class="game-thumb" src="images/games/triviamaster.png" alt="Trivia Master" loading="lazy" />
+        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/triviamaster.png" alt="Trivia Master" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Trivia Master</div>
           <div class="game-desc">Build and play your own trivia games with pictures and video.</div>
@@ -885,6 +924,30 @@
         <p>The hub is its own full arcade — with menus, settings, and every game navigatable with just one or two switches. Browse and play independently, all in one place.</p>
         <a href="https://narbehouse.github.io/bennyshub" class="btn-primary" target="_blank" rel="noopener" style="font-size:1rem; padding: 0.85rem 2.2rem;">Enter Benny's Hub →</a>
       </div>
+    </div>
+  </section>
+
+  <!-- SUBMIT GAMES -->
+  <section class="submit-games" id="submit-games" aria-label="Submit your game levels and custom games">
+    <div class="submit-games-inner">
+      <div class="section-label">Community creations</div>
+      <h2 class="section-title">Submit Your Game Levels and Custom Games</h2>
+      <p class="section-sub">Many of the games on SwitchedGames.org have built-in game editors. We always welcome people to customize their experience with their own personalized game levels — and we'd love to add your full custom games to our library too.</p>
+
+      <div class="submit-grid">
+        <div class="submit-card">
+          <h3>🛠️ Custom Levels</h3>
+          <p>Built a level with one of our in-game editors? Share it with the community — submit yours using the link below.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH7960t8xKdrYwrwCZzh3pD3rT9Xv6orqIkgGvbqJUb41ncw/viewform?usp=header" class="btn-apply" target="_blank" rel="noopener">✏️ Submit a Level</a>
+        </div>
+        <div class="submit-card">
+          <h3>🎮 Full Custom Games</h3>
+          <p>Made a full custom game? We want to feature it in our Games Library, with full credit to you as the creator.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH7960t8xKdrYwrwCZzh3pD3rT9Xv6orqIkgGvbqJUb41ncw/viewform?usp=header" class="btn-apply" target="_blank" rel="noopener">🚀 Submit a Game</a>
+        </div>
+      </div>
+
+      <p class="submit-guide">Please make sure your game is switch-access ready — see the <a href="https://narbehouse.github.io/developer-guide.html" target="_blank" rel="noopener">developer guide</a> for requirements. Once your submission is reviewed and approved, we'll upload it to our library, credit you as the creator, and you may even get showcased on our social media.</p>
     </div>
   </section>
 
