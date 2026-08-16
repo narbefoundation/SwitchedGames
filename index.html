@@ -756,6 +756,7 @@
       <button class="filter-btn" data-filter="strategy">Strategy &amp; Board</button>
       <button class="filter-btn" data-filter="arcade">Arcade &amp; Action</button>
       <button class="filter-btn" data-filter="puzzle">Puzzle, Word &amp; Memory</button>
+      <button class="filter-btn" data-filter="cause-effect">Cause &amp; Effect</button>
       <button class="filter-btn" data-filter="casino">Casino</button>
     </div>
 
@@ -842,7 +843,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSLOTMACHINE/index.html" class="game-tile" data-category="casino" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSLOTMACHINE/index.html" class="game-tile" data-category="casino cause-effect" target="_blank" rel="noopener">
         <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysslotmachine.png" alt="Benny's Mega Slot" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Mega Slot</div>
@@ -923,7 +924,7 @@
         </div>
       </a>
 
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSHOWNSOUND/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
+      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSHOWNSOUND/index.html" class="game-tile" data-category="cause-effect" target="_blank" rel="noopener">
         <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/shownsound.png" alt="Benny's Show n Sound" loading="lazy" />
         <div class="game-info">
           <div class="game-title">Benny's Show n Sound</div>
@@ -1116,7 +1117,8 @@
         btn.classList.add('active');
         const filter = btn.dataset.filter;
         document.querySelectorAll('[data-category]').forEach(tile => {
-          tile.style.display = (filter === 'all' || tile.dataset.category === filter) ? '' : 'none';
+          const categories = tile.dataset.category.split(/\s+/);
+          tile.style.display = (filter === 'all' || categories.includes(filter)) ? '' : 'none';
         });
       });
     });
