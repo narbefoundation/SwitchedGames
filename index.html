@@ -337,20 +337,19 @@
 
     .game-tile:hover .game-play { color: var(--orange); }
 
-    .game-tile-wrap {
+    .game-tile-link {
       display: flex;
       flex-direction: column;
-      height: 100%;
+      flex: 1 1 auto;
+      color: inherit;
+      text-decoration: none;
     }
 
-    .game-tile-wrap .game-tile { flex: 1 1 auto; }
-
     .game-credit {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       color: var(--text-light);
-      text-align: center;
       line-height: 1.4;
-      margin-top: 0.4rem;
+      padding: 0 1rem 0.9rem;
     }
 
     .game-credit a {
@@ -795,8 +794,8 @@
         </div>
       </a>
 
-      <div class="game-tile-wrap">
-        <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFOOTBALL/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
+      <div class="game-tile" data-category="sports">
+        <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFOOTBALL/index.html" class="game-tile-link" target="_blank" rel="noopener">
           <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysfootball.png" alt="Benny's Football" loading="lazy" />
           <div class="game-info">
             <div class="game-title">Benny's Football</div>
@@ -804,7 +803,7 @@
             <span class="game-play">▶ Play now</span>
           </div>
         </a>
-        <div class="game-credit">Special thank you for contribution from our community member, <a href="https://github.com/elliottdehn" target="_blank" rel="noopener">Elliott Dehnbostel</a>.</div>
+        <div class="game-credit">In collaboration with: <a href="https://github.com/elliottdehn" target="_blank" rel="noopener">Elliott Dehnbostel</a></div>
       </div>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASKETBALLSHOOTER/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
