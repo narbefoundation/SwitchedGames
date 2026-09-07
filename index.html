@@ -345,6 +345,34 @@
       text-decoration: none;
     }
 
+    /* A game we are showing off before it is finished. Over the corner of the
+       thumbnail so it is read with the picture rather than after it, and in
+       the warm accent rather than a warning red - this is an invitation, not
+       an error. */
+    .game-beta {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      z-index: 2;
+      background: var(--orange, #f5821f);
+      color: #fff;
+      font-size: 0.66rem;
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      padding: 0.24rem 0.56rem;
+      border-radius: 999px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+      pointer-events: none;
+    }
+    .game-tile { position: relative; }
+    .game-note {
+      font-size: 0.72rem;
+      line-height: 1.4;
+      color: var(--text-light);
+      padding: 0.3rem 1rem 0;
+    }
+
     .game-credit {
       font-size: 0.72rem;
       color: var(--text-light);
@@ -789,6 +817,19 @@
     </div>
 
     <div class="games-grid">
+
+      <div class="game-tile" data-category="sports strategy">
+        <span class="game-beta">Active beta</span>
+        <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFISHMYSTERY/index.html" class="game-tile-link" target="_blank" rel="noopener">
+          <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysfishmystery.png" alt="Benny's Fish Mystery" loading="lazy" />
+          <div class="game-info">
+            <div class="game-title">Benny's Fish Mystery</div>
+            <div class="game-desc">Tag fish for Walt's research station and work out what is in the middle of the lake.</div>
+          </div>
+        </a>
+        <div class="game-note">A proof of concept we are still building — more story and animation to come, and it will have bugs.</div>
+        <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFISHMYSTERY/index.html" class="game-play game-play-standalone" target="_blank" rel="noopener">▶ Play now</a>
+      </div>
 
       <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASEBALL2/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
         <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysbaseball.png" alt="Benny's Baseball" loading="lazy" />
