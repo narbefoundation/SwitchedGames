@@ -183,6 +183,10 @@
       .nav-logo-img { max-width: 40vw; height: 44px; width: auto; }
       .nav-btn span { display: none; }
     }
+    /* Shared legal destinations remain readable and keyboard accessible. */
+    footer .legal-links { margin-top: 1rem; }
+    footer .legal-links a { display: inline-block; padding: .5rem .75rem; font-size: 1rem; text-decoration: underline; text-underline-offset: .2em; }
+    footer .legal-links a:focus-visible { outline: 3px solid #f5a06a; outline-offset: 3px; }
   </style>
 </head>
 <body>
@@ -219,6 +223,7 @@
     </p>
     <p style="margin-top: 0.75rem; font-size: 0.75rem; opacity: 0.4;">© 2026 NARBE LLC. All rights reserved.</p>
     <p style="margin-top: 0.75rem; color: #aab3c2;">NARBE is not affiliated with any cryptocurrency or crypto token. <a href="/crypto-statement/" style="color: inherit; text-decoration: underline; text-underline-offset: 0.15em;">Read our official statement</a>.</p>
+    <p class="legal-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></p>
   </footer>
 </body>
 </html>
