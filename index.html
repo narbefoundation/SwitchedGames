@@ -1,790 +1,191 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGVD6RB4H1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FGVD6RB4H1');
-  </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SwitchedGames – Free One &amp; Two Switch Games | Accessible Arcade for Switch Users</title>
-  <meta name="description" content="SwitchedGames is a free, growing library of browser games built for switch users — people who interact with a computer using a single button or input as their only means of control. No downloads, no account, always free." />
-  <meta name="keywords" content="one switch games, two switch games, one button games, two button games, single switch games, dual switch games, switch access games, switch accessible games, accessible browser games, free accessible games, adaptive games, adapted games, switch adapted games, switch scanning games, auto scan games, AAC switch games, AAC games, spacebar games, enter key games, one click games, touch accessible games, keyboard accessible games, simple games for disabilities, fun games for switch users, engaging accessible games, independence games, independent play, assistive technology games, AT games, games for people with disabilities, cerebral palsy games, ALS games, muscular dystrophy games, spinal cord injury games, low motor function games, motor impairment games, occupational therapy games, OT games, physical therapy games, special education games, switch kit games, adaptive switch kit, adaptive gaming, browser games no downloads, free disability games, NARBE Foundation, Benny's Hub arcade" />
-  <meta property="og:title" content="SwitchedGames – Free One &amp; Two Switch Games | Accessible Arcade" />
-  <meta property="og:description" content="A free, growing library of browser games for switch users. Play fully and independently with one or two inputs. Powered by NARBE Foundation." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://switchedgames.org/images/branding/switchedgames_emblem_v5.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://switchedgames.org/images/branding/switchedgames_emblem_v5.png" />
-  <link rel="canonical" href="https://switchedgames.org" />
-  <link rel="icon" href="images/branding/switchedgames_emblem_v5.svg" type="image/svg+xml" />
-  <link rel="icon" href="images/branding/switchedgames_emblem_v5.png" type="image/png" />
-
-  <!-- Givebutter Widget -->
-  <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=JlNZTQzhAyoKDVPC&p=other"></script>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "SwitchedGames",
-    "url": "https://switchedgames.org",
-    "description": "Free browser-based games playable with one or two switches — built for people who interact with a computer using a single button or input as their only means of control.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "NARBE LLC",
-      "url": "https://narbehouse.com"
-    }
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --blue:        #1e60b3;
-      --blue-light:  #2e7dd1;
-      --blue-pale:   #e8f1fb;
-      --blue-dark:   #12377a;
-      --orange:      #f07d35;
-      --orange-light:#f5a06a;
-      --orange-pale: #fff3eb;
-      --white:       #ffffff;
-      --off-white:   #f7f9fc;
-      --text:        #0f1e30;
-      --text-mid:    #3a4f65;
-      --text-light:  #6a82a0;
-      --border:      #d2e0f0;
-      --radius:      16px;
-      --shadow:      0 4px 24px rgba(30,96,179,0.10);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Nunito', sans-serif;
-      background: var(--off-white);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    /* ── NAV ── */
-    nav {
-      background: var(--white);
-      border-bottom: 2px solid var(--border);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 68px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo-img { height: 44px; width: auto; display: block; }
-    .nav-benny-icon { height: 22px; width: auto; vertical-align: middle; }
-
-    .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
-
-    .nav-btn {
-      text-decoration: none;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800; font-size: 0.9rem;
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .nav-btn-arcade { background: var(--blue); color: var(--white); }
-    .nav-btn-arcade:hover { background: var(--blue-light); transform: translateY(-1px); }
-    .nav-btn-donate { background: var(--orange); color: var(--white); }
-    .nav-btn-donate:hover { background: var(--orange-light); transform: translateY(-1px); }
-    .nav-btn-about { background: var(--off-white); color: var(--text-mid); border: 2px solid var(--border); }
-    .nav-btn-about:hover { background: var(--border); }
-
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
-      color: var(--white);
-      padding: 5rem 2rem 4.5rem;
-      text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .hero-video {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      filter: saturate(0.45) brightness(0.5);
-      z-index: 0;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(18,55,122,0.68) 0%, rgba(30,96,179,0.68) 100%);
-      mix-blend-mode: multiply;
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: var(--orange); color: var(--white);
-      font-weight: 800; font-size: 0.8rem;
-      padding: 0.35rem 1rem; border-radius: 50px;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      margin-bottom: 1.5rem; position: relative;
-    }
-    .hero h1 {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      line-height: 1.1; margin-bottom: 1.2rem; position: relative;
-    }
-    .hero h1 em { font-style: italic; color: var(--orange-light); }
-    .hero p {
-      font-size: clamp(1rem, 2.5vw, 1.2rem); opacity: 0.9;
-      max-width: 640px; margin: 0 auto 2.5rem;
-      position: relative; font-weight: 600;
-    }
-    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
-
-    .btn-primary {
-      background: var(--orange); color: var(--white);
-      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1.1rem;
-      padding: 0.9rem 2.2rem; border-radius: 50px;
-      text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
-      transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    }
-    .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.15); color: var(--white);
-      font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 1rem;
-      padding: 0.9rem 2rem; border-radius: 50px;
-      text-decoration: none; border: 2px solid rgba(255,255,255,0.4);
-      transition: background 0.15s;
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.25); }
-
-    /* ── WHAT IS A SWITCH ── */
-    .what-is-switch {
-      background: var(--white);
-      border-bottom: 2px solid var(--border);
-      padding: 4rem 2rem;
-    }
-    .wis-inner {
-      max-width: 980px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-    .wis-label {
-      font-size: 0.8rem; font-weight: 800;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--blue); margin-bottom: 0.5rem;
-    }
-    .wis-text h2 {
-      font-family: 'Fraunces', serif;
-      font-weight: 900;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      color: var(--text);
-      line-height: 1.15;
-      margin-bottom: 0.85rem;
-    }
-    .wis-text h2 em { font-style: italic; color: var(--blue); }
-    .wis-text p {
-      color: var(--text-mid);
-      font-weight: 600;
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-    .wis-inputs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      align-content: flex-start;
-    }
-    .wis-pill {
-      background: var(--off-white);
-      border: 2px solid var(--border);
-      border-radius: 50px;
-      padding: 0.55rem 1.1rem;
-      font-weight: 700;
-      font-size: 0.92rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--text);
-    }
-    .wis-key {
-      background: var(--blue);
-      color: var(--white);
-      border-radius: 6px;
-      padding: 0.1rem 0.55rem;
-      font-size: 0.78rem;
-      font-weight: 900;
-      font-family: monospace;
-    }
-    @media (max-width: 700px) {
-      .wis-inner { grid-template-columns: 1fr; gap: 1.75rem; }
-    }
-
-    /* ── SHARED SECTION LABELS ── */
-    .section-label {
-      font-size: 0.8rem; font-weight: 800;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--blue); margin-bottom: 0.5rem;
-    }
-    .section-title {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      color: var(--text); margin-bottom: 0.75rem; line-height: 1.15;
-    }
-    .section-sub {
-      color: var(--text-light); font-size: 1rem; font-weight: 600;
-      max-width: 680px; margin: 0 auto;
-    }
-
-    /* ── GAMES GRID ── */
-    .games {
-      background: var(--off-white);
-      padding: 4.5rem 2rem;
-      border-top: 2px solid var(--border);
-    }
-
-    .games-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.25rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .game-tile {
-      background: var(--white);
-      border: 2px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      text-decoration: none;
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    }
-
-    .game-tile:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-      border-color: var(--blue-light);
-    }
-
-    .game-thumb {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      display: block;
-      background: var(--blue-pale);
-    }
-
-    .game-info {
-      padding: 0.85rem 1rem 1rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
-
-    .game-title {
-      font-weight: 800;
-      font-size: 0.92rem;
-      color: var(--text);
-      line-height: 1.3;
-    }
-
-    .game-desc {
-      font-size: 0.78rem;
-      color: var(--text-mid);
-      font-weight: 600;
-      line-height: 1.45;
-      flex: 1;
-    }
-
-    .game-play {
-      display: inline-block;
-      margin-top: 0.6rem;
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: var(--blue);
-    }
-
-    .game-tile:hover .game-play { color: var(--orange); }
-
-    .game-tile-link {
-      display: flex;
-      flex-direction: column;
-      flex: 1 1 auto;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* A game we are showing off before it is finished. Over the corner of the
-       thumbnail so it is read with the picture rather than after it, and in
-       the warm accent rather than a warning red - this is an invitation, not
-       an error. */
-    .game-status {
-      position: absolute;
-      top: 0.6rem;
-      left: 0.6rem;
-      z-index: 2;
-      background: var(--orange, #f5821f);
-      color: #fff;
-      font-size: 0.66rem;
-      font-weight: 900;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      padding: 0.24rem 0.56rem;
-      border-radius: 999px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
-      pointer-events: none;
-    }
-    .game-tile { position: relative; }
-    .game-note {
-      font-size: 0.72rem;
-      line-height: 1.4;
-      color: var(--text-light);
-      padding: 0.3rem 1rem 0;
-    }
-
-    .game-credit {
-      font-size: 0.72rem;
-      color: var(--text-light);
-      line-height: 1.4;
-      padding: 0.3rem 1rem 0;
-    }
-
-    .game-credit a {
-      color: var(--blue);
-      font-weight: 700;
-      text-decoration: underline;
-    }
-
-    .game-credit a:hover { color: var(--orange); }
-
-    .game-play-standalone {
-      display: block;
-      padding: 0 1rem 1rem;
-    }
-
-    /* ── GAME FILTER BAR ── */
-    .game-filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      max-width: 1100px;
-      margin: 0 auto 1.5rem;
-    }
-    .filter-btn {
-      padding: 0.4rem 1rem;
-      border-radius: 2rem;
-      border: 2px solid var(--blue);
-      background: transparent;
-      cursor: pointer;
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--blue);
-      transition: background 0.15s, color 0.15s;
-    }
-    .filter-btn:hover { background: var(--blue-pale); }
-    .filter-btn.active {
-      background: var(--blue);
-      color: var(--white);
-      border-color: var(--blue);
-    }
-
-    .hub-cta {
-      max-width: 1100px;
-      margin: 2.5rem auto 0;
-      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
-      border-radius: var(--radius);
-      padding: 2.5rem 2.5rem;
-      color: var(--white);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 0;
-    }
-    .hub-cta img {
-      height: 140px;
-      width: auto;
-      flex-shrink: 0;
-      margin-bottom: 1.25rem;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
-      animation: bennyBob 3s ease-in-out infinite;
-    }
-    .hub-cta-text {
-      text-align: center;
-    }
-    .hub-cta h3 {
-      font-family: 'Fraunces', serif;
-      font-weight: 900;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      margin-bottom: 0.5rem;
-    }
-    .hub-cta h3 em { font-style: italic; color: var(--orange-light); }
-    .hub-cta p {
-      font-size: 0.95rem;
-      font-weight: 600;
-      opacity: 0.85;
-      max-width: 480px;
-      margin: 0 auto 1.5rem;
-    }
-    @media (max-width: 600px) {
-      .hub-cta { padding: 2rem 1.25rem; }
-    }
-
-    .game-request-cta {
-      text-align: center;
-      margin-top: 1.75rem;
-      font-size: 0.95rem;
-      color: var(--text-mid);
-      font-weight: 600;
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .game-request-cta a {
-      color: var(--blue);
-      font-weight: 800;
-      text-decoration: none;
-    }
-    .game-request-cta a:hover { text-decoration: underline; }
-
-    /* ── WHO ── */
-    .who {
-      background: var(--orange-pale);
-      border-top: 2px solid #f5d5bb;
-      border-bottom: 2px solid #f5d5bb;
-      padding: 4.5rem 2rem; text-align: center;
-    }
-    .who .section-label { color: var(--orange); }
-    .who-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem; max-width: 860px; margin: 2rem auto 0;
-    }
-    .who-chip {
-      background: var(--white); border: 2px solid #f0c4a0;
-      border-radius: 12px; padding: 1.1rem 0.8rem;
-      font-weight: 700; font-size: 0.88rem; color: var(--text); text-align: center;
-    }
-    .who-chip span { display: block; font-size: 1.5rem; margin-bottom: 0.35rem; }
-
-    /* ── SWITCH KIT ── */
-    .switchkit {
-      background: var(--blue-pale);
-      padding: 4.5rem 2rem;
-      border-top: 2px solid var(--border);
-      border-bottom: 2px solid var(--border);
-    }
-    .switchkit-inner { max-width: 1000px; margin: 0 auto; }
-    .switchkit-header { text-align: center; margin-bottom: 2.5rem; }
-    .switchkit-header h2 {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      color: var(--text); margin-bottom: 0.75rem; line-height: 1.15;
-    }
-    .switchkit-header h2 em { font-style: italic; color: var(--blue); }
-    .switchkit-header p {
-      color: var(--text-mid); font-weight: 600; font-size: 1rem;
-      max-width: 580px; margin: 0 auto;
-    }
-
-    .kit-photo-inuse {
-      border-radius: var(--radius); overflow: hidden;
-      border: 2px solid var(--border); background: var(--white);
-      margin-bottom: 1.5rem;
-    }
-    .kit-photo-inuse img {
-      width: 100%; max-height: 300px;
-      object-fit: cover; object-position: center 60%; display: block;
-    }
-
-    .kit-details {
-      max-width: 700px; margin: 0 auto 1.5rem;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-    }
-    .kit-items {
-      list-style: none; display: flex;
-      flex-direction: column; gap: 0.65rem; grid-column: 1 / -1;
-    }
-    .kit-items li {
-      display: flex; align-items: flex-start; gap: 0.7rem;
-      background: var(--white); border: 2px solid var(--border);
-      border-radius: 12px; padding: 0.75rem 1rem;
-    }
-    .kit-items li .kit-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.05rem; }
-    .kit-items li strong { display: block; font-weight: 800; font-size: 0.92rem; color: var(--text); }
-    .kit-items li span { font-size: 0.82rem; color: var(--text-mid); font-weight: 600; }
-
-    .kit-mapping {
-      background: var(--white); border: 2px solid var(--border);
-      border-radius: var(--radius); padding: 1rem 1.2rem; grid-column: 1 / -1;
-    }
-    .kit-mapping h4 {
-      font-weight: 800; font-size: 0.82rem;
-      text-transform: uppercase; letter-spacing: 0.08em;
-      color: var(--blue); margin-bottom: 0.6rem;
-    }
-    .mapping-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-    .mapping-pill {
-      display: flex; align-items: center; gap: 0.4rem;
-      background: var(--blue-pale); border-radius: 50px;
-      padding: 0.35rem 0.85rem;
-      font-size: 0.85rem; font-weight: 700; color: var(--text);
-    }
-    .mapping-pill .pill-key {
-      background: var(--blue); color: var(--white);
-      border-radius: 5px; padding: 0.1rem 0.5rem;
-      font-size: 0.78rem; font-weight: 900; font-family: monospace;
-    }
-
-    .switchkit-cta {
-      text-align: center; background: var(--white);
-      border: 2px solid var(--border); border-radius: var(--radius);
-      padding: 2rem 2rem 1.75rem;
-    }
-    .switchkit-cta h3 {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: 1.5rem; color: var(--text); margin-bottom: 0.5rem;
-    }
-    .switchkit-cta p {
-      color: var(--text-mid); font-weight: 600; font-size: 0.92rem;
-      max-width: 460px; margin: 0 auto 1.25rem;
-    }
-    .notice-box {
-      background: #fff8e6; border: 2px solid #f5d78a;
-      border-radius: 10px; padding: 0.75rem 1rem;
-      font-size: 0.82rem; color: #5a4200; font-weight: 600;
-      line-height: 1.5; margin-top: 0.75rem;
-    }
-    .notice-box strong { font-weight: 800; }
-    .btn-apply {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--blue); color: var(--white);
-      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1.05rem;
-      padding: 0.85rem 2.2rem; border-radius: 50px; text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      box-shadow: 0 4px 16px rgba(30,96,179,0.25);
-    }
-    .btn-apply:hover { background: var(--blue-light); transform: translateY(-2px); }
-    .cta-fine {
-      margin-top: 0.85rem; font-size: 0.8rem;
-      color: var(--text-light); font-weight: 600;
-    }
-    .cta-fine a { color: var(--blue); font-weight: 700; text-decoration: none; }
-    .cta-fine a:hover { text-decoration: underline; }
-
-    @media (max-width: 700px) {
-      .kit-details { grid-template-columns: 1fr; }
-    }
-
-    /* ── SUBMIT GAMES ── */
-    .submit-games {
-      background: var(--off-white);
-      padding: 4.5rem 2rem;
-      border-top: 2px solid var(--border);
-      border-bottom: 2px solid var(--border);
-      text-align: center;
-    }
-    .submit-games-inner { max-width: 900px; margin: 0 auto; }
-    .submit-games-inner > .section-sub { max-width: 640px; margin: 0 auto 2.5rem; }
-    .submit-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-      text-align: left; margin-bottom: 2rem;
-    }
-    .submit-card {
-      background: var(--white); border: 2px solid var(--border);
-      border-radius: var(--radius); padding: 1.75rem;
-    }
-    .submit-card h3 {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: 1.25rem; color: var(--text); margin-bottom: 0.6rem;
-    }
-    .submit-card p {
-      color: var(--text-mid); font-weight: 600; font-size: 0.92rem;
-      margin-bottom: 1.1rem;
-    }
-    .submit-card a.btn-apply { font-size: 0.92rem; padding: 0.7rem 1.6rem; }
-    .submit-guide {
-      background: var(--white); border: 2px solid var(--border);
-      border-radius: var(--radius); padding: 1.25rem 1.5rem;
-      font-size: 0.92rem; color: var(--text-mid); font-weight: 600;
-      max-width: 640px; margin: 0 auto;
-    }
-    .submit-guide a { color: var(--blue); font-weight: 800; text-decoration: none; }
-    .submit-guide a:hover { text-decoration: underline; }
-    @media (max-width: 700px) {
-      .submit-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── DONATE ── */
-    .donate {
-      background: var(--off-white); padding: 4.5rem 2rem;
-      text-align: center; border-top: 2px solid var(--border);
-    }
-    .donate-inner { max-width: 580px; margin: 0 auto; }
-    .donate h2 {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--text); margin-bottom: 0.75rem;
-    }
-    .donate-inner > p { color: var(--text-mid); font-weight: 600; font-size: 1rem; margin-bottom: 2rem; }
-    .givebutter-wrap {
-      background: var(--white); border: 2px solid var(--border);
-      border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow);
-      display: flex; justify-content: center; align-items: flex-start;
-    }
-    givebutter-widget { display: block; width: 100%; max-width: 480px; margin: 0 auto; }
-    .donate-alt { margin-top: 1.2rem; font-size: 0.88rem; color: var(--text-light); font-weight: 600; }
-    .donate-alt a { color: var(--blue); text-decoration: none; font-weight: 800; }
-    .donate-alt a:hover { text-decoration: underline; }
-
-    /* ── GET INVOLVED ── */
-    .involved { background: var(--white); padding: 4.5rem 2rem; border-top: 2px solid var(--border); }
-    .involved-header { text-align: center; margin-bottom: 2.5rem; }
-    .involved-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem; max-width: 980px; margin: 0 auto;
-    }
-    @media (max-width: 600px) {
-      .involved-grid { grid-template-columns: 1fr; }
-    }
-    .involve-card {
-      background: var(--off-white); border: 2px solid var(--border);
-      border-radius: var(--radius); padding: 2rem 1.8rem;
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    }
-    .involve-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--blue-light); }
-    .involve-card--full {
-      grid-column: 1 / -1;
-      background: var(--blue-pale);
-      border-color: var(--blue);
-    }
-    .involve-card--full p { max-width: 700px; line-height: 1.75; }
-    .involve-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
-    .involve-logo {
-      display: block; height: 48px; width: auto;
-      max-width: 160px; object-fit: contain; margin-bottom: 0.85rem;
-    }
-    .involve-card h3 { font-weight: 800; font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
-    .involve-card p { font-size: 0.9rem; color: var(--text-mid); font-weight: 600; line-height: 1.55; margin-bottom: 1.2rem; }
-    .involve-link {
-      display: inline-block; background: var(--blue); color: var(--white);
-      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.88rem;
-      padding: 0.5rem 1.2rem; border-radius: 50px;
-      text-decoration: none; transition: background 0.2s;
-    }
-    .involve-link:hover { background: var(--blue-light); }
-    .involve-link.orange { background: var(--orange); }
-    .involve-link.orange:hover { background: var(--orange-light); }
-
-    /* ── OSS STRIP + FOOTER ── */
-    .oss-strip {
-      background: var(--text); color: rgba(255,255,255,0.7);
-      padding: 1.75rem 2rem; text-align: center;
-    }
-    .oss-strip p { font-size: 0.92rem; font-weight: 700; margin-bottom: 0.25rem; }
-    .oss-strip strong { color: var(--orange-light); }
-    .oss-strip a { color: var(--orange-light); text-decoration: none; }
-    .oss-strip a:hover { text-decoration: underline; }
-
-    footer {
-      background: #080f1a; color: rgba(255,255,255,0.5);
-      padding: 1.75rem 2rem; text-align: center;
-      border-top: 2px solid rgba(255,255,255,0.07);
-    }
-    footer .footer-logo {
-      font-family: 'Fraunces', serif; font-weight: 900;
-      font-size: 1.2rem; color: var(--white); margin-bottom: 0.4rem;
-    }
-    footer .footer-logo span { color: var(--orange); }
-    footer p { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem; }
-    footer a { color: var(--orange-light); text-decoration: none; }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .hero-content > * { animation: fadeUp 0.5s ease both; }
-    .hero-badge   { animation-delay: 0.05s; }
-    .hero h1      { animation-delay: 0.15s; }
-    .hero p       { animation-delay: 0.25s; }
-    .hero-buttons { animation-delay: 0.35s; }
-
-    @media (max-width: 480px) {
-      .who-grid { grid-template-columns: 1fr 1fr; }
-      .nav-btn span { display: none; }
-    }
-    /* Shared legal destinations remain readable and keyboard accessible. */
-    footer .legal-links { margin-top: 1rem; }
-    footer .legal-links a { display: inline-block; padding: .5rem .75rem; font-size: 1rem; text-decoration: underline; text-underline-offset: .2em; }
-    footer .legal-links a:focus-visible { outline: 3px solid #f5a06a; outline-offset: 3px; }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#11141b">
+  <title>SwitchedGames — Great games. More ways to play.</title>
+  <meta name="description" content="Explore free browser games built for one- and two-switch play. Meet the family behind SwitchedGames and discover independent play in Benny's Hub.">
+  <link rel="canonical" href="https://switchedgames.org/">
+  <meta property="og:title" content="SwitchedGames — Great games. More ways to play.">
+  <meta property="og:description" content="A growing collection of free games built for switch users. Developed with Ben. Shared with everyone.">
+  <meta property="og:image" content="https://switchedgames.org/images/branding/switchedgames_emblem_v5.png">
+  <link rel="icon" href="images/branding/switchedgames_emblem_v5.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="showcase.css">
+  <script defer src="showcase.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#games">Skip to games</a>
+<svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6m0-6L9 15"/><path d="M10 4H4v16h16v-6"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14m8-14v14"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.9 6.5 1-4.7 4.6 1.1 6.5-5.7-3.1-5.7 3.1 1.1-6.5L3 9.9l6.2-1Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-sport" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18M6 5c9 3 9 11 0 14M18 5c-9 3-9 11 0 14"/></symbol>
+  <symbol id="i-strategy" viewBox="0 0 24 24"><path d="m5 4 2 4 5-5 5 5 2-4 2 11H3Zm0 15h14"/></symbol>
+  <symbol id="i-arcade" viewBox="0 0 24 24"><path d="M12 10v6M5 16h14l2 5H3Z"/><circle cx="12" cy="6" r="4"/></symbol>
+  <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M14 3v4a3 3 0 1 0 0 6v4h-4a3 3 0 1 1-6 0H1V3h5a3 3 0 1 1 6 0Zm5 10v8H9"/></symbol>
+  <symbol id="i-switch" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="5"/><path d="M12 4v16"/><circle cx="7.5" cy="10" r="1.5"/><circle cx="16.5" cy="14" r="1.5"/></symbol>
+  <symbol id="i-dice" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M7 7h.1M17 7h.1M12 12h.1M7 17h.1M17 17h.1" stroke-width="3"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3m1-17a4 4 0 0 1 0 8m2 3a5 5 0 0 1 3 5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.2"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5Zm4 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+  <symbol id="i-replay" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 7M3 3v7h7"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+</svg>
 
-  <nav aria-label="Main navigation">
-    <a href="/" class="nav-logo" aria-label="SwitchedGames home">
-      <img src="images/branding/switchedgames_emblem_v5.svg" alt="SwitchedGames" class="nav-logo-img" />
-    </a>
-    <div class="nav-actions">
-      <a href="aboutus.html" class="nav-btn nav-btn-about">Our Story</a>
-      <a href="https://narbehouse.github.io/bennyshub" class="nav-btn nav-btn-arcade" target="_blank" rel="noopener">
-        <img src="images/branding/beamin-benny.png" alt="" class="nav-benny-icon" aria-hidden="true" />
-        <span>Play Arcade</span>
-      </a>
+<div id="brand-intro" class="brand-intro" aria-hidden="true" hidden>
+  <div class="intro-mark">
+    <svg class="intro-half intro-left" viewBox="115 160 210 360"><path d="M175 160C175 160 115 160 115 240V440C115 440 115 520 175 520H325V160Z" fill="#f07d35"/></svg>
+    <svg class="intro-half intro-right" viewBox="355 160 210 360"><path d="M355 160H505C505 160 565 160 565 240V440C565 440 565 520 505 520H355Z" fill="#1e60b3"/></svg>
+    <span class="intro-button intro-button-orange"></span>
+    <span class="intro-button intro-button-blue"></span>
+  </div>
+  <span class="intro-wordmark">SWITCHED<span>GAMES</span></span>
+</div>
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="SwitchedGames home">
+    <img src="images/branding/switchedgames_emblem_v5.svg" alt="" width="43" height="35">
+    <span>SWITCHED<span>GAMES</span></span>
+  </a>
+  <label class="search-box"><svg class="icon"><use href="#i-search"/></svg><span class="sr-only">Search games</span><input id="game-search" type="search" placeholder="Find your next game…" autocomplete="off"><kbd>/</kbd></label>
+  <nav class="top-links" aria-label="Main navigation"><a href="aboutus.html">Our story</a><a href="#involved">Partner with us</a></nav>
+  <a class="button hub-button" href="https://narbehouse.github.io/bennyshub" target="_blank" rel="noopener">Play in Benny’s Hub <svg class="icon"><use href="#i-external"/></svg></a>
+  <button class="icon-button menu-button" id="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><svg class="icon"><use href="#i-menu"/></svg></button>
+</header>
+
+<div class="site-layout">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <p class="nav-label">YOUR NEXT ADVENTURE</p>
+    <nav class="browse-nav" aria-label="Browse games">
+      <button class="side-link active" data-collection="all" aria-pressed="true"><svg class="icon"><use href="#i-grid"/></svg>All games <span class="side-count">26</span></button>
+      <button class="side-link" data-collection="favorites" aria-pressed="false"><svg class="icon"><use href="#i-star"/></svg>Favorites <span id="favorite-count" class="side-count">0</span></button>
+      <button class="side-link" data-collection="recent" aria-pressed="false"><svg class="icon"><use href="#i-clock"/></svg>Recently played</button>
+    </nav>
+    <div class="sidebar-rule"></div>
+    <p class="nav-label">FIND YOUR KIND OF GAME</p>
+    <nav class="category-nav" aria-label="Game categories"><button class="side-link" data-category-select="sports" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-sport"/></svg>Sports<span class="side-count">9</span></button><button class="side-link" data-category-select="strategy" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-strategy"/></svg>Strategy &amp; Board<span class="side-count">7</span></button><button class="side-link" data-category-select="arcade" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-arcade"/></svg>Arcade &amp; Action<span class="side-count">5</span></button><button class="side-link" data-category-select="puzzle" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-puzzle"/></svg>Puzzle, Word &amp; Memory<span class="side-count">5</span></button><button class="side-link" data-category-select="cause-effect" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-switch"/></svg>Cause &amp; Effect<span class="side-count">3</span></button><button class="side-link" data-category-select="casino" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-dice"/></svg>Casino<span class="side-count">1</span></button></nav>
+    <div class="sidebar-rule"></div>
+    <nav class="resource-nav" aria-label="About SwitchedGames">
+      <a href="#how-to-play"><svg class="icon"><use href="#i-switch"/></svg>What is a switch?</a>
+      <a href="aboutus.html"><svg class="icon"><use href="#i-users"/></svg>The story behind it</a>
+      <a href="#switchkit"><svg class="icon"><use href="#i-grid"/></svg>Get a switch kit</a>
+      <a href="#submit-games"><svg class="icon"><use href="#i-arcade"/></svg>Create with us</a>
+    </nav>
+  </div>
+  <div class="sidebar-bottom">
+    <p>Built with Ben.<br><strong>Shared with everyone.</strong></p>
+    <a href="https://narbefoundation.org" target="_blank" rel="noopener">Supported by NARBE Foundation <svg class="icon"><use href="#i-external"/></svg></a>
+    <button id="replay-intro" class="replay-button"><svg class="icon"><use href="#i-replay"/></svg>Replay the intro <svg class="icon small"><use href="#i-volume"/></svg></button>
+  </div>
+</aside>
+<main id="main">
+  <section class="hero-carousel" aria-label="Discover SwitchedGames" aria-roledescription="carousel">
+    <video id="hero-video" muted loop playsinline preload="metadata" poster="images/games/narberacer.png"><source src="videos/BENNYS-HUB-PROMO.mp4" type="video/mp4"></video>
+    <div class="hero-shade"></div>
+    <div class="hero-slide" id="slide-0" role="tabpanel" aria-labelledby="tab-0">
+      <p class="eyebrow"><span class="status-dot"></span>FREE TO PLAY. BUILT FOR SWITCH USERS.</p>
+      <h1>Great games.<br><span>More ways to play.</span></h1>
+      <p class="hero-copy">One or two switches. A whole world of games.<br>Explore a growing collection built for independent play.</p>
+      <a class="hero-cta" href="#games">Find your next game <svg class="icon"><use href="#i-arrow"/></svg></a>
     </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="videos/BENNYS-HUB-PROMO.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-badge">🎮 Free · Open Source · No Downloads · No Account</div>
-      <h1>Free games built for <em>switch users.</em></h1>
-      <p>SwitchedGames is a free, growing library of browser games built for people who interact with a computer using a single button or input as their only means of control. Every game here plays fully and independently with one or two switches.</p>
-      <div class="hero-buttons">
-        <a href="https://narbehouse.github.io/bennyshub" class="btn-primary" target="_blank" rel="noopener">🕹️ Play Benny's Hub</a>
-        <a href="#games" class="btn-secondary">See the Games</a>
-        <a href="#submit-games" class="btn-secondary">Create With Us</a>
-      </div>
+    <div class="hero-slide" id="slide-1" role="tabpanel" aria-labelledby="tab-1" hidden>
+      <p class="eyebrow"><span class="status-dot"></span>A SMALL BUTTON. A BIG DIFFERENCE.</p>
+      <h2>What is<br><span>a switch?</span></h2>
+      <p class="hero-copy">A single button can be someone’s way to control a computer. We build games around that possibility.</p>
+      <a class="hero-cta" href="#how-to-play">See how it works <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="hero-slide" id="slide-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+      <p class="eyebrow"><span class="status-dot"></span>THE FAMILY BEHIND THE GAMES</p>
+      <h2>Built for Ben.<br><span>Shared with everyone.</span></h2>
+      <p class="hero-copy">Ben helps shape, test, and play what we build. What started with our family keeps growing for others.</p>
+      <a class="hero-cta" href="aboutus.html">Meet Ben. Meet our mission. <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="hero-slide" id="slide-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+      <p class="eyebrow"><span class="status-dot"></span>THE COMPLETE SWITCH-NAVIGABLE EXPERIENCE</p>
+      <h2>Your games.<br><span>Your independence.</span></h2>
+      <p class="hero-copy">Play all these games inside Benny’s Hub. Use one or two switches to navigate the entire interface.</p>
+      <a class="hero-cta" href="https://narbehouse.github.io/bennyshub" target="_blank" rel="noopener">Open Benny’s Hub <svg class="icon"><use href="#i-external"/></svg></a>
+    </div>
+    <div class="hero-video-label"><span></span>REAL GAMES. REAL GAMEPLAY.</div>
+    <div class="hero-controls"><button class="icon-button" id="video-toggle" aria-label="Play background video" aria-pressed="false"><svg class="icon"><use href="#i-play"/></svg></button></div>
+    <div class="hero-tabs" role="tablist" aria-label="Choose an introduction">
+      <button id="tab-0" role="tab" aria-controls="slide-0" aria-selected="true" tabindex="0"><span>01</span>The games</button>
+      <button id="tab-1" role="tab" aria-controls="slide-1" aria-selected="false" tabindex="-1"><span>02</span>Switch access</button>
+      <button id="tab-2" role="tab" aria-controls="slide-2" aria-selected="false" tabindex="-1"><span>03</span>Our story</button>
+      <button id="tab-3" role="tab" aria-controls="slide-3" aria-selected="false" tabindex="-1"><span>04</span>Benny’s Hub</button>
     </div>
   </section>
 
-  <!-- WHAT IS A SWITCH -->
-  <section class="what-is-switch" aria-label="What is a switch?">
+  <div class="hub-strip">
+    <svg class="icon"><use href="#i-switch"/></svg>
+    <p><strong>Ready to play independently?</strong> Browse and play the entire collection with your switches inside Benny’s Hub.</p>
+    <a href="https://narbehouse.github.io/bennyshub" target="_blank" rel="noopener">Let’s play <svg class="icon"><use href="#i-arrow"/></svg></a>
+  </div>
+
+  <section class="game-library" id="games" aria-labelledby="library-title">
+    <div class="library-heading"><div><p class="eyebrow">THE COLLECTION</p><h2 id="library-title">Find your next favorite<span>.</span></h2></div><p id="game-count" aria-live="polite">26 games to explore</p></div>
+    <div class="filter-toolbar">
+      <label class="select-wrap"><span class="sr-only">Game category</span><select id="category-filter"><option value="all">All categories</option><option value="sports">Sports</option><option value="strategy">Strategy &amp; Board</option><option value="arcade">Arcade &amp; Action</option><option value="puzzle">Puzzle, Word &amp; Memory</option><option value="cause-effect">Cause &amp; Effect</option><option value="casino">Casino</option></select><svg class="icon"><use href="#i-chevron"/></svg></label>
+      <div class="filter-toggles">
+        <label class="toggle"><input id="multiplayer-filter" type="checkbox"><span class="toggle-track"></span>Multiplayer</label>
+        <label class="toggle"><input id="editor-filter" type="checkbox"><span class="toggle-track"></span>Game editors</label>
+        <label class="toggle"><input id="concept-filter" type="checkbox"><span class="toggle-track"></span>New concepts</label>
+      </div>
+      <label class="select-wrap sort-wrap"><span class="sort-label">Sort:</span><span class="sr-only">Sort games</span><select id="sort-filter"><option value="featured">Featured</option><option value="az">A–Z</option><option value="za">Z–A</option></select><svg class="icon"><use href="#i-chevron"/></svg></label>
+    </div>
+    <div id="filter-summary" class="filter-summary" hidden><span id="filter-text"></span><button id="clear-filters">Clear filters <svg class="icon small"><use href="#i-close"/></svg></button></div>
+    <div class="games-grid" id="game-grid"><article class="game-card" data-game-id="NARBEKART"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/NARBEKART/index.html" target="_blank" rel="noopener" data-play="NARBEKART" aria-label="Play NARBE Racer"><img src="images/games/narberacer.png" alt="NARBE Racer" width="480" height="270" loading="eager"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="NARBEKART" aria-pressed="false" aria-label="Save NARBE Racer to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/NARBEKART/index.html" data-play="NARBEKART" target="_blank" rel="noopener">NARBE Racer</a></h3><p class="game-description">Race through Grand Prix cups, single races, and time trials with one or two switches — or race a friend with one switch each.</p><div class="game-card-footer"><span class="game-category">Sports</span><button class="detail-button" data-details="NARBEKART" aria-label="About NARBE Racer">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSBALLISTA"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBALLISTA/index.html" target="_blank" rel="noopener" data-play="BENNYSBALLISTA" aria-label="Play Benny's Ballista"><img src="images/games/bennysballista.png" alt="Benny's Ballista" width="480" height="270" loading="eager"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><span class="game-status">NEW CONCEPT</span><button class="favorite-button" data-favorite="BENNYSBALLISTA" aria-pressed="false" aria-label="Save Benny's Ballista to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBALLISTA/index.html" data-play="BENNYSBALLISTA" target="_blank" rel="noopener">Benny's Ballista</a></h3><p class="game-description">Topple castles in three story campaigns, or create your own castles and full campaigns in the Castle Workshop. Build, play and share adventures with custom stories and goals.</p><div class="game-card-footer"><span class="game-category">Strategy &amp; Board</span><button class="detail-button" data-details="BENNYSBALLISTA" aria-label="About Benny's Ballista">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSFISHMYSTERY"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFISHMYSTERY/index.html" target="_blank" rel="noopener" data-play="BENNYSFISHMYSTERY" aria-label="Play Benny's Fish Mystery"><img src="images/games/bennysfishmystery.png" alt="Benny's Fish Mystery" width="480" height="270" loading="eager"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><span class="game-status">NEW CONCEPT</span><button class="favorite-button" data-favorite="BENNYSFISHMYSTERY" aria-pressed="false" aria-label="Save Benny's Fish Mystery to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFISHMYSTERY/index.html" data-play="BENNYSFISHMYSTERY" target="_blank" rel="noopener">Benny's Fish Mystery</a></h3><p class="game-description">Tag fish for Walt's research station and work out what is in the middle of the lake.</p><div class="game-card-footer"><span class="game-category">Sports</span><button class="detail-button" data-details="BENNYSFISHMYSTERY" aria-label="About Benny's Fish Mystery">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSBASEBALL2"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASEBALL2/index.html" target="_blank" rel="noopener" data-play="BENNYSBASEBALL2" aria-label="Play Benny's Baseball"><img src="images/games/bennysbaseball.png" alt="Benny's Baseball" width="480" height="270" loading="eager"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSBASEBALL2" aria-pressed="false" aria-label="Save Benny's Baseball to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASEBALL2/index.html" data-play="BENNYSBASEBALL2" target="_blank" rel="noopener">Benny's Baseball</a></h3><p class="game-description">Make choices and play a full season of baseball. No reactions needed.</p><div class="game-card-footer"><span class="game-category">Sports</span><button class="detail-button" data-details="BENNYSBASEBALL2" aria-label="About Benny's Baseball">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSFOOTBALL"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFOOTBALL/index.html" target="_blank" rel="noopener" data-play="BENNYSFOOTBALL" aria-label="Play Benny's Football"><img src="images/games/bennysfootball.png" alt="Benny's Football" width="480" height="270" loading="eager"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSFOOTBALL" aria-pressed="false" aria-label="Save Benny's Football to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFOOTBALL/index.html" data-play="BENNYSFOOTBALL" target="_blank" rel="noopener">Benny's Football</a></h3><p class="game-description">Call plays and lead your team through a full 16-game season, now with 3D player models on the field.</p><div class="game-card-footer"><span class="game-category">Sports</span><button class="detail-button" data-details="BENNYSFOOTBALL" aria-label="About Benny's Football">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div><p class="game-card-credit">In collaboration with: <a href="https://github.com/elliottdehn" target="_blank" rel="noopener">Elliott Dehnbostel</a></p></div></article>
+<article class="game-card" data-game-id="ROBOTFOOTBALL"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/ROBOTFOOTBALL/index.html" target="_blank" rel="noopener" data-play="ROBOTFOOTBALL" aria-label="Play Robot Football"><img src="images/games/robotfootball.png" alt="Robot Football" width="480" height="270" loading="eager"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="ROBOTFOOTBALL" aria-pressed="false" aria-label="Save Robot Football to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/ROBOTFOOTBALL/index.html" data-play="ROBOTFOOTBALL" target="_blank" rel="noopener">Robot Football</a></h3><p class="game-description">Call plays, pass, run and defend with 3D robot teams. Play a 16-game season, exhibition or practice with one or two switches.</p><div class="game-card-footer"><span class="game-category">Sports</span><button class="detail-button" data-details="ROBOTFOOTBALL" aria-label="About Robot Football">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSBASKETBALLSHOOTER"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASKETBALLSHOOTER/index.html" target="_blank" rel="noopener" data-play="BENNYSBASKETBALLSHOOTER" aria-label="Play Benny's Basketball Shooter"><img src="images/games/bennysbasketball.png" alt="Benny's Basketball Shooter" width="480" height="270" loading="eager"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSBASKETBALLSHOOTER" aria-pressed="false" aria-label="Save Benny's Basketball Shooter to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASKETBALLSHOOTER/index.html" data-play="BENNYSBASKETBALLSHOOTER" target="_blank" rel="noopener">Benny's Basketball Shooter</a></h3><p class="game-description">Shoot for a high score in a packed arena, or play 2-player HORSE.</p><div class="game-card-footer"><span class="game-category">Sports</span><button class="detail-button" data-details="BENNYSBASKETBALLSHOOTER" aria-label="About Benny's Basketball Shooter">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSBOWLING"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBOWLING/index.html" target="_blank" rel="noopener" data-play="BENNYSBOWLING" aria-label="Play Benny's Bowling"><img src="images/games/bennysbowling.png" alt="Benny's Bowling" width="480" height="270" loading="eager"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSBOWLING" aria-pressed="false" aria-label="Save Benny's Bowling to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBOWLING/index.html" data-play="BENNYSBOWLING" target="_blank" rel="noopener">Benny's Bowling</a></h3><p class="game-description">Physics-based bowling for up to 4 players, with cues to aim by ear.</p><div class="game-card-footer"><span class="game-category">Sports</span><button class="detail-button" data-details="BENNYSBOWLING" aria-label="About Benny's Bowling">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="NARBEMINIGOLF"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/NARBEMINIGOLF/index.html" target="_blank" rel="noopener" data-play="NARBEMINIGOLF" aria-label="Play NARBE Mini Golf"><img src="images/games/narbeminigolf.png" alt="NARBE Mini Golf" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="NARBEMINIGOLF" aria-pressed="false" aria-label="Save NARBE Mini Golf to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/NARBEMINIGOLF/index.html" data-play="NARBEMINIGOLF" target="_blank" rel="noopener">NARBE Mini Golf</a></h3><p class="game-description">3D mini golf for up to 4 players across three courses, with cinematic cameras and a Course Creator.</p><div class="game-card-footer"><span class="game-category">Sports</span><button class="detail-button" data-details="NARBEMINIGOLF" aria-label="About NARBE Mini Golf">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="NARBEPICKLEBALL"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/NARBEPICKLEBALL/index.html" target="_blank" rel="noopener" data-play="NARBEPICKLEBALL" aria-label="Play NARBE Robot Pickleball"><img src="images/games/narbe-pickleball-2026-10.png" alt="NARBE Robot Pickleball" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="NARBEPICKLEBALL" aria-pressed="false" aria-label="Save NARBE Robot Pickleball to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/NARBEPICKLEBALL/index.html" data-play="NARBEPICKLEBALL" target="_blank" rel="noopener">NARBE Robot Pickleball</a></h3><p class="game-description">Aim your serve, then rally robots with slow-motion or no-fail play.</p><div class="game-card-footer"><span class="game-category">Sports</span><button class="detail-button" data-details="NARBEPICKLEBALL" aria-label="About NARBE Robot Pickleball">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div><p class="game-card-credit">In collaboration with <a href="https://www.southernct.edu/" target="_blank" rel="noopener">SCSU</a> and student creator Lily Flack — redesigned and developed by NARBE</p></div></article>
+<article class="game-card" data-game-id="BENNYSBATTLEBOATS"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBATTLEBOATS/index.html" target="_blank" rel="noopener" data-play="BENNYSBATTLEBOATS" aria-label="Play Benny's Battle Boats"><img src="images/games/battleboats.png" alt="Benny's Battle Boats" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSBATTLEBOATS" aria-pressed="false" aria-label="Save Benny's Battle Boats to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBATTLEBOATS/index.html" data-play="BENNYSBATTLEBOATS" target="_blank" rel="noopener">Benny's Battle Boats</a></h3><p class="game-description">Classic Battleship — place your fleet and sink the enemy's ships.</p><div class="game-card-footer"><span class="game-category">Strategy &amp; Board</span><button class="detail-button" data-details="BENNYSBATTLEBOATS" aria-label="About Benny's Battle Boats">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSBUGBLASTER"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBUGBLASTER/index.html" target="_blank" rel="noopener" data-play="BENNYSBUGBLASTER" aria-label="Play Benny's Bug Blaster"><img src="images/games/bennysbugblaster.png" alt="Benny's Bug Blaster" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSBUGBLASTER" aria-pressed="false" aria-label="Save Benny's Bug Blaster to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBUGBLASTER/index.html" data-play="BENNYSBUGBLASTER" target="_blank" rel="noopener">Benny's Bug Blaster</a></h3><p class="game-description">Tower defense — squash bugs and upgrade your defenses to survive.</p><div class="game-card-footer"><span class="game-category">Arcade &amp; Action</span><button class="detail-button" data-details="BENNYSBUGBLASTER" aria-label="About Benny's Bug Blaster">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSPEGGLE"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSPEGGLE/index.html" target="_blank" rel="noopener" data-play="BENNYSPEGGLE" aria-label="Play Benny's P3GL Game"><img src="images/games/bennyspeggle.png" alt="Benny's P3GL Game" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSPEGGLE" aria-pressed="false" aria-label="Save Benny's P3GL Game to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSPEGGLE/index.html" data-play="BENNYSPEGGLE" target="_blank" rel="noopener">Benny's P3GL Game</a></h3><p class="game-description">Peggle-style peg blasting with a full campaign and level editor.</p><div class="game-card-footer"><span class="game-category">Arcade &amp; Action</span><button class="detail-button" data-details="BENNYSPEGGLE" aria-label="About Benny's P3GL Game">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSRACETRACKS"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSRACETRACKS/index.html" target="_blank" rel="noopener" data-play="BENNYSRACETRACKS" aria-label="Play Benny's Race Tracks"><img src="images/games/bennysracetrack.png" alt="Benny's Race Tracks" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSRACETRACKS" aria-pressed="false" aria-label="Save Benny's Race Tracks to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSRACETRACKS/index.html" data-play="BENNYSRACETRACKS" target="_blank" rel="noopener">Benny's Race Tracks</a></h3><p class="game-description">3D one-switch racing across 10 levels — arrows, sound, and speech call every turn, plus a no-fail Cruise mode.</p><div class="game-card-footer"><span class="game-category">Arcade &amp; Action</span><button class="detail-button" data-details="BENNYSRACETRACKS" aria-label="About Benny's Race Tracks">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSSLOTMACHINE"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSLOTMACHINE/index.html" target="_blank" rel="noopener" data-play="BENNYSSLOTMACHINE" aria-label="Play Benny's Mega Slot"><img src="images/games/bennysslotmachine.png" alt="Benny's Mega Slot" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSSLOTMACHINE" aria-pressed="false" aria-label="Save Benny's Mega Slot to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSLOTMACHINE/index.html" data-play="BENNYSSLOTMACHINE" target="_blank" rel="noopener">Benny's Mega Slot</a></h3><p class="game-description">Casino-style slot machine with multiple themes and bonus modes.</p><div class="game-card-footer"><span class="game-category">Casino</span><button class="detail-button" data-details="BENNYSSLOTMACHINE" aria-label="About Benny's Mega Slot">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSMATCHYMATCH"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSMATCHYMATCH/index.html" target="_blank" rel="noopener" data-play="BENNYSMATCHYMATCH" aria-label="Play Benny's Matchy Match"><img src="images/games/bennysmatchymatch.png" alt="Benny's Matchy Match" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSMATCHYMATCH" aria-pressed="false" aria-label="Save Benny's Matchy Match to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSMATCHYMATCH/index.html" data-play="BENNYSMATCHYMATCH" target="_blank" rel="noopener">Benny's Matchy Match</a></h3><p class="game-description">Memory matching with competitive modes and a built-in game editor.</p><div class="game-card-footer"><span class="game-category">Puzzle, Word &amp; Memory</span><button class="detail-button" data-details="BENNYSMATCHYMATCH" aria-label="About Benny's Matchy Match">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSCHESSCHECKERS"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCHESSCHECKERS/index.html" target="_blank" rel="noopener" data-play="BENNYSCHESSCHECKERS" aria-label="Play Benny's Chess &amp; Checkers"><img src="images/games/bennyscheckers.png" alt="Benny's Chess &amp; Checkers" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSCHESSCHECKERS" aria-pressed="false" aria-label="Save Benny's Chess &amp; Checkers to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCHESSCHECKERS/index.html" data-play="BENNYSCHESSCHECKERS" target="_blank" rel="noopener">Benny's Chess &amp; Checkers</a></h3><p class="game-description">Classic Chess or Checkers vs the computer or a friend.</p><div class="game-card-footer"><span class="game-category">Strategy &amp; Board</span><button class="detail-button" data-details="BENNYSCHESSCHECKERS" aria-label="About Benny's Chess &amp; Checkers">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSCONNECTFOUR"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCONNECTFOUR/index.html" target="_blank" rel="noopener" data-play="BENNYSCONNECTFOUR" aria-label="Play Benny's Connect Four"><img src="images/games/connectfour.png" alt="Benny's Connect Four" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSCONNECTFOUR" aria-pressed="false" aria-label="Save Benny's Connect Four to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCONNECTFOUR/index.html" data-play="BENNYSCONNECTFOUR" target="_blank" rel="noopener">Benny's Connect Four</a></h3><p class="game-description">Drop pieces and connect four in a row to win.</p><div class="game-card-footer"><span class="game-category">Strategy &amp; Board</span><button class="detail-button" data-details="BENNYSCONNECTFOUR" aria-label="About Benny's Connect Four">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSTICTACTOE"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSTICTACTOE/index.html" target="_blank" rel="noopener" data-play="BENNYSTICTACTOE" aria-label="Play Benny's Tic Tac Toe"><img src="images/games/bennystictactoe.png" alt="Benny's Tic Tac Toe" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSTICTACTOE" aria-pressed="false" aria-label="Save Benny's Tic Tac Toe to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSTICTACTOE/index.html" data-play="BENNYSTICTACTOE" target="_blank" rel="noopener">Benny's Tic Tac Toe</a></h3><p class="game-description">Classic Tic Tac Toe vs the computer or a friend.</p><div class="game-card-footer"><span class="game-category">Strategy &amp; Board</span><button class="detail-button" data-details="BENNYSTICTACTOE" aria-label="About Benny's Tic Tac Toe">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSDICE"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSDICE/index.html" target="_blank" rel="noopener" data-play="BENNYSDICE" aria-label="Play Benny's Dice"><img src="images/games/bennysdice.png" alt="Benny's Dice" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSDICE" aria-pressed="false" aria-label="Save Benny's Dice to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSDICE/index.html" data-play="BENNYSDICE" target="_blank" rel="noopener">Benny's Dice</a></h3><p class="game-description">3D dice with Yarkle, Fahtzee, and Free Throw modes.</p><div class="game-card-footer"><span class="game-category">Strategy &amp; Board</span><button class="detail-button" data-details="BENNYSDICE" aria-label="About Benny's Dice">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSWORDJUMBLE"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSWORDJUMBLE/index.html" target="_blank" rel="noopener" data-play="BENNYSWORDJUMBLE" aria-label="Play Benny's Word Jumble"><img src="images/games/bennyswordjumble.png" alt="Benny's Word Jumble" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSWORDJUMBLE" aria-pressed="false" aria-label="Save Benny's Word Jumble to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSWORDJUMBLE/index.html" data-play="BENNYSWORDJUMBLE" target="_blank" rel="noopener">Benny's Word Jumble</a></h3><p class="game-description">Rearrange the letters to solve the word puzzle and advance.</p><div class="game-card-footer"><span class="game-category">Puzzle, Word &amp; Memory</span><button class="detail-button" data-details="BENNYSWORDJUMBLE" aria-label="About Benny's Word Jumble">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="ELOUISESWORDSEARCH"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/ELOUISESWORDSEARCH/index.html" target="_blank" rel="noopener" data-play="ELOUISESWORDSEARCH" aria-label="Play Elouise's Word Search"><img src="images/games/elouiseswordsearch.png" alt="Elouise's Word Search" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="ELOUISESWORDSEARCH" aria-pressed="false" aria-label="Save Elouise's Word Search to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/ELOUISESWORDSEARCH/index.html" data-play="ELOUISESWORDSEARCH" target="_blank" rel="noopener">Elouise's Word Search</a></h3><p class="game-description">Find hidden words in a letter grid with one or two switches — pick a row, pick a letter, then spin the aimer to point the way the word runs.</p><div class="game-card-footer"><span class="game-category">Puzzle, Word &amp; Memory</span><button class="detail-button" data-details="ELOUISESWORDSEARCH" aria-label="About Elouise's Word Search">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSAYS"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSAYS/index.html" target="_blank" rel="noopener" data-play="BENNYSAYS" aria-label="Play Benny Says"><img src="images/games/bennysays.png" alt="Benny Says" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSAYS" aria-pressed="false" aria-label="Save Benny Says to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSAYS/index.html" data-play="BENNYSAYS" target="_blank" rel="noopener">Benny Says</a></h3><p class="game-description">Simon Says memory game — match the growing sequence each round.</p><div class="game-card-footer"><span class="game-category">Puzzle, Word &amp; Memory</span><button class="detail-button" data-details="BENNYSAYS" aria-label="About Benny Says">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="TRIVIAMASTER"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/TRIVIAMASTER/index.html" target="_blank" rel="noopener" data-play="TRIVIAMASTER" aria-label="Play Trivia Master"><img src="images/games/triviamaster.png" alt="Trivia Master" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="TRIVIAMASTER" aria-pressed="false" aria-label="Save Trivia Master to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/TRIVIAMASTER/index.html" data-play="TRIVIAMASTER" target="_blank" rel="noopener">Trivia Master</a></h3><p class="game-description">Build and play your own trivia games with pictures and video.</p><div class="game-card-footer"><span class="game-category">Puzzle, Word &amp; Memory</span><button class="detail-button" data-details="TRIVIAMASTER" aria-label="About Trivia Master">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="BENNYSSHOWNSOUND"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSHOWNSOUND/index.html" target="_blank" rel="noopener" data-play="BENNYSSHOWNSOUND" aria-label="Play Benny's Show n Sound"><img src="images/games/shownsound.png" alt="Benny's Show n Sound" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="BENNYSSHOWNSOUND" aria-pressed="false" aria-label="Save Benny's Show n Sound to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSHOWNSOUND/index.html" data-play="BENNYSSHOWNSOUND" target="_blank" rel="noopener">Benny's Show n Sound</a></h3><p class="game-description">A spinning wheel See 'n Say — pick a category, spin, and hear each panel's name and sound.</p><div class="game-card-footer"><span class="game-category">Cause &amp; Effect</span><button class="detail-button" data-details="BENNYSSHOWNSOUND" aria-label="About Benny's Show n Sound">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article>
+<article class="game-card" data-game-id="NARBEANIMALFRIENDS"><a class="game-art" href="https://narbehouse.github.io/bennyshub/apps/games/NARBEANIMALFRIENDS/index.html" target="_blank" rel="noopener" data-play="NARBEANIMALFRIENDS" aria-label="Play NARBE Animal Friends"><img src="images/games/narbeanimalfriends.png" alt="NARBE Animal Friends" width="480" height="270" loading="lazy"><span class="art-play"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span></a><button class="favorite-button" data-favorite="NARBEANIMALFRIENDS" aria-pressed="false" aria-label="Save NARBE Animal Friends to favorites"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></button><div class="game-card-body"><h3><a href="https://narbehouse.github.io/bennyshub/apps/games/NARBEANIMALFRIENDS/index.html" data-play="NARBEANIMALFRIENDS" target="_blank" rel="noopener">NARBE Animal Friends</a></h3><p class="game-description">Press a switch to open the barn doors and meet a friendly animal — pure cause and effect, no fail state.</p><div class="game-card-footer"><span class="game-category">Cause &amp; Effect</span><button class="detail-button" data-details="NARBEANIMALFRIENDS" aria-label="About NARBE Animal Friends">Details <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></div></div></article></div>
+    <div class="empty-state" id="empty-state" hidden><svg class="icon"><use href="#i-search"/></svg><h3 id="empty-title">No games found</h3><p id="empty-copy">Try another search or clear your filters.</p><button class="button secondary" id="empty-reset">Browse all games</button></div>
+    <noscript><p class="notice-box">All games are listed below. Search, filters, and saved favorites need JavaScript.</p></noscript>
+    <p class="game-request">Have a game in mind? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2bGKJdF-wUodX1JYJK03Mz3jqXV3y00dCzvaSa7DmvIVVDg/viewform" target="_blank" rel="noopener">Tell us what you’d love to play <svg class="icon small"><use href="#i-arrow"/></svg></a></p>
+  </section>
+
+  <section class="story-feature" aria-labelledby="story-title">
+    <div class="story-photo"><img src="images/branding/family.png" alt="Ari, Nancy, and Ben, the family behind SwitchedGames" loading="lazy"><span>THE PEOPLE BEHIND THE PLAY</span></div>
+    <div class="story-feature-copy"><p class="eyebrow">A FAMILY. A REASON TO BUILD.</p><h2 id="story-title">It started with Ben.<br>It keeps growing with you.</h2><p>We’re Ari, Nancy, and Ben. We started making games so Ben could play independently. Today, he’s our collaborator and core tester, helping us build a collection for more people and families.</p><div class="story-actions"><a href="aboutus.html" class="button secondary">Read our story <svg class="icon"><use href="#i-arrow"/></svg></a><a class="text-link" href="#involved">Partner with us <svg class="icon"><use href="#i-arrow"/></svg></a></div></div>
+  </section>
+
+  <div class="more-section">
+    <div class="more-heading"><p class="eyebrow">THERE’S MORE TO THE MISSION</p><h2>More ways to get involved<span>.</span></h2></div>
+    <details class="content-drawer" id="how-to-play"><summary><svg class="icon"><use href="#i-switch"/></svg><span><strong>What is a switch?</strong><small>Inputs, independent play, and Benny’s Hub</small></span><svg class="icon drawer-chevron"><use href="#i-chevron"/></svg></summary><div class="drawer-body"><section class="what-is-switch" aria-label="What is a switch?">
     <div class="wis-inner">
       <div class="wis-text">
         <div class="wis-label">What is a switch?</div>
@@ -794,298 +195,33 @@
       <div class="wis-inputs">
         <div class="wis-pill"><span class="wis-key">SPACE</span> Spacebar</div>
         <div class="wis-pill"><span class="wis-key">↵</span> Enter Key</div>
-        <div class="wis-pill">🖱️ Mouse Click</div>
-        <div class="wis-pill">📱 Screen Touch</div>
-        <div class="wis-pill">🔌 External Adaptive Switch</div>
-        <div class="wis-pill">🔄 Auto-Scan (built in)</div>
+        <div class="wis-pill"> Mouse Click</div>
+        <div class="wis-pill"> Screen Touch</div>
+        <div class="wis-pill"> External Adaptive Switch</div>
+        <div class="wis-pill"> Auto-Scan (built in)</div>
       </div>
     </div>
-  </section>
-
-  <!-- GAMES -->
-  <section class="games" id="games">
-    <div class="games-header">
-      <div class="section-label">The arcade</div>
-      <h2 class="section-title">Games in Benny's Hub</h2>
-      <p class="section-sub">Benny's Hub is the flagship project NARBE LLC develops for Ben — releasing games through the hub and SwitchedGames alongside NARBE Foundation to keep growing a library of all types of accessible games. Every game plays with one or two inputs. The library keeps growing, with new concepts and pilot games exploring more ways to play.</p>
+  </section><div class="hub-detail"><h3>Meet Benny’s Hub</h3><p>Benny’s Hub is the flagship project NARBE LLC develops for Ben, releasing games through the hub and SwitchedGames alongside NARBE Foundation. The hub’s menus, settings, and games are navigable with one or two switches, so players can browse and play independently.</p><a class="button" href="https://narbehouse.github.io/bennyshub" target="_blank" rel="noopener">Enter Benny’s Hub <svg class="icon"><use href="#i-external"/></svg></a></div></div></details>
+    <details class="content-drawer" id="who"><summary><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span><strong>Who is this for?</strong><small>Switch users, families, educators, and support teams</small></span><svg class="icon drawer-chevron"><use href="#i-chevron"/></svg></summary><div class="drawer-body"><section class="who">
+    <div class="section-label">You belong here</div>
+    <h2 class="section-title">Who Is This For?</h2>
+    <p class="section-sub">Switch users and everyone who supports them.</p>
+    <div class="who-grid">
+      <div class="who-chip"><span></span>Switch Users</div>
+      <div class="who-chip"><span></span>AAC Users</div>
+      <div class="who-chip"><span></span>Occupational Therapists</div>
+      <div class="who-chip"><span></span>Physical Therapists</div>
+      <div class="who-chip"><span></span>Speech-Language Pathologists</div>
+      <div class="who-chip"><span></span>AT Specialists</div>
+      <div class="who-chip"><span></span>Special Ed Teachers</div>
+      <div class="who-chip"><span></span>Caregivers &amp; Families</div>
+      <div class="who-chip"><span></span>Rehab Specialists</div>
+      <div class="who-chip"><span></span>Home Support Workers</div>
+      <div class="who-chip"><span></span>Disability Advocates</div>
+      <div class="who-chip"><span></span>Anyone Who Wants to Help</div>
     </div>
-
-    <div class="game-filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="sports">Sports</button>
-      <button class="filter-btn" data-filter="strategy">Strategy &amp; Board</button>
-      <button class="filter-btn" data-filter="arcade">Arcade &amp; Action</button>
-      <button class="filter-btn" data-filter="puzzle">Puzzle, Word &amp; Memory</button>
-      <button class="filter-btn" data-filter="cause-effect">Cause &amp; Effect</button>
-      <button class="filter-btn" data-filter="casino">Casino</button>
-    </div>
-
-    <div class="games-grid">
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/NARBEKART/index.html" class="game-tile" data-category="sports arcade" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/narberacer.png" alt="NARBE Racer" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">NARBE Racer</div>
-          <div class="game-desc">Race through Grand Prix cups, single races, and time trials with one or two switches — or race a friend with one switch each.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <div class="game-tile" data-category="strategy arcade">
-        <span class="game-status">New concept</span>
-        <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBALLISTA/index.html" class="game-tile-link" target="_blank" rel="noopener">
-          <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysballista.png" alt="Benny's Ballista" loading="lazy" />
-          <div class="game-info">
-            <div class="game-title">Benny's Ballista</div>
-            <div class="game-desc">Topple castles in three story campaigns, or create your own castles and full campaigns in the Castle Workshop. Build, play and share adventures with custom stories and goals.</div>
-          </div>
-        </a>
-        <div class="game-note">A new concept for one- and two-switch play, with Auto Scan target aiming and a choice of aiming styles.</div>
-        <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBALLISTA/index.html" class="game-play game-play-standalone" target="_blank" rel="noopener">▶ Play now</a>
-      </div>
-
-      <div class="game-tile" data-category="sports strategy">
-        <span class="game-status">New concept</span>
-        <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFISHMYSTERY/index.html" class="game-tile-link" target="_blank" rel="noopener">
-          <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysfishmystery.png" alt="Benny's Fish Mystery" loading="lazy" />
-          <div class="game-info">
-            <div class="game-title">Benny's Fish Mystery</div>
-            <div class="game-desc">Tag fish for Walt's research station and work out what is in the middle of the lake.</div>
-          </div>
-        </a>
-        <div class="game-note">A pilot game exploring how a fishing adventure can work with one- and two-switch access. Still in development, with more improvements to come.</div>
-        <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFISHMYSTERY/index.html" class="game-play game-play-standalone" target="_blank" rel="noopener">▶ Play now</a>
-      </div>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASEBALL2/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysbaseball.png" alt="Benny's Baseball" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Baseball</div>
-          <div class="game-desc">Make choices and play a full season of baseball. No reactions needed.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <div class="game-tile" data-category="sports">
-        <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFOOTBALL/index.html" class="game-tile-link" target="_blank" rel="noopener">
-          <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysfootball.png" alt="Benny's Football" loading="lazy" />
-          <div class="game-info">
-            <div class="game-title">Benny's Football</div>
-            <div class="game-desc">Call plays and lead your team through a full 16-game season, now with 3D player models on the field.</div>
-          </div>
-        </a>
-        <div class="game-credit">In collaboration with: <a href="https://github.com/elliottdehn" target="_blank" rel="noopener">Elliott Dehnbostel</a></div>
-        <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSFOOTBALL/index.html" class="game-play game-play-standalone" target="_blank" rel="noopener">▶ Play now</a>
-      </div>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/ROBOTFOOTBALL/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/robotfootball.png" alt="Robot Football" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Robot Football</div>
-          <div class="game-desc">Call plays, pass, run and defend with 3D robot teams. Play a 16-game season, exhibition or practice with one or two switches.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASKETBALLSHOOTER/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysbasketball.png" alt="Benny's Basketball Shooter" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Basketball Shooter</div>
-          <div class="game-desc">Shoot for a high score in a packed arena, or play 2-player HORSE.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBOWLING/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysbowling.png" alt="Benny's Bowling" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Bowling</div>
-          <div class="game-desc">Physics-based bowling for up to 4 players, with cues to aim by ear.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/NARBEMINIGOLF/index.html" class="game-tile" data-category="sports" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/narbeminigolf.png" alt="NARBE Mini Golf" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">NARBE Mini Golf</div>
-          <div class="game-desc">3D mini golf for up to 4 players across three courses, with cinematic cameras and a Course Creator.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <div class="game-tile" data-category="sports">
-        <a href="https://narbehouse.github.io/bennyshub/apps/games/NARBEPICKLEBALL/index.html" class="game-tile-link" target="_blank" rel="noopener">
-          <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/narbe-pickleball-2026-10.png" alt="NARBE Robot Pickleball court with robot opponent and serve target" loading="lazy" />
-          <div class="game-info">
-            <div class="game-title">NARBE Robot Pickleball</div>
-            <div class="game-desc">Aim your serve, then rally robots with slow-motion or no-fail play.</div>
-          </div>
-        </a>
-        <div class="game-credit">In collaboration with <a href="https://www.southernct.edu/" target="_blank" rel="noopener">SCSU</a> and student creator Lily Flack — redesigned and developed by NARBE</div>
-        <a href="https://narbehouse.github.io/bennyshub/apps/games/NARBEPICKLEBALL/index.html" class="game-play game-play-standalone" target="_blank" rel="noopener">▶ Play now</a>
-      </div>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBATTLEBOATS/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/battleboats.png" alt="Benny's Battle Boats" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Battle Boats</div>
-          <div class="game-desc">Classic Battleship — place your fleet and sink the enemy's ships.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSBUGBLASTER/index.html" class="game-tile" data-category="arcade" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysbugblaster.png" alt="Benny's Bug Blaster" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Bug Blaster</div>
-          <div class="game-desc">Tower defense — squash bugs and upgrade your defenses to survive.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSPEGGLE/index.html" class="game-tile" data-category="arcade" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennyspeggle.png" alt="Benny's P3GL Game" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's P3GL Game</div>
-          <div class="game-desc">Peggle-style peg blasting with a full campaign and level editor.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSRACETRACKS/index.html" class="game-tile" data-category="arcade" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysracetrack.png" alt="Benny's Race Tracks" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Race Tracks</div>
-          <div class="game-desc">3D one-switch racing across 10 levels — arrows, sound, and speech call every turn, plus a no-fail Cruise mode.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSLOTMACHINE/index.html" class="game-tile" data-category="casino cause-effect" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysslotmachine.png" alt="Benny's Mega Slot" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Mega Slot</div>
-          <div class="game-desc">Casino-style slot machine with multiple themes and bonus modes.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSMATCHYMATCH/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysmatchymatch.png" alt="Benny's Matchy Match" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Matchy Match</div>
-          <div class="game-desc">Memory matching with competitive modes and a built-in game editor.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCHESSCHECKERS/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennyscheckers.png" alt="Benny's Chess &amp; Checkers" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Chess &amp; Checkers</div>
-          <div class="game-desc">Classic Chess or Checkers vs the computer or a friend.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSCONNECTFOUR/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/connectfour.png" alt="Benny's Connect Four" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Connect Four</div>
-          <div class="game-desc">Drop pieces and connect four in a row to win.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSTICTACTOE/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennystictactoe.png" alt="Benny's Tic Tac Toe" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Tic Tac Toe</div>
-          <div class="game-desc">Classic Tic Tac Toe vs the computer or a friend.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSDICE/index.html" class="game-tile" data-category="strategy" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysdice.png" alt="Benny's Dice" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Dice</div>
-          <div class="game-desc">3D dice with Yarkle, Fahtzee, and Free Throw modes.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSWORDJUMBLE/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennyswordjumble.png" alt="Benny's Word Jumble" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Word Jumble</div>
-          <div class="game-desc">Rearrange the letters to solve the word puzzle and advance.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/ELOUISESWORDSEARCH/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/elouiseswordsearch.png" alt="Elouise's Word Search" loading="lazy" onerror="this.style.display='none'" />
-        <div class="game-info">
-          <div class="game-title">Elouise's Word Search</div>
-          <div class="game-desc">Find hidden words in a letter grid with one or two switches — pick a row, pick a letter, then spin the aimer to point the way the word runs.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSAYS/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/bennysays.png" alt="Benny Says" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny Says</div>
-          <div class="game-desc">Simon Says memory game — match the growing sequence each round.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/TRIVIAMASTER/index.html" class="game-tile" data-category="puzzle" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/triviamaster.png" alt="Trivia Master" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Trivia Master</div>
-          <div class="game-desc">Build and play your own trivia games with pictures and video.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/BENNYSSHOWNSOUND/index.html" class="game-tile" data-category="cause-effect" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/shownsound.png" alt="Benny's Show n Sound" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">Benny's Show n Sound</div>
-          <div class="game-desc">A spinning wheel See 'n Say — pick a category, spin, and hear each panel's name and sound.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-      <a href="https://narbehouse.github.io/bennyshub/apps/games/NARBEANIMALFRIENDS/index.html" class="game-tile" data-category="cause-effect" target="_blank" rel="noopener">
-        <img class="game-thumb" src="https://narbehouse.github.io/bennyshub/images/games/narbeanimalfriends.png" alt="NARBE Animal Friends" loading="lazy" />
-        <div class="game-info">
-          <div class="game-title">NARBE Animal Friends</div>
-          <div class="game-desc">Press a switch to open the barn doors and meet a friendly animal — pure cause and effect, no fail state.</div>
-          <span class="game-play">▶ Play now</span>
-        </div>
-      </a>
-
-    </div>
-
-    <p class="game-request-cta">Not seeing a game type you're looking for? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2bGKJdF-wUodX1JYJK03Mz3jqXV3y00dCzvaSa7DmvIVVDg/viewform" target="_blank" rel="noopener">Contact us to make a request!</a></p>
-
-    <div class="hub-cta">
-      <img src="images/branding/beamin-benny.png" alt="Beamin' Benny" />
-      <div class="hub-cta-text">
-        <h3>Get the Full <em>Benny's Hub</em> Experience</h3>
-        <p>The hub is its own full arcade — with menus, settings, and every game navigatable with just one or two switches. Browse and play independently, all in one place.</p>
-        <a href="https://narbehouse.github.io/bennyshub" class="btn-primary" target="_blank" rel="noopener" style="font-size:1rem; padding: 0.85rem 2.2rem;">Enter Benny's Hub →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUBMIT GAMES -->
-  <section class="submit-games" id="submit-games" aria-label="Share levels and collaborate with NARBE">
+  </section></div></details>
+<details class="content-drawer" id="submit-games"><summary><svg class="icon" aria-hidden="true"><use href="#i-arcade"/></svg><span><strong>Share a level. Build with NARBE.</strong><small>Game editors, collaboration, and development</small></span><svg class="icon drawer-chevron"><use href="#i-chevron"/></svg></summary><div class="drawer-body"><section class="submit-games" aria-label="Share levels and collaborate with NARBE">
     <div class="submit-games-inner">
       <div class="section-label">Create with us</div>
       <h2 class="section-title">Share a Level. Build With NARBE.</h2>
@@ -1093,44 +229,21 @@
 
       <div class="submit-grid">
         <div class="submit-card">
-          <h3>🛠️ Custom Levels</h3>
+          <h3> Custom Levels</h3>
           <p>Built a level with one of our in-game editors? Share it with the community — submit yours using the link below.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH7960t8xKdrYwrwCZzh3pD3rT9Xv6orqIkgGvbqJUb41ncw/viewform?usp=header" class="btn-apply" target="_blank" rel="noopener">✏️ Submit a Level</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH7960t8xKdrYwrwCZzh3pD3rT9Xv6orqIkgGvbqJUb41ncw/viewform?usp=header" class="btn-apply" target="_blank" rel="noopener"> Submit a Level</a>
         </div>
         <div class="submit-card">
-          <h3>🤝 Build a Game With NARBE</h3>
+          <h3> Build a Game With NARBE</h3>
           <p>Have a game idea, development skills, art, sound, or switch-access testing experience? Start with a collaboration proposal. Together, we can shape, build, and test a game for the NARBE collection.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH7960t8xKdrYwrwCZzh3pD3rT9Xv6orqIkgGvbqJUb41ncw/viewform" class="btn-apply" target="_blank" rel="noopener">🤝 Propose a Collaboration</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH7960t8xKdrYwrwCZzh3pD3rT9Xv6orqIkgGvbqJUb41ncw/viewform" class="btn-apply" target="_blank" rel="noopener"> Propose a Collaboration</a>
         </div>
       </div>
 
       <p class="submit-guide">Every game must support independent play with one or two switches, including menus, pause, settings, and exit. See the <a href="https://narbehouse.github.io/developer-guide.html" target="_blank" rel="noopener">developer guide</a> for our development requirements. We review shared levels before adding them. New games are developed through agreed collaborations and enter the collection after accessibility testing with switch users and a NARBE quality review. Collaborators are credited; sending a proposal does not guarantee publication.</p>
     </div>
-  </section>
-
-  <!-- WHO IS THIS FOR -->
-  <section class="who" id="who">
-    <div class="section-label">You belong here</div>
-    <h2 class="section-title">Who Is This For?</h2>
-    <p class="section-sub">Switch users and everyone who supports them.</p>
-    <div class="who-grid">
-      <div class="who-chip"><span>🎮</span>Switch Users</div>
-      <div class="who-chip"><span>🧠</span>AAC Users</div>
-      <div class="who-chip"><span>🏥</span>Occupational Therapists</div>
-      <div class="who-chip"><span>🦾</span>Physical Therapists</div>
-      <div class="who-chip"><span>🗣️</span>Speech-Language Pathologists</div>
-      <div class="who-chip"><span>💻</span>AT Specialists</div>
-      <div class="who-chip"><span>🏫</span>Special Ed Teachers</div>
-      <div class="who-chip"><span>👨‍👩‍👧</span>Caregivers &amp; Families</div>
-      <div class="who-chip"><span>❤️‍🩹</span>Rehab Specialists</div>
-      <div class="who-chip"><span>🏠</span>Home Support Workers</div>
-      <div class="who-chip"><span>🌍</span>Disability Advocates</div>
-      <div class="who-chip"><span>💙</span>Anyone Who Wants to Help</div>
-    </div>
-  </section>
-
-  <!-- SWITCH KIT -->
-  <section class="switchkit" id="switchkit" aria-label="Adaptive Switch Kit Program: apply for a free 2-button switch kit">
+  </section></div></details>
+<details class="content-drawer" id="switchkit"><summary><svg class="icon" aria-hidden="true"><use href="#i-switch"/></svg><span><strong>Apply for a free switch kit</strong><small>The kit, setup guide, and application information</small></span><svg class="icon drawer-chevron"><use href="#i-chevron"/></svg></summary><div class="drawer-body"><section class="switchkit" aria-label="Adaptive Switch Kit Program: apply for a free 2-button switch kit">
     <div class="switchkit-inner">
       <div class="switchkit-header">
         <div class="section-label">Adaptive Switch Kit Program</div>
@@ -1140,13 +253,13 @@
 
       <div class="kit-details">
         <ul class="kit-items">
-          <li><span class="kit-icon">🔘</span><div><strong>2 Accessibility Switches</strong><span>Large, easy-to-press buttons with 3.5mm connectors</span></div></li>
-          <li><span class="kit-icon">🔌</span><div><strong>USB Adapter</strong><span>Converts switch presses into keyboard signals</span></div></li>
-          <li><span class="kit-icon">🔀</span><div><strong>3.5mm Y-Splitter Cable</strong><span>Connects both switches to the adapter at once</span></div></li>
-          <li><span class="kit-icon">📎</span><div><strong>Adhesive Velcro Strips</strong><span>Mount your switches wherever is most comfortable</span></div></li>
+          <li><span class="kit-icon"></span><div><strong>2 Accessibility Switches</strong><span>Large, easy-to-press buttons with 3.5mm connectors</span></div></li>
+          <li><span class="kit-icon"></span><div><strong>USB Adapter</strong><span>Converts switch presses into keyboard signals</span></div></li>
+          <li><span class="kit-icon"></span><div><strong>3.5mm Y-Splitter Cable</strong><span>Connects both switches to the adapter at once</span></div></li>
+          <li><span class="kit-icon"></span><div><strong>Adhesive Velcro Strips</strong><span>Mount your switches wherever is most comfortable</span></div></li>
         </ul>
         <div class="kit-mapping">
-          <h4>🎯 Default Input Mapping</h4>
+          <h4> Default Input Mapping</h4>
           <div class="mapping-pills">
             <div class="mapping-pill">Switch 1 → <span class="pill-key">SPACE</span> Spacebar</div>
             <div class="mapping-pill">Switch 2 → <span class="pill-key">↵</span> Enter Key</div>
@@ -1161,17 +274,15 @@
       </div>
 
       <div class="switchkit-cta">
-        <h3>🎮 Apply for Your Free Kit</h3>
+        <h3> Apply for Your Free Kit</h3>
         <p>Kits are offered through an application process, subject to availability. Selection details are provided in the application. United States only, at no cost to you. To apply, please sign up for the NARBE Foundation newsletter. The application link will be included when the newsletter goes out.</p>
         <a href="https://narbefoundation.org/switchkit.html#newsletter" class="btn-apply" target="_blank" rel="noopener">Sign Up for the Newsletter &rarr;</a>
         <p class="cta-fine">Full setup guide at <a href="https://narbefoundation.org/switchkit.html" target="_blank" rel="noopener">narbefoundation.org/switchkit</a></p>
-        <div class="notice-box"><strong>⚠️ Recreational use only.</strong> These kits are for gaming and computer interaction — not medical or AAC purposes. For AAC hardware, please consult a Speech-Language Pathologist or Occupational Therapist.</div>
+        <div class="notice-box"><strong> Recreational use only.</strong> These kits are for gaming and computer interaction — not medical or AAC purposes. For AAC hardware, please consult a Speech-Language Pathologist or Occupational Therapist.</div>
       </div>
     </div>
-  </section>
-
-  <!-- DONATE -->
-  <section class="donate" id="donate">
+  </section></div></details>
+<details class="content-drawer" id="donate"><summary><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><span><strong>Support the mission</strong><small>Help fund free access and the switch kit program</small></span><svg class="icon drawer-chevron"><use href="#i-chevron"/></svg></summary><div class="drawer-body"><section class="donate">
     <div class="donate-inner">
       <div class="section-label">Support the mission</div>
       <h2>Donate to NARBE Foundation</h2>
@@ -1181,10 +292,8 @@
       </div>
       <p class="donate-alt">Prefer to donate directly? <a href="https://givebutter.com/donate-narbe" target="_blank" rel="noopener">givebutter.com/donate-narbe</a></p>
     </div>
-  </section>
-
-  <!-- GET INVOLVED -->
-  <section class="involved" id="involved">
+  </section></div></details>
+<details class="content-drawer" id="involved"><summary><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span><strong>Partners make more possible</strong><small>NARBE Foundation, NARBE LLC, and our community</small></span><svg class="icon drawer-chevron"><use href="#i-chevron"/></svg></summary><div class="drawer-body"><section class="involved">
     <div class="involved-header">
       <div class="section-label">Get involved</div>
       <h2 class="section-title">There Are Many Ways to Help</h2>
@@ -1193,7 +302,7 @@
     <div class="involved-grid">
 
       <div class="involve-card involve-card--full">
-        <span class="involve-icon">🌱</span>
+        <span class="involve-icon"></span>
         <h3>This Library Grows With Your Support</h3>
         <p>We use AI to develop and iterate on these games with <a href="aboutus.html" style="color:var(--blue); font-weight:800; text-decoration:none;">Ben</a> as our core tester — and the more support we have, the better we can make them and the faster we can grow the library. Our partners make this possible. We're always looking for feedback, collaborators, and people who believe in what we're building. If you'd like to help in any way, please reach out. We appreciate your support more than we can say. Let's keep growing these games so more people and families get to play.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2bGKJdF-wUodX1JYJK03Mz3jqXV3y00dCzvaSa7DmvIVVDg/viewform" class="involve-link orange" target="_blank" rel="noopener" style="margin-top:0.5rem;">Get in Touch →</a>
@@ -1221,48 +330,29 @@
       </div>
 
       <div class="involve-card">
-        <span class="involve-icon">🤝</span>
+        <span class="involve-icon"></span>
         <h3>Partner With Us</h3>
         <p>We're a small family building something we believe in. If you share our mission and want to help us reach more families, build better games, and keep this growing — we'd love to hear from you. No pressure, just a conversation.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2bGKJdF-wUodX1JYJK03Mz3jqXV3y00dCzvaSa7DmvIVVDg/viewform" class="involve-link" target="_blank" rel="noopener">Get in Touch →</a>
       </div>
 
     </div>
-  </section>
-
-  <div class="oss-strip">
-    <p><strong>Everything is free and open source.</strong></p>
-    <p>Powered by <a href="https://narbefoundation.org" target="_blank" rel="noopener">NARBE Foundation</a> · Developed by <a href="https://narbehouse.com" target="_blank" rel="noopener">NARBE LLC</a> · SwitchedGames.org is a product of NARBE LLC.</p>
+  </section></div></details>
   </div>
-
-  <footer>
-    <div class="footer-logo">Switched<span>Games</span></div>
-    <p>A free, open-source gaming hub for one and two switch users.</p>
-    <p>
-      <a href="https://narbefoundation.org" target="_blank" rel="noopener">NARBE Foundation</a> ·
-      <a href="https://narbehouse.com" target="_blank" rel="noopener">NARBE LLC</a> ·
-      <a href="https://www.switchedtoys.org" target="_blank" rel="noopener">SwitchedToys.org</a> ·
-      <a href="https://narbehouse.github.io/bennyshub" target="_blank" rel="noopener">Benny's Hub</a>
-    </p>
-    <p style="margin-top: 0.75rem; font-size: 0.75rem; opacity: 0.4;">© 2026 NARBE LLC. All rights reserved.</p>
-    <p style="margin-top: 0.75rem; color: #aab3c2;">NARBE is not affiliated with any cryptocurrency or crypto token. <a href="/crypto-statement/" style="color: inherit; text-decoration: underline; text-underline-offset: 0.15em;">Read our official statement</a>.</p>
-    <p class="legal-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></p>
+  <footer class="site-footer">
+    <div class="footer-top"><a class="brand" href="index.html"><img src="images/branding/switchedgames_emblem_v5.svg" alt="" width="38" height="32"><span>SWITCHED<span>GAMES</span></span></a><p>Free to play. Open source. Built for independence.</p></div>
+    <div class="footer-links"><a href="https://narbefoundation.org" target="_blank" rel="noopener">NARBE Foundation</a><a href="https://narbehouse.com" target="_blank" rel="noopener">NARBE LLC</a><a href="https://www.switchedtoys.org" target="_blank" rel="noopener">SwitchedToys.org</a><a href="https://narbehouse.github.io/bennyshub" target="_blank" rel="noopener">Benny’s Hub</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+    <div class="footer-bottom"><p>© 2026 NARBE LLC. All rights reserved. SwitchedGames.org is a product of NARBE LLC.</p><p>NARBE is not affiliated with any cryptocurrency or crypto token. <a href="/crypto-statement/">Official statement</a>.</p></div>
   </footer>
+</main>
+</div>
 
-  <script>
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('[data-category]').forEach(tile => {
-          const categories = tile.dataset.category.split(/\s+/);
-          tile.style.display = (filter === 'all' || categories.includes(filter)) ? '' : 'none';
-        });
-      });
-    });
-  </script>
-
-  <script src="/crypto-statement/modal.js" data-theme="switched" data-auto-open="session" defer></script>
+<dialog id="game-dialog" class="game-dialog" aria-labelledby="dialog-title">
+  <button class="icon-button dialog-close" id="dialog-close" aria-label="Close game details"><svg class="icon"><use href="#i-close"/></svg></button>
+  <img id="dialog-image" alt="">
+  <div class="dialog-body"><p class="eyebrow" id="dialog-category"></p><h2 id="dialog-title"></h2><p id="dialog-description"></p><p id="dialog-note" class="concept-note"></p><p id="dialog-credit" class="credit"></p><a id="dialog-play" class="button" target="_blank" rel="noopener">Play this game <svg class="icon"><use href="#i-external"/></svg></a><p class="dialog-hub-note">For a fully switch-navigable arcade, <a href="https://narbehouse.github.io/bennyshub" target="_blank" rel="noopener">open Benny’s Hub</a>.</p></div>
+</dialog>
+<p class="sr-only" id="action-status" role="status"></p>
+<script type="application/json" id="game-data">[{"id":"NARBEKART","url":"https://narbehouse.github.io/bennyshub/apps/games/NARBEKART/index.html","title":"NARBE Racer","description":"Race through Grand Prix cups, single races, and time trials with one or two switches — or race a friend with one switch each.","categories":["sports","arcade"],"image":"images/games/narberacer.png","note":"","credit":"","concept":false,"multiplayer":true,"editor":false},{"id":"BENNYSBALLISTA","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSBALLISTA/index.html","title":"Benny's Ballista","description":"Topple castles in three story campaigns, or create your own castles and full campaigns in the Castle Workshop. Build, play and share adventures with custom stories and goals.","categories":["strategy","arcade"],"image":"images/games/bennysballista.png","note":"A new concept for one- and two-switch play, with Auto Scan target aiming and a choice of aiming styles.","credit":"","concept":true,"multiplayer":false,"editor":true},{"id":"BENNYSFISHMYSTERY","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSFISHMYSTERY/index.html","title":"Benny's Fish Mystery","description":"Tag fish for Walt's research station and work out what is in the middle of the lake.","categories":["sports","strategy"],"image":"images/games/bennysfishmystery.png","note":"A pilot game exploring how a fishing adventure can work with one- and two-switch access. Still in development, with more improvements to come.","credit":"","concept":true,"multiplayer":false,"editor":false},{"id":"BENNYSBASEBALL2","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASEBALL2/index.html","title":"Benny's Baseball","description":"Make choices and play a full season of baseball. No reactions needed.","categories":["sports"],"image":"images/games/bennysbaseball.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"BENNYSFOOTBALL","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSFOOTBALL/index.html","title":"Benny's Football","description":"Call plays and lead your team through a full 16-game season, now with 3D player models on the field.","categories":["sports"],"image":"images/games/bennysfootball.png","note":"","credit":"In collaboration with: \u003ca href=\"https://github.com/elliottdehn\" target=\"_blank\" rel=\"noopener\">Elliott Dehnbostel\u003c/a>","concept":false,"multiplayer":false,"editor":false},{"id":"ROBOTFOOTBALL","url":"https://narbehouse.github.io/bennyshub/apps/games/ROBOTFOOTBALL/index.html","title":"Robot Football","description":"Call plays, pass, run and defend with 3D robot teams. Play a 16-game season, exhibition or practice with one or two switches.","categories":["sports"],"image":"images/games/robotfootball.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"BENNYSBASKETBALLSHOOTER","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSBASKETBALLSHOOTER/index.html","title":"Benny's Basketball Shooter","description":"Shoot for a high score in a packed arena, or play 2-player HORSE.","categories":["sports"],"image":"images/games/bennysbasketball.png","note":"","credit":"","concept":false,"multiplayer":true,"editor":false},{"id":"BENNYSBOWLING","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSBOWLING/index.html","title":"Benny's Bowling","description":"Physics-based bowling for up to 4 players, with cues to aim by ear.","categories":["sports"],"image":"images/games/bennysbowling.png","note":"","credit":"","concept":false,"multiplayer":true,"editor":false},{"id":"NARBEMINIGOLF","url":"https://narbehouse.github.io/bennyshub/apps/games/NARBEMINIGOLF/index.html","title":"NARBE Mini Golf","description":"3D mini golf for up to 4 players across three courses, with cinematic cameras and a Course Creator.","categories":["sports"],"image":"images/games/narbeminigolf.png","note":"","credit":"","concept":false,"multiplayer":true,"editor":true},{"id":"NARBEPICKLEBALL","url":"https://narbehouse.github.io/bennyshub/apps/games/NARBEPICKLEBALL/index.html","title":"NARBE Robot Pickleball","description":"Aim your serve, then rally robots with slow-motion or no-fail play.","categories":["sports"],"image":"images/games/narbe-pickleball-2026-10.png","note":"","credit":"In collaboration with \u003ca href=\"https://www.southernct.edu/\" target=\"_blank\" rel=\"noopener\">SCSU\u003c/a> and student creator Lily Flack — redesigned and developed by NARBE","concept":false,"multiplayer":false,"editor":false},{"id":"BENNYSBATTLEBOATS","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSBATTLEBOATS/index.html","title":"Benny's Battle Boats","description":"Classic Battleship — place your fleet and sink the enemy's ships.","categories":["strategy"],"image":"images/games/battleboats.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"BENNYSBUGBLASTER","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSBUGBLASTER/index.html","title":"Benny's Bug Blaster","description":"Tower defense — squash bugs and upgrade your defenses to survive.","categories":["arcade"],"image":"images/games/bennysbugblaster.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"BENNYSPEGGLE","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSPEGGLE/index.html","title":"Benny's P3GL Game","description":"Peggle-style peg blasting with a full campaign and level editor.","categories":["arcade"],"image":"images/games/bennyspeggle.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":true},{"id":"BENNYSRACETRACKS","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSRACETRACKS/index.html","title":"Benny's Race Tracks","description":"3D one-switch racing across 10 levels — arrows, sound, and speech call every turn, plus a no-fail Cruise mode.","categories":["arcade"],"image":"images/games/bennysracetrack.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"BENNYSSLOTMACHINE","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSSLOTMACHINE/index.html","title":"Benny's Mega Slot","description":"Casino-style slot machine with multiple themes and bonus modes.","categories":["casino","cause-effect"],"image":"images/games/bennysslotmachine.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"BENNYSMATCHYMATCH","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSMATCHYMATCH/index.html","title":"Benny's Matchy Match","description":"Memory matching with competitive modes and a built-in game editor.","categories":["puzzle"],"image":"images/games/bennysmatchymatch.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":true},{"id":"BENNYSCHESSCHECKERS","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSCHESSCHECKERS/index.html","title":"Benny's Chess & Checkers","description":"Classic Chess or Checkers vs the computer or a friend.","categories":["strategy"],"image":"images/games/bennyscheckers.png","note":"","credit":"","concept":false,"multiplayer":true,"editor":false},{"id":"BENNYSCONNECTFOUR","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSCONNECTFOUR/index.html","title":"Benny's Connect Four","description":"Drop pieces and connect four in a row to win.","categories":["strategy"],"image":"images/games/connectfour.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"BENNYSTICTACTOE","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSTICTACTOE/index.html","title":"Benny's Tic Tac Toe","description":"Classic Tic Tac Toe vs the computer or a friend.","categories":["strategy"],"image":"images/games/bennystictactoe.png","note":"","credit":"","concept":false,"multiplayer":true,"editor":false},{"id":"BENNYSDICE","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSDICE/index.html","title":"Benny's Dice","description":"3D dice with Yarkle, Fahtzee, and Free Throw modes.","categories":["strategy"],"image":"images/games/bennysdice.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"BENNYSWORDJUMBLE","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSWORDJUMBLE/index.html","title":"Benny's Word Jumble","description":"Rearrange the letters to solve the word puzzle and advance.","categories":["puzzle"],"image":"images/games/bennyswordjumble.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"ELOUISESWORDSEARCH","url":"https://narbehouse.github.io/bennyshub/apps/games/ELOUISESWORDSEARCH/index.html","title":"Elouise's Word Search","description":"Find hidden words in a letter grid with one or two switches — pick a row, pick a letter, then spin the aimer to point the way the word runs.","categories":["puzzle"],"image":"images/games/elouiseswordsearch.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"BENNYSAYS","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSAYS/index.html","title":"Benny Says","description":"Simon Says memory game — match the growing sequence each round.","categories":["puzzle"],"image":"images/games/bennysays.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"TRIVIAMASTER","url":"https://narbehouse.github.io/bennyshub/apps/games/TRIVIAMASTER/index.html","title":"Trivia Master","description":"Build and play your own trivia games with pictures and video.","categories":["puzzle"],"image":"images/games/triviamaster.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":true},{"id":"BENNYSSHOWNSOUND","url":"https://narbehouse.github.io/bennyshub/apps/games/BENNYSSHOWNSOUND/index.html","title":"Benny's Show n Sound","description":"A spinning wheel See 'n Say — pick a category, spin, and hear each panel's name and sound.","categories":["cause-effect"],"image":"images/games/shownsound.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false},{"id":"NARBEANIMALFRIENDS","url":"https://narbehouse.github.io/bennyshub/apps/games/NARBEANIMALFRIENDS/index.html","title":"NARBE Animal Friends","description":"Press a switch to open the barn doors and meet a friendly animal — pure cause and effect, no fail state.","categories":["cause-effect"],"image":"images/games/narbeanimalfriends.png","note":"","credit":"","concept":false,"multiplayer":false,"editor":false}]</script>
 </body>
 </html>
