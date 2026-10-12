@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-12 — Visible logo docking and family story layout (LOCAL REVIEW)
+
+- Separate the logo’s final flight from the assembly animation. Keep it opaque through an 800ms movement to the header, measure the destination at takeoff, and remove the overlay only after the flight completes. Match the visible SVG bounds and preserve replay, audio, reduced-motion behavior, and original notice startup.
+- Show the complete family photo inside its frame on aboutus.html, replacing the cropped cover layout with contain sizing. Reduce the gap between the partnership note and the opening family paragraph to 20–24px.
+- Validation: JavaScript syntax, 20 existing DOM checks, and a docking regression check covering fresh responsive geometry, actual animation completion, replay, and delayed startup. Visual browser QA remains unavailable; changes are local to the preview.
+
 ## 2026-10-12 — Larger, more dramatic logo intro (LOCAL REVIEW)
 
 - Increase the assembled emblem from 180px to a responsive maximum of 420px. Its size also adapts to short and narrow screens.

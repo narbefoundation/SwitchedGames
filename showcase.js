@@ -242,7 +242,7 @@
     document.head.append(widget);
   });
   // Keep the click cues and cleanup aligned with the CSS impact/landing keyframes.
-  const introTiming = { durationMs: 3000, impact: 0.28, landings: [0.68, 0.72] };
+  const introTiming = { durationMs: 3000, dockDurationMs: 800, impact: 0.28, landings: [0.68, 0.72] };
   let audioContext;
   function introSound(interactive) {
     try {
@@ -284,27 +284,68 @@
       tone.stop(start + delay + .06);
     });
   }
-  let introTimer;
+  let activeIntro;
   function playIntro(interactive = false) {
+    activeIntro?.finish();
     if (reducedMotion.matches) {
       announce('The animation is skipped because reduced motion is enabled.');
       return Promise.resolve();
     }
     const intro = $('#brand-intro');
+    const flight = intro.querySelector('.intro-flight');
+    const logo = document.querySelector('.site-header .brand img');
+    const originalVisibility = logo.style.visibility;
+    const run = { done: false };
     intro.style.setProperty('--intro-duration', introTiming.durationMs + 'ms');
-    clearTimeout(introTimer);
+    intro.classList.remove('is-docking');
+    flight.style.transition = '';
+    flight.style.transform = '';
     intro.hidden = true;
     void intro.offsetWidth;
     intro.hidden = false;
-    const mark = intro.querySelector(".intro-mark");
-    const logoRect = document.querySelector(".site-header .brand img").getBoundingClientRect();
-    const markRect = mark.getBoundingClientRect();
-    mark.style.setProperty("--dock-x", (logoRect.left + logoRect.width / 2 - markRect.left - markRect.width / 2) + "px");
-    mark.style.setProperty("--dock-y", (logoRect.top + logoRect.height / 2 - markRect.top - markRect.height / 2) + "px");
-    mark.style.setProperty("--dock-scale", logoRect.width / markRect.width);
     introSound(interactive);
     return new Promise(resolve => {
-      introTimer = setTimeout(() => { intro.hidden = true; resolve(); }, introTiming.durationMs + 30);
+      run.finish = () => {
+        if (run.done) return;
+        run.done = true;
+        clearTimeout(run.timer);
+        intro.hidden = true;
+        run.animation?.cancel();
+        intro.classList.remove('is-docking');
+        logo.style.visibility = originalVisibility;
+        flight.style.transition = '';
+        flight.style.transform = '';
+        if (activeIntro === run) activeIntro = null;
+        resolve();
+      };
+      activeIntro = run;
+      run.timer = setTimeout(() => {
+        // Measure at takeoff so resizing or scrolling during the intro cannot leave a stale target.
+        const from = flight.getBoundingClientRect();
+        const target = logo.getBoundingClientRect();
+        if (!from.width || !target.width) { run.finish(); return; }
+        // The header SVG has a 460×370 viewBox around a 450×360 emblem.
+        const svgScale = Math.min(target.width / 460, target.height / 370);
+        const x = target.left + (target.width - 460 * svgScale) / 2 - from.left;
+        const y = target.top + (target.height - 370 * svgScale) / 2 - from.top;
+        const scale = 450 * svgScale / from.width;
+        const destination = 'translate(' + x + 'px,' + y + 'px) scale(' + scale + ')';
+        logo.style.visibility = 'hidden';
+        intro.classList.add('is-docking');
+        if (typeof flight.animate === 'function') {
+          run.animation = flight.animate([
+            { transform: 'translate(0px,0px) scale(1)' },
+            { transform: destination }
+          ], { duration: introTiming.dockDurationMs, easing: 'cubic-bezier(.5,0,.2,1)', fill: 'forwards' });
+          // Keep the emblem fully visible until the flight actually completes.
+          run.animation.finished.then(run.finish, run.finish);
+        } else {
+          flight.style.transition = 'transform ' + introTiming.dockDurationMs + 'ms cubic-bezier(.5,0,.2,1)';
+          void flight.offsetWidth;
+          flight.style.transform = destination;
+          run.timer = setTimeout(run.finish, introTiming.dockDurationMs + 50);
+        }
+      }, introTiming.durationMs);
     });
   }
   $('#replay-intro').addEventListener('click', () => playIntro(true));

@@ -5,12 +5,17 @@
   --intro-size:min(420px,68vw,48vh);
   position:fixed;inset:0;background:#10151c;z-index:200;
   display:flex;align-items:center;justify-content:center;flex-direction:column;
-  pointer-events:none;animation:intro-veil var(--intro-duration) both linear;
+  pointer-events:none;transition:background-color .65s ease;
+}
+.intro-flight{
+  width:var(--intro-size);height:calc(var(--intro-size) * .8);flex:none;transform-origin:top left;
 }
 .intro-mark{
-  position:relative;width:var(--intro-size);height:calc(var(--intro-size) * .8);
-  flex:none;transform-origin:center;perspective:900px;animation:mark-settle var(--intro-duration) both linear;
+  position:relative;width:100%;height:100%;
+  transform-origin:center;perspective:900px;animation:mark-settle var(--intro-duration) both linear;
 }
+.brand-intro.is-docking{background-color:transparent}
+.brand-intro.is-docking .intro-wordmark{animation:none;opacity:0;transform:translateY(-8px)}
 .intro-half{position:absolute;top:0;width:46.666667%;height:100%;overflow:visible}
 .intro-left{left:0;animation:half-left var(--intro-duration) both linear}
 .intro-right{right:0;animation:half-right var(--intro-duration) both linear}
@@ -37,6 +42,7 @@
 .intro-wordmark{
   font:700 clamp(30px,4vw,44px) var(--display);letter-spacing:2px;margin-top:32px;
   animation:intro-word var(--intro-duration) both linear;
+  transition:opacity .2s ease,transform .2s ease;
 }
 .intro-wordmark>span{color:var(--orange)}
 @keyframes half-left{
@@ -76,18 +82,11 @@
 @keyframes mark-settle{
   0%,27%{transform:scale(1)}
   30%{transform:scale(.965,1.025);animation-timing-function:cubic-bezier(.15,.75,.25,1)}
-  36%,86%{transform:scale(1);animation-timing-function:cubic-bezier(.65,0,.2,1)}
-  100%{transform:translate(var(--dock-x,0px),var(--dock-y,0px)) scale(var(--dock-scale,.1))}
-}
-@keyframes intro-veil{
-  0%,86%{background-color:#10151c;opacity:1}
-  96%{background-color:#10151c00;opacity:1}
-  100%{background-color:#10151c00;opacity:0;visibility:hidden}
+  36%,100%{transform:scale(1)}
 }
 @keyframes intro-word{
   0%,32%{opacity:0;transform:translateY(10px);animation-timing-function:ease-out}
-  43%,86%{opacity:1;transform:translateY(0)}
-  94%,100%{opacity:0;transform:translateY(-5px)}
+  43%,100%{opacity:1;transform:translateY(0)}
 }
 @keyframes slide-copy{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 @media(min-width:1680px){.games-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.site-layout{grid-template-columns:232px minmax(0,1fr)}main{padding:30px 38px 0}.hero-slide h1,.hero-slide h2{font-size:58px}.game-card h3{font-size:14px}.game-description{font-size:11px}}
