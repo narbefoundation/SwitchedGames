@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-12 — Showcase publication approved (WEB-ONLY)
+
+- The owner approved publishing the reviewed showcase redesign, including the refined logo intro, family story layout, public partnership links, and supporting-page styling. This supersedes the local-review restrictions on the entries below.
+- Publish through the existing GitHub Pages main-branch workflow at https://switchedgames.org/. Preserve the previous site at commit 6839365a5ae17103a3673a7202594b68825215bb under the pre-showcase-2026-10-12 tag, in addition to the verified ZIP backup.
+- Existing validation covers 26 preserved game URLs, filtering/favorites/details, responsive docking geometry and intro lifecycle, supporting-page content/links, and local HTTP responses. No game-runtime, Foundation-site, or Benny’s Hub changes are included in this publication.
+
 ## 2026-10-12 — Supporting pages match the showcase (LOCAL REVIEW)
 
 - Restyle Privacy Policy, Terms of Use, and the official cryptocurrency statement with the shared showcase header, dark palette, orange/blue accents, compact policy navigation, readable content widths, and matching footers. Add a sticky desktop contents menu with a stacked mobile layout and retain print styling.
