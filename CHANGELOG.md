@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-12 — Supporting pages match the showcase (LOCAL REVIEW)
+
+- Restyle Privacy Policy, Terms of Use, and the official cryptocurrency statement with the shared showcase header, dark palette, orange/blue accents, compact policy navigation, readable content widths, and matching footers. Add a sticky desktop contents menu with a stacked mobile layout and retain print styling.
+- Update the SwitchedGames statement dialog colors, typography, backdrop, and button styling; preserve its content, session dismissal, focus handling, and other behavior.
+- Preserve all policy/statement wording and dates. Privacy and Terms continue to use device fonts and load no scripts or external font services.
+- Validation: original section text, headings and dates compared exactly; local links/anchors/assets, CSS parsing and dialog JavaScript syntax verified. Preview endpoints checked. No browser was available for visual QA.
+- Files: privacy.html, terms.html, legal.css, crypto-statement/index.html, crypto-statement/modal.js, CHANGELOG.md. Local preview only; original/published site is unchanged.
+
 ## 2026-10-12 — Visible logo docking and family story layout (LOCAL REVIEW)
 
 - Separate the logo’s final flight from the assembly animation. Keep it opaque through an 800ms movement to the header, measure the destination at takeoff, and remove the overlay only after the flight completes. Match the visible SVG bounds and preserve replay, audio, reduced-motion behavior, and original notice startup.
