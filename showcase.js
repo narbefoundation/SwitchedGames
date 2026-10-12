@@ -241,6 +241,8 @@
     widget.async = true;
     document.head.append(widget);
   });
+  // Keep the click cues and cleanup aligned with the CSS impact/landing keyframes.
+  const introTiming = { durationMs: 3000, impact: 0.28, landings: [0.68, 0.72] };
   let audioContext;
   function introSound(interactive) {
     try {
@@ -254,7 +256,8 @@
   function scheduleClicks() {
     const context = audioContext;
     const start = context.currentTime;
-    [0.43, 0.91].forEach((delay, index) => {
+    [introTiming.impact, ...introTiming.landings].forEach((fraction, index) => {
+      const delay = introTiming.durationMs / 1000 * fraction;
       const length = Math.floor(context.sampleRate * 0.045);
       const buffer = context.createBuffer(1, length, context.sampleRate);
       const channel = buffer.getChannelData(0);
@@ -288,6 +291,7 @@
       return Promise.resolve();
     }
     const intro = $('#brand-intro');
+    intro.style.setProperty('--intro-duration', introTiming.durationMs + 'ms');
     clearTimeout(introTimer);
     intro.hidden = true;
     void intro.offsetWidth;
@@ -300,7 +304,7 @@
     mark.style.setProperty("--dock-scale", logoRect.width / markRect.width);
     introSound(interactive);
     return new Promise(resolve => {
-      introTimer = setTimeout(() => { intro.hidden = true; resolve(); }, 1380);
+      introTimer = setTimeout(() => { intro.hidden = true; resolve(); }, introTiming.durationMs + 30);
     });
   }
   $('#replay-intro').addEventListener('click', () => playIntro(true));

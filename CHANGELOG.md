@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-12 — Larger, more dramatic logo intro (LOCAL REVIEW)
+
+- Increase the assembled emblem from 180px to a responsive maximum of 420px. Its size also adapts to short and narrow screens.
+- Extend the sequence to 3 seconds: accelerating entrance, impact/rebound, flush buttons that lift out of recessed seats and swap with staggered coin flips on overhead arcs, a settled hold, then docking at the actual header logo.
+- Synchronize the mechanical clicks with the collision and each button landing. Preserve replay, silent autoplay fallback, and reduced-motion behavior.
+- Change the lead headline to “Fun games. More ways to play.” and link prominent partnership calls to action on the home and story pages directly to the verified, now-public collaboration form.
+- Files: showcase.css, showcase.js, index.html and aboutus.html. The original/published site is unchanged.
+- Validation: JavaScript syntax, 20 DOM integration checks, intro lifecycle/hold/replay checks, and live local preview asset responses. Visual browser QA was unavailable in this session.
+
+
 ## 2026-10-12 — Game showcase preview (WEB-ONLY, LOCAL REVIEW)
 
 - Preserve the live-site baseline at commit 6839365 on main. Work is isolated on showcase-redesign in ../tmp/switchedgames-showcase; no redesign changes are pushed.
