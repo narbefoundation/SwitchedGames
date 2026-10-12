@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-12 — Correct multiplayer and editor filters (WEB-ONLY)
+
+- Audit feature flags for all 26 games against the currently published game sources (NARBE House commit 1a8433ca420ef20c704967d1ffa96239d3337819), including real menu actions and editor entry points.
+- Add Matchy Match, Connect Four, Battle Boats, and Dice to Multiplayer. The filter now includes 10 games and includes local competitive, cooperative, and shared-screen play.
+- Add Word Jumble, Elouise’s Word Search, and Show n Sound to Game editor, bringing it to 8 games with user-facing editors. Per the owner’s clarification, Fish Mystery remains in the collection but its internal story/chart tool is excluded from this filter. Planned editors and name/settings editing do not count.
+- Only catalog flags change; all game descriptions, launch URLs, credits, game runtimes, and filter behavior remain unchanged. Files: index.html and CHANGELOG.md. No Electron port.
+- Validation: check both full result sets against the audited lists, their two-game intersection, combined genre/search filters, and catalog field preservation; verify the published catalog after release.
+
 ## 2026-10-12 — Showcase publication approved (WEB-ONLY)
 
 - The owner approved publishing the reviewed showcase redesign, including the refined logo intro, family story layout, public partnership links, and supporting-page styling. This supersedes the local-review restrictions on the entries below.
