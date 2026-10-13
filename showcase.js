@@ -24,7 +24,7 @@
   const sort = $('#sort-filter');
   const categories = {
     sports: 'Sports', strategy: 'Strategy & Board', arcade: 'Arcade & Action',
-    puzzle: 'Puzzle, Word & Memory', 'cause-effect': 'Cause & Effect', casino: 'Casino'
+    puzzle: 'Puzzle, Word & Memory', simulation: 'Simulation', 'cause-effect': 'Cause & Effect', casino: 'Casino'
   };
   function announce(message) { $('#action-status').textContent = message; }
   function updateFavorites() {

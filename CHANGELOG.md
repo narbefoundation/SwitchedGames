@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-13 — Add Pet Pals and Magic Button (WEB-ONLY)
+
+- Owner approved publication after local preparation and review. Publish the NARBE House game files before these listings.
+- Add NARBE Pet Pals and NARBE Magic Button as the first two New Game cards, using their existing artwork and canonical Benny's Hub URLs. The catalog now contains 28 games.
+- Add Simulation for Pet Pals and include Magic Button in Cause & Effect (four games). Preserve existing multiplayer, editor and new-concept flags.
+- Files: index.html, showcase.js, images/games/narbepetpals.png, images/games/narbemagicbutton.png and CHANGELOG.md. No Electron changes.
+- Validation: the combined import passes 38 browser checks, including game play, saving, mobile layouts, catalog search/filters/details/images and NARBE House iframe launch buttons. All 257 NARBE House release tests, the build, audit and 1,078 link checks pass.
+
 ## 2026-10-12 — Correct multiplayer and editor filters (WEB-ONLY)
 
 - Audit feature flags for all 26 games against the currently published game sources (NARBE House commit 1a8433ca420ef20c704967d1ffa96239d3337819), including real menu actions and editor entry points.
