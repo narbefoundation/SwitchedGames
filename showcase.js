@@ -153,7 +153,7 @@
   $$('.game-art img, #dialog-image').forEach(img => img.addEventListener('error', () => {
     if (img.dataset.fallback) return;
     img.dataset.fallback = 'true';
-    img.src = 'images/branding/switchedgames_emblem_v5.svg';
+    img.src = 'images/branding/switchedgames-logo.svg';
     img.style.objectFit = 'contain';
     img.style.padding = '24px';
   }));
@@ -324,11 +324,11 @@
         const from = flight.getBoundingClientRect();
         const target = logo.getBoundingClientRect();
         if (!from.width || !target.width) { run.finish(); return; }
-        // The header SVG has a 460×370 viewBox around a 450×360 emblem.
-        const svgScale = Math.min(target.width / 460, target.height / 370);
-        const x = target.left + (target.width - 460 * svgScale) / 2 - from.left;
-        const y = target.top + (target.height - 370 * svgScale) / 2 - from.top;
-        const scale = 450 * svgScale / from.width;
+        // Match the 1000×632 logo, centered by object-fit: contain inside the header image.
+        const svgScale = Math.min(target.width / 1000, target.height / 632);
+        const x = target.left + (target.width - 1000 * svgScale) / 2 - from.left;
+        const y = target.top + (target.height - 632 * svgScale) / 2 - from.top;
+        const scale = 1000 * svgScale / from.width;
         const destination = 'translate(' + x + 'px,' + y + 'px) scale(' + scale + ')';
         logo.style.visibility = 'hidden';
         intro.classList.add('is-docking');

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-13 — Updated SwitchedGames branding (WEB-ONLY)
+
+- Use the owner-supplied switchedgames-logo.svg and .png throughout the headers, footers, favicons, social preview, and game-art fallback. Add the missing favicon to Our Story.
+- Match the opening animation to the 1000×632 artwork: touching halves, larger centered circles, updated colors and button-swap distances. Hide the recessed seats after landing and match the final flight to the new header proportions.
+- Files: index.html, aboutus.html, privacy.html, terms.html, crypto-statement/index.html, showcase.css, showcase.js, the supplied images/branding/switchedgames-logo.* replacements, and CHANGELOG.md.
+- Validation: browser checks cover first visit, replay, the assembled mark and header docking at 1366×900, 390×844, and 844×390, reduced motion, all five page favicons, social image and game-art fallback. No local asset failures or page errors. Screenshots and verification notes: ../tmp/switchedgames-logo-20261013/.
+- Related logo references and legacy SVG copies are updated in NARBE House and NARBE Foundation. The owner approved publishing this reviewed logo refresh on 2026-10-13.
+
 ## 2026-10-13 — Add Pet Pals and Magic Button (WEB-ONLY)
 
 - Owner approved publication after local preparation and review. Publish the NARBE House game files before these listings.

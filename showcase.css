@@ -8,7 +8,7 @@
   pointer-events:none;transition:background-color .65s ease;
 }
 .intro-flight{
-  width:var(--intro-size);height:calc(var(--intro-size) * .8);flex:none;transform-origin:top left;
+  width:var(--intro-size);height:calc(var(--intro-size) * .632);flex:none;transform-origin:top left;
 }
 .intro-mark{
   position:relative;width:100%;height:100%;
@@ -16,27 +16,28 @@
 }
 .brand-intro.is-docking{background-color:transparent}
 .brand-intro.is-docking .intro-wordmark{animation:none;opacity:0;transform:translateY(-8px)}
-.intro-half{position:absolute;top:0;width:46.666667%;height:100%;overflow:visible}
+.intro-half{position:absolute;top:0;width:50%;height:100%;overflow:visible}
 .intro-left{left:0;animation:half-left var(--intro-duration) both linear}
 .intro-right{right:0;animation:half-right var(--intro-duration) both linear}
-/* The buttons begin flush in matching material. Their seats appear only as they lift. */
+/* Match switchedgames-logo.svg: 1000×632, touching 500-wide halves, radius-172 buttons.
+   The 500-unit swap spans 145.348837% of each 344-unit button. Seats appear as buttons lift. */
 .intro-mark::before,.intro-mark::after{
-  content:"";position:absolute;top:24.444444%;width:32%;height:40%;
+  content:"";position:absolute;top:22.784810%;width:34.4%;height:54.430380%;
   border-radius:50%;background:#111b29;box-shadow:inset 0 8px 13px #0007;
   z-index:1;animation:button-seats var(--intro-duration) both linear;
 }
-.intro-mark::before{left:7.333333%}
-.intro-mark::after{left:60.666667%}
+.intro-mark::before{left:7.8%}
+.intro-mark::after{left:57.8%}
 .intro-button{
-  position:absolute;top:24.444444%;width:32%;height:40%;border-radius:50%;
+  position:absolute;top:22.784810%;width:34.4%;height:54.430380%;border-radius:50%;
   box-shadow:none;z-index:3;transform-origin:center;
 }
 .intro-button-orange{
-  background:#f07d35;left:7.333333%;
+  background:#ff7300;left:7.8%;
   animation:button-orange var(--intro-duration) both linear;
 }
 .intro-button-blue{
-  background:#1e60b3;left:60.666667%;z-index:2;
+  background:#005cd6;left:57.8%;z-index:2;
   animation:button-blue var(--intro-duration) both linear;
 }
 .intro-wordmark{
@@ -60,24 +61,25 @@
   28%{transform:translateX(7px) rotateY(0deg);box-shadow:none;animation-timing-function:cubic-bezier(.12,.7,.2,1)}
   35%,38%{transform:translate(0,0) scale(1) rotateY(0deg) rotateZ(0deg);box-shadow:none;animation-timing-function:cubic-bezier(.16,.8,.28,1)}
   46%{transform:translate(0,-65%) scale(1.07) rotateY(55deg) rotateZ(-8deg);box-shadow:0 16px 24px #0005,inset 0 0 0 2px #ffffff30;animation-timing-function:cubic-bezier(.55,0,.8,.6)}
-  55%{transform:translate(83.333333%,-80%) scale(1.07) rotateY(230deg) rotateZ(-10deg);box-shadow:0 22px 28px #0006,inset 0 0 0 2px #ffffff30;animation-timing-function:cubic-bezier(.15,.5,.35,1)}
-  62%{transform:translate(166.666667%,-60%) scale(1.04) rotateY(335deg) rotateZ(4deg);box-shadow:0 16px 22px #0005,inset 0 0 0 2px #ffffff30;animation-timing-function:cubic-bezier(.65,0,.92,.45)}
-  68%{transform:translate(166.666667%,3%) scale(1.025,.94) rotateY(360deg) rotateZ(0deg);box-shadow:0 1px 2px #0004;animation-timing-function:cubic-bezier(.15,.75,.25,1)}
-  72%,100%{transform:translate(166.666667%,0) scale(1) rotateY(360deg) rotateZ(0deg);box-shadow:none}
+  55%{transform:translate(72.674419%,-80%) scale(1.07) rotateY(230deg) rotateZ(-10deg);box-shadow:0 22px 28px #0006,inset 0 0 0 2px #ffffff30;animation-timing-function:cubic-bezier(.15,.5,.35,1)}
+  62%{transform:translate(145.348837%,-60%) scale(1.04) rotateY(335deg) rotateZ(4deg);box-shadow:0 16px 22px #0005,inset 0 0 0 2px #ffffff30;animation-timing-function:cubic-bezier(.65,0,.92,.45)}
+  68%{transform:translate(145.348837%,3%) scale(1.025,.94) rotateY(360deg) rotateZ(0deg);box-shadow:0 1px 2px #0004;animation-timing-function:cubic-bezier(.15,.75,.25,1)}
+  72%,100%{transform:translate(145.348837%,0) scale(1) rotateY(360deg) rotateZ(0deg);box-shadow:none}
 }
 @keyframes button-blue{
   0%,5%{transform:translateX(70vw) rotateY(0deg);box-shadow:none;animation-timing-function:cubic-bezier(.72,0,.92,.45)}
   28%{transform:translateX(-7px) rotateY(0deg);box-shadow:none;animation-timing-function:cubic-bezier(.12,.7,.2,1)}
   35%,40%{transform:translate(0,0) scale(1) rotateY(0deg) rotateZ(0deg);box-shadow:none;animation-timing-function:cubic-bezier(.16,.8,.28,1)}
   48%{transform:translate(0,-90%) scale(1.07) rotateY(-55deg) rotateZ(8deg);box-shadow:0 16px 24px #0005,inset 0 0 0 2px #ffffff30;animation-timing-function:cubic-bezier(.55,0,.8,.6)}
-  57%{transform:translate(-83.333333%,-190%) scale(1.07) rotateY(-230deg) rotateZ(10deg);box-shadow:0 24px 30px #0006,inset 0 0 0 2px #ffffff30;animation-timing-function:cubic-bezier(.15,.5,.35,1)}
-  64%{transform:translate(-166.666667%,-80%) scale(1.04) rotateY(-335deg) rotateZ(-4deg);box-shadow:0 16px 22px #0005,inset 0 0 0 2px #ffffff30;animation-timing-function:cubic-bezier(.65,0,.92,.45)}
-  72%{transform:translate(-166.666667%,3%) scale(1.025,.94) rotateY(-360deg) rotateZ(0deg);box-shadow:0 1px 2px #0004;animation-timing-function:cubic-bezier(.15,.75,.25,1)}
-  76%,100%{transform:translate(-166.666667%,0) scale(1) rotateY(-360deg) rotateZ(0deg);box-shadow:none}
+  57%{transform:translate(-72.674419%,-190%) scale(1.07) rotateY(-230deg) rotateZ(10deg);box-shadow:0 24px 30px #0006,inset 0 0 0 2px #ffffff30;animation-timing-function:cubic-bezier(.15,.5,.35,1)}
+  64%{transform:translate(-145.348837%,-80%) scale(1.04) rotateY(-335deg) rotateZ(-4deg);box-shadow:0 16px 22px #0005,inset 0 0 0 2px #ffffff30;animation-timing-function:cubic-bezier(.65,0,.92,.45)}
+  72%{transform:translate(-145.348837%,3%) scale(1.025,.94) rotateY(-360deg) rotateZ(0deg);box-shadow:0 1px 2px #0004;animation-timing-function:cubic-bezier(.15,.75,.25,1)}
+  76%,100%{transform:translate(-145.348837%,0) scale(1) rotateY(-360deg) rotateZ(0deg);box-shadow:none}
 }
 @keyframes button-seats{
   0%,38%{opacity:0}
-  42%,100%{opacity:1}
+  42%,76%{opacity:1}
+  80%,100%{opacity:0}
 }
 @keyframes mark-settle{
   0%,27%{transform:scale(1)}
