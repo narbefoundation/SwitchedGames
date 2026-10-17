@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-10-17 - Sphere Splash and approved game publication
+
+- Publish Sphere Splash and the pending Chasing Rainbows listing after the updated games are available in Benny's Hub. This approval supersedes the local-only status below.
+- Add Sphere Splash with a new 1920 x 1080 gameplay screenshot and credit to Bryan R. (Ben's other big brother), working in collaboration with NARBE LLC. The catalog contains 30 games, including 10 Sports and 9 Strategy & Board games.
+- Keep the README focused on the catalog. Detailed game documentation, licensing and credits stay in the hosted game folders; card and Details credits remain available.
+- Files: index.html, images/games/bennyspheresplash-20261017.png, README.md and CHANGELOG.md.
+- Validation: 19 combined browser checks pass for listings, screenshot loading, credits, launch links, favorites, category filters, mobile layout and NARBE House launch buttons. No missing local listing assets or SwitchedGames JavaScript errors.
+
+## 2026-10-17 — Chasing Rainbows (LOCAL ONLY)
+
+- Add Chasing Rainbows to the catalog with its canonical Benny’s Hub game link, existing hosted thumbnail, four-mode description, Strategy & Board category and local multiplayer flag. Catalog: 29 games; Strategy & Board: 8.
+- Use Inclusive Imagination®’s exact requested game, artwork, copyright and NARBE House adaptation credits, home URL and social handle in the Details dialog and README.
+- Files: index.html, README.md and CHANGELOG.md. The signed form and private rights records are excluded. No game assets are copied into this repository.
+- Validation: headless catalog checks pass for all 29 cards, search, multiplayer filtering, required credits, creator and game links, and favorites. No real-browser visual check was run.
+- Prepared locally only; the owner will publish from the website workspace after the updated game is ready.
+
+
 ## 2026-10-13 — Updated SwitchedGames branding (WEB-ONLY)
 
 - Use the owner-supplied switchedgames-logo.svg and .png throughout the headers, footers, favicons, social preview, and game-art fallback. Add the missing favicon to Our Story.
