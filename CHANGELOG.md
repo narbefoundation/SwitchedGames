@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-17 - Sphere Splash is a new concept
+
+- Mark Sphere Splash as a new concept, as clarified by the owner. Its card shows NEW CONCEPT, the New concepts filter includes it, and Details uses the same classification.
+- Files: index.html and CHANGELOG.md. Validation: all 30 games are preserved; the concept filter data now contains Sphere Splash, Ballista and Fish Mystery.
+
 ## 2026-10-17 - Sphere Splash and approved game publication
 
 - Publish Sphere Splash and the pending Chasing Rainbows listing after the updated games are available in Benny's Hub. This approval supersedes the local-only status below.
