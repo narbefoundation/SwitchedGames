@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-19 - Use Benny’s Hub as the game-image source
+
+- All 30 game-card and Details thumbnails use the canonical URLs from Benny’s Hub’s game catalog; the hero poster shares the Hub Racer image too.
+- Removed all 28 redundant files from images/games and the now-empty directory. No game-image copies remain in this website; site branding and switch-kit photography stay local.
+- README.md records the Hub as the source of truth for thumbnails and launch paths.
+- Changed files: index.html, README.md, CHANGELOG.md and the 28 removed images/games/*.png files. Backup: ../tmp/bug-blaster-pc-20261019/before/switchedgames-canonical-images. Website publication authorized by the owner’s subsequent “push it” instruction; no game-runtime or Electron changes from this cleanup.
+- Verification: all 30 card sources match the Hub catalog and all 30 Details images decode with matching launch links in the local candidate preview. The hero uses the Hub Racer image, no local game-image references or folder remain, and no browser exceptions occur. The Bug Blaster card and Details screenshots were visually reviewed. All 33 NARBE House game/tool cards already match Hub launch and thumbnail paths.
+
 ## 2026-10-19 - Use the shared Mini Golf thumbnail
 
 - Point the Mini Golf card and Details dialog to the canonical Benny’s Hub thumbnail at https://narbehouse.github.io/bennyshub/images/games/narbeminigolf.png. Future replacements of that image now carry through to SwitchedGames.
