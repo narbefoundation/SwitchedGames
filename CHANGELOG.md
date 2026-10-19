@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-19 - Use the shared Mini Golf thumbnail
+
+- Point the Mini Golf card and Details dialog to the canonical Benny’s Hub thumbnail at https://narbehouse.github.io/bennyshub/images/games/narbeminigolf.png. Future replacements of that image now carry through to SwitchedGames.
+- Remove the unused local Mini Golf image and describe the three themed 18-hole courses (54 holes).
+- Files: index.html, images/games/narbeminigolf.png (removed), and CHANGELOG.md. Web-only catalog correction; no Electron port required. The PC Hub already has the matching offline thumbnail.
+- Verification: card and Details popup render the canonical 1366 × 768 image with no browser errors; all 30 game entries, links and feature flags are preserved.
+
 ## 2026-10-17 - Sphere Splash is a new concept
 
 - Mark Sphere Splash as a new concept, as clarified by the owner. Its card shows NEW CONCEPT, the New concepts filter includes it, and Details uses the same classification.
