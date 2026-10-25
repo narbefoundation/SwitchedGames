@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-25 - Add Loops and Switch Songs
+
+- Add both music games to the visible cards and Details/search data, using their real gameplay screenshots from Benny’s Hub. The collection now contains 34 games.
+- Keep game images hosted only at narbehouse.github.io/bennyshub/images/games; no local thumbnail copies.
+- Changed files: index.html and CHANGELOG.md. Website-only listing update; Electron port: NO. Publication authorized by the owner.
+- Verification: all 34 entries retain matching static cards and Details data. Both new Details images decode from the canonical Hub URLs, search finds Loops, and both launch URLs match the Hub catalog. The NARBE House home-page cards also launch the new games. No browser exceptions or console errors. Gameplay thumbnails and the home-page cards were visually reviewed.
+
 ## 2026-10-19 - Use Benny’s Hub as the game-image source
 
 - All 30 game-card and Details thumbnails use the canonical URLs from Benny’s Hub’s game catalog; the hero poster shares the Hub Racer image too.
