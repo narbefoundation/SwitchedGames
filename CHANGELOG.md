@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-05 - Add NARBE Build n Bash
+
+- Add the new cause-and-effect game to the visible cards (first, marked NEW GAME) and the Details/search data, category Cause & Effect. The collection now contains 35 games.
+- The card and Details image use the canonical Hub picture, narbehouse.github.io/bennyshub/images/games/narbebuildnbash.png (stamp ?v=344ee74e0df0, the first 12 hex of its SHA-256); no local thumbnail copy.
+- Changed files: index.html and CHANGELOG.md. Website-only listing update; Electron port: NO. Publication requested by the owner.
+- Verification: all 35 entries keep matching static cards and Details data, and the count reads 35. The launch URL matches the Hub catalog path. Browser checks (Details dialog, search, launch from the card) are pending: the game page and picture go live only once the NARBE House site is published.
+
 ## 2026-10-25 - Add Loops and Switch Songs
 
 - Add both music games to the visible cards and Details/search data, using their real gameplay screenshots from Benny’s Hub. The collection now contains 34 games.
