@@ -37,7 +37,7 @@
       '<div class="support-body">' +
         '<section class="support-section" aria-labelledby="support-dialog-title">' +
           '<h2 id="support-dialog-title" tabindex="-1">Support NARBE Foundation</h2>' +
-          '<p>NARBE Foundation is our nonprofit. Donations pay for the tools we use to build these free, open-source games, and for our switch kit program, which gives free switch kits and USB adapters to people who need them. Your gift sends free switch kits to people who need them and helps us keep building new free games.</p>' +
+          '<p>NARBE Foundation is our nonprofit. Your gift sends free switches and USB switch interface adapters to people who need them, and pays for the tools we use to build these free, open-source games.</p>' +
           '<div class="support-actions">' +
             '<a class="button" href="' + DONATE_URL + '" target="_blank" rel="noopener">Support Kits and Games' + NEW_TAB + EXTERNAL + '</a>' +
             '<a class="button secondary" href="' + SWITCH_KIT_URL + '" target="_blank" rel="noopener">Switch Kit Program' + NEW_TAB + EXTERNAL + '</a>' +
