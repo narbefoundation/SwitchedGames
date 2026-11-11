@@ -6,6 +6,7 @@
   var DONATE_URL = 'https://givebutter.com/donate-narbe';
   var SWITCH_KIT_URL = 'https://narbefoundation.org/switchkit.html#newsletter';
   var BUILD_URL = 'https://narbehouse.github.io/build-with-us/';
+  var AWARD_URL = 'https://forms.gle/QhVt7WhoQKe6ozkp9';
   var NEW_TAB = '<span class="sr-only"> (opens in a new tab)</span>';
   var EXTERNAL = '<svg class="icon small" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M14 4h6v6m0-6L9 15"/><path d="M10 4H4v16h16v-6"/></svg>';
 
@@ -47,6 +48,7 @@
           '<p>Switched Games is made by NARBE House, our small family business. Want to learn to build games like these, or have us build one with you or your organization?</p>' +
           '<div class="support-actions">' +
             '<a class="button secondary" href="' + BUILD_URL + '" target="_blank" rel="noopener">Build With NARBE House' + NEW_TAB + EXTERNAL + '</a>' +
+            '<a class="button secondary" href="' + AWARD_URL + '" target="_blank" rel="noopener">Apply for the Build for One Award' + NEW_TAB + EXTERNAL + '</a>' +
           '</div>' +
         '</section>' +
         '<button type="button" class="button support-continue" data-support-close>Continue to Games</button>' +

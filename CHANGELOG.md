@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-11 - Build for One Award link in the support dialog
+
+- support-modal.js: an "Apply for the Build for One Award" button next to Build With NARBE House, linking straight to the award's Google Form (forms.gle/QhVt7WhoQKe6ozkp9) in a new tab. Following it marks the dialog as seen, like the other links.
+- Changed files: support-modal.js, CHANGELOG.md. Electron port: NO.
+- Verification (Playwright): correct link and new tab; keyboard order Donate, Switch Kit, Build With NARBE House, Award, Continue, Close, each with a visible outline; dialog fits at 1280, 768, 375 and 320 px wide, scrolling inside on small screens; no page errors.
+
 ## 2026-11-11 - Automatic NEW GAME badge; New concept tags removed
 
 - Every game in the #game-data list now has an `added` date (YYYY-MM-DD): the date of the commit that first listed it on SwitchedGames.org (`git log --reverse -S <id> -- index.html`). The 8 games that had a manual NEW GAME tag each map to one clear commit: Build n Bash 2026-11-05; Loops and Switch Songs 2026-10-25; Glow Pop and Switch Stories 2026-10-22; Chasing Rainbows 2026-10-17; Pet Pals and Magic Button 2026-10-13.
