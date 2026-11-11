@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-11 - Support dialog: donation wording and button label
+
+- support-modal.js: the Support NARBE Foundation paragraph now ends "Your gift sends free switch kits to people who need them and helps us keep building new free games." in place of "Without your support, we can't keep these programs going."
+- The Givebutter button reads "Support Kits and Games" (was "Donate on Givebutter"). It still links to https://givebutter.com/donate-narbe in a new tab; its accessible name is the new label plus the existing "(opens in a new tab)" hint. Switch Kit Program and all other links, styles and behavior are unchanged.
+- Changed files: support-modal.js, CHANGELOG.md. Electron port: NO.
+
 ## 2026-11-11 - Build for One Award link in the support dialog
 
 - support-modal.js: an "Apply for the Build for One Award" button next to Build With NARBE House, linking straight to the award's Google Form (forms.gle/QhVt7WhoQKe6ozkp9) in a new tab. Following it marks the dialog as seen, like the other links.
