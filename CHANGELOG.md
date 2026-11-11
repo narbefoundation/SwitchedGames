@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-11 - Switch Stories links to its new address
+
+- index.html: the Switch Stories card (picture link and title link) and its game-data url now open https://narbehouse.github.io/switch-stories/, the game's own GitHub Pages site (it left narbehouse.github.io/bennyshub/apps/games/NARBESWITCHSTORIES/, which no longer exists). The card id NARBESWITCHSTORIES is unchanged, so saved favorites and played marks carry over. Search, details and the NEW badge read the same game data.
+- Changed files: index.html, CHANGELOG.md. Electron port: NO.
+
 ## 2026-11-11 - Support dialog: donation wording and button label
 
 - support-modal.js: the Support NARBE Foundation paragraph now ends "Your gift sends free switch kits to people who need them and helps us keep building new free games." in place of "Without your support, we can't keep these programs going."
