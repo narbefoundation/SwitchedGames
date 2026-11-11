@@ -1,6 +1,8 @@
 /* SwitchedGames showcase. Individual games and Benny's Hub retain their existing URLs. */
 (() => {
   'use strict';
+  // A game shows the NEW GAME badge for this many days after its "added" date (YYYY-MM-DD in #game-data).
+  const NEW_BADGE_DAYS = 30;
   const data = JSON.parse(document.getElementById('game-data').textContent);
   const byId = new Map(data.map(game => [game.id, game]));
   const $ = selector => document.querySelector(selector);
@@ -20,12 +22,28 @@
   const category = $('#category-filter');
   const multiplayer = $('#multiplayer-filter');
   const editor = $('#editor-filter');
-  const concept = $('#concept-filter');
   const sort = $('#sort-filter');
   const categories = {
     sports: 'Sports', strategy: 'Strategy & Board', arcade: 'Arcade & Action',
     puzzle: 'Puzzle, Word & Memory', simulation: 'Simulation', 'cause-effect': 'Cause & Effect', casino: 'Casino'
   };
+  // Badge recently added games, using the visitor's local date at page load.
+  function isNewGame(game, today = new Date()) {
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(game.added || '');
+    if (!match) return false;
+    const added = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+    const start = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const age = Math.round((start - added) / 86400000);
+    return age >= 0 && age < NEW_BADGE_DAYS;
+  }
+  data.forEach(game => {
+    const art = cards.get(game.id)?.querySelector('.game-art');
+    if (!art || !isNewGame(game)) return;
+    const badge = document.createElement('span');
+    badge.className = 'game-status';
+    badge.textContent = 'NEW GAME';
+    art.after(badge);
+  });
   function announce(message) { $('#action-status').textContent = message; }
   function updateFavorites() {
     $('#favorite-count').textContent = favorites.size;
@@ -44,7 +62,6 @@
       (category.value === 'all' || game.categories.includes(category.value)) &&
       (!multiplayer.checked || game.multiplayer) &&
       (!editor.checked || game.editor) &&
-      (!concept.checked || game.concept) &&
       (collection !== 'favorites' || favorites.has(game.id)) &&
       (collection !== 'recent' || recent.includes(game.id))
     );
@@ -60,7 +77,6 @@
     if (category.value !== 'all') labels.push(categories[category.value]);
     if (multiplayer.checked) labels.push('Multiplayer');
     if (editor.checked) labels.push('Game editors');
-    if (concept.checked) labels.push('New concepts');
     $('#filter-summary').hidden = !labels.length;
     $('#filter-text').textContent = labels.join(' · ');
     $('#empty-state').hidden = matches.length > 0;
@@ -88,7 +104,7 @@
   function resetFilters(resetCollection = false) {
     search.value = '';
     category.value = 'all';
-    multiplayer.checked = editor.checked = concept.checked = false;
+    multiplayer.checked = editor.checked = false;
     sort.value = 'featured';
     if (resetCollection) collection = 'all';
     filterGames();
@@ -100,7 +116,7 @@
   }
   function showLibrary() { closeMenu(); $('#games').scrollIntoView({block: 'start'}); }
   search.addEventListener('input', filterGames);
-  [category, multiplayer, editor, concept, sort].forEach(input => input.addEventListener('change', filterGames));
+  [category, multiplayer, editor, sort].forEach(input => input.addEventListener('change', filterGames));
   $('#clear-filters').addEventListener('click', () => resetFilters());
   $('#empty-reset').addEventListener('click', () => resetFilters(true));
   $$('[data-collection]').forEach(button => button.addEventListener('click', () => {
@@ -134,7 +150,7 @@
     $('#dialog-image').src = game.image;
     $('#dialog-image').alt = game.title;
     $('#dialog-title').textContent = game.title;
-    $('#dialog-category').textContent = game.categories.map(key => categories[key]).join(' / ') + (game.concept ? ' · New concept' : '');
+    $('#dialog-category').textContent = game.categories.map(key => categories[key]).join(' / ');
     $('#dialog-description').textContent = game.description;
     $('#dialog-note').textContent = game.note;
     $('#dialog-note').hidden = !game.note;
@@ -349,12 +365,10 @@
     });
   }
   $('#replay-intro').addEventListener('click', () => playIntro(true));
-  function loadStatement() {
-    const statement = document.createElement('script');
-    statement.src = 'crypto-statement/modal.js';
-    statement.dataset.theme = 'switched';
-    statement.dataset.autoOpen = 'session';
-    document.body.append(statement);
+  function loadSupportDialog() {
+    const support = document.createElement('script');
+    support.src = 'support-modal.js';
+    document.body.append(support);
   }
   async function boot() {
     filterGames();
@@ -362,7 +376,7 @@
     try { seen = sessionStorage.getItem('switchedgames-intro-seen') === '1'; sessionStorage.setItem('switchedgames-intro-seen', '1'); } catch {}
     if (!seen && !location.hash && !document.hidden) await playIntro();
     startVideo();
-    loadStatement();
+    loadSupportDialog();
     // Keep production analytics; local previews do not send page views.
     if (location.hostname === 'switchedgames.org' || location.hostname === 'www.switchedgames.org') {
       window.dataLayer = window.dataLayer || [];

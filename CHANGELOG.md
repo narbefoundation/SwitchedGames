@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-11-11 - Automatic NEW GAME badge; New concept tags removed
+
+- Every game in the #game-data list now has an `added` date (YYYY-MM-DD): the date of the commit that first listed it on SwitchedGames.org (`git log --reverse -S <id> -- index.html`). The 8 games that had a manual NEW GAME tag each map to one clear commit: Build n Bash 2026-11-05; Loops and Switch Songs 2026-10-25; Glow Pop and Switch Stories 2026-10-22; Chasing Rainbows 2026-10-17; Pet Pals and Magic Button 2026-10-13.
+- All manual `game-status` badges are removed. showcase.js adds the same NEW GAME badge (same element, class and position) at page load when a game's added date is less than `NEW_BADGE_DAYS` (30, top of showcase.js) days before the visitor's local date. Day 0 is the added date; the badge goes away on day 30.
+- New concept: badges removed from Sphere Splash, Ballista and Fish Mystery, `concept` set to false, the Details " · New concept" suffix and the New concepts filter toggle removed. The Details notes for Ballista and Fish Mystery are unchanged.
+- To list a new game, give it `"added":"YYYY-MM-DD"` in #game-data; no badge markup needed.
+- Changed files: index.html, showcase.js, CHANGELOG.md. Electron port: NO.
+- Verification (Playwright clock): Build n Bash shows the badge on 2026-11-11 and on days 0 and 29, not on day 30 or later; Benny's Football (2026-06-05) shows none today and did 15 days after it was added; with NEW_BADGE_DAYS = 7 only Build n Bash is badged on 2026-11-11. Search, Details and the support dialog still work; no page errors.
+
+## 2026-11-11 - Replace the crypto notice pop-up with a support dialog
+
+- Remove the cryptocurrency notice pop-up (crypto-statement/modal.js and its loaders in showcase.js and aboutus.html). The official statement page and every footer link to it are unchanged.
+- New support-modal.js dialog on the homepage and About page: Support NARBE Foundation (Donate on Givebutter, Switch Kit Program) and Built by NARBE House (Build With NARBE House), with a full-width Continue to Games button. Shown once per browser session; closing it (Continue, X, Escape or backdrop) or following one of its links sets the session cookie `switchedgames-support-dialog-seen` (no expiry; SameSite=Lax, Secure on HTTPS), so refreshes and other tabs skip it and it returns after the browser is fully closed and reopened. Focus moves to the heading on open, Tab stays inside, and the page regains focus on close. Styles appended to showcase.css.
+- privacy.html: the storage paragraph now describes the new session cookie instead of the removed session-storage key; last-updated date November 11, 2026.
+- Changed files: showcase.js, showcase.css, aboutus.html, privacy.html, support-modal.js (new), crypto-statement/modal.js (removed), CHANGELOG.md. Website-only; Electron port: NO.
+- Verification (local Playwright): opens once, closes all four ways, does not reopen after reload or on the other page, keyboard trap and visible focus on every control, fits 320x568, 375x667, 667x375, 768x1024 and desktop with scrolling inside the dialog; game Details dialog unaffected.
+
 ## 2026-11-05 - Add NARBE Build n Bash
 
 - Add the new cause-and-effect game to the visible cards (first, marked NEW GAME) and the Details/search data, category Cause & Effect. The collection now contains 35 games.
