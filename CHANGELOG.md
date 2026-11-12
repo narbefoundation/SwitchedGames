@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-12 - Children's privacy section; Analytics ad signals off
+
+- aboutus.html, crypto-statement/index.html, showcase.js: the Google Analytics config now sets `allow_google_signals: false` and `allow_ad_personalization_signals: false`, matching Benny's Hub. Analytics still loads on the same pages and still counts visits.
+- privacy.html: new "Children's privacy" section. It says the games need no account and ask for no contact details; we don't knowingly collect personal information from children under 13; the forms are for adults (a child's level should be sent by a parent, guardian or teacher); a parent can ask for deletion; and the Hub's YouTube Search is not made for children under 13. The Analytics paragraph now says Google signals and ad personalization are off and the site shows no ads. "Families and policy updates" became "Policy updates". Last updated: November 12, 2026.
+- Changed files: aboutus.html, crypto-statement/index.html, showcase.js, privacy.html, CHANGELOG.md. Electron port: NO.
+
 ## 2026-11-11 - Switch Stories links to its new address
 
 - index.html: the Switch Stories card (picture link and title link) and its game-data url now open https://narbehouse.github.io/switch-stories/, the game's own GitHub Pages site (it left narbehouse.github.io/bennyshub/apps/games/NARBESWITCHSTORIES/, which no longer exists). The card id NARBESWITCHSTORIES is unchanged, so saved favorites and played marks carry over. Search, details and the NEW badge read the same game data.

@@ -382,7 +382,7 @@
       window.dataLayer = window.dataLayer || [];
       window.gtag = function () { window.dataLayer.push(arguments); };
       window.gtag('js', new Date());
-      window.gtag('config', 'G-FGVD6RB4H1');
+      window.gtag('config', 'G-FGVD6RB4H1', { allow_google_signals: false, allow_ad_personalization_signals: false });
       const analytics = document.createElement('script');
       analytics.src = 'https://www.googletagmanager.com/gtag/js?id=G-FGVD6RB4H1';
       analytics.async = true;
