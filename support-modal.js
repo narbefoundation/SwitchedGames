@@ -44,8 +44,8 @@
           '</div>' +
         '</section>' +
         '<section class="support-section" aria-labelledby="support-house-title">' +
-          '<h2 id="support-house-title">Built by NARBE House</h2>' +
-          '<p>Switched Games is made by NARBE House, our small family business. Want to learn to build games like these, or have us build one with you or your organization?</p>' +
+          '<h2 id="support-house-title">Make Games with NARBE House</h2>' +
+          '<p>Switched Games is made by NARBE House, our small family business. If you have an idea for a game, want to learn how we build them, or would like to create one with us for someone you know or your organization, we\'d love to hear from you.</p>' +
           '<div class="support-actions">' +
             '<a class="button secondary" href="' + BUILD_URL + '" target="_blank" rel="noopener">Build With NARBE House' + NEW_TAB + EXTERNAL + '</a>' +
             '<a class="button secondary" href="' + AWARD_URL + '" target="_blank" rel="noopener">Apply for the Build for One Award' + NEW_TAB + EXTERNAL + '</a>' +

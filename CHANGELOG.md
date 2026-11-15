@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-15 - Support dialog: NARBE House section reworded
+
+- support-modal.js: the NARBE House section heading is now "Make Games with NARBE House" (was "Built by NARBE House"), and its paragraph reads "Switched Games is made by NARBE House, our small family business. If you have an idea for a game, want to learn how we build them, or would like to create one with us for someone you know or your organization, we'd love to hear from you." The Build With NARBE House and Build for One Award buttons, links and behavior are unchanged.
+- Changed files: support-modal.js, CHANGELOG.md. Electron port: NO.
+
 ## 2026-11-12 - Children's privacy section; Analytics ad signals off
 
 - aboutus.html, crypto-statement/index.html, showcase.js: the Google Analytics config now sets `allow_google_signals: false` and `allow_ad_personalization_signals: false`, matching Benny's Hub. Analytics still loads on the same pages and still counts visits.
