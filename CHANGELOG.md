@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-17 - Add NARBE Build n Ride
+
+- Add the new toy-train game to the visible cards (first) and the Details/search data, categories Simulation and Cause & Effect, `added` 2026-11-17 so the automatic NEW GAME badge shows for 30 days. The collection now contains 36 games.
+- The card and Details image use the canonical Hub picture, narbehouse.github.io/bennyshub/images/games/narbebuildnride.png (stamp ?v=f7cfebf580ea, the first 12 hex of its SHA-256); no local thumbnail copy. The game and its picture arrive with the narbehouse.github.io release that adds them, so that release goes out first.
+- Changed files: index.html and CHANGELOG.md. Website-only listing update; Electron port: NO. Publication requested by the owner.
+
 ## 2026-11-15 - Support dialog: NARBE House section reworded
 
 - support-modal.js: the NARBE House section heading is now "Make Games with NARBE House" (was "Built by NARBE House"), and its paragraph reads "Switched Games is made by NARBE House, our small family business. If you have an idea for a game, want to learn how we build them, or would like to create one with us for someone you know or your organization, we'd love to hear from you." The Build With NARBE House and Build for One Award buttons, links and behavior are unchanged.
