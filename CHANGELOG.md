@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-20 - Add NARBE Space Explorer
+
+- Add the new space exploration game to the visible cards (first) and the Details/search data, categories Simulation and Cause & Effect, `added` 2026-11-20 so the automatic NEW GAME badge shows for 30 days. The collection now contains 38 games.
+- The card and Details image use the canonical Hub picture, narbehouse.github.io/bennyshub/images/games/narbespaceexplorer.png (stamp ?v=c43395643170, the first 12 hex of its SHA-256); no local thumbnail copy. The game and its picture arrive with the narbehouse.github.io release that adds them, so that release goes out first.
+- Changed files: index.html and CHANGELOG.md. Website-only listing update; Electron port: NO. Publication requested by the owner.
+
 ## 2026-11-18 - Add Ben's Food Court
 
 - Add the food court game to the visible cards (first) and the Details/search data, category Simulation, `added` 2026-11-18 so the automatic NEW GAME badge shows for 30 days. The collection now contains 37 games.
