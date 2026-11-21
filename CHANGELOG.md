@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-21 - Robot Football description mentions the commentary
+
+- Robot Football now has live broadcast commentary (announcer Penny Sparks, robot commentator CAL-9000 and the stadium announcer), so its card text and its Details/search description (both kept identical) now say so. Category, picture and link are unchanged.
+- Changed files: index.html and CHANGELOG.md. Website-only listing update; Electron port: NO. Requested by the owner.
+
 ## 2026-11-20 - Add NARBE Space Explorer
 
 - Add the new space exploration game to the visible cards (first) and the Details/search data, categories Simulation and Cause & Effect, `added` 2026-11-20 so the automatic NEW GAME badge shows for 30 days. The collection now contains 38 games.
