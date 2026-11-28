@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-28 - Add NARBE Color Splash
+
+- Add the new coloring game to the visible cards (first) and the Details/search data, category Cause & Effect, `editor` true (its Page Maker draws new pages, so it shows under Game editors), `added` 2026-11-28 so the automatic NEW GAME badge shows for 30 days. The collection now contains 39 games.
+- It is published from its own repo, so the card and Details link to narbehouse.github.io/color-splash/. The picture is the canonical Hub one, narbehouse.github.io/bennyshub/images/games/narbecolorsplash.png (stamp ?v=bbd12f972299, the first 12 hex of its SHA-256); no local thumbnail copy. The game repo and the narbehouse.github.io release that adds the picture go out first.
+- Changed files: index.html and CHANGELOG.md. Website-only listing update; Electron port: NO. Publication requested by the owner.
+
 ## 2026-11-21 - Robot Football description mentions the commentary
 
 - Robot Football now has live broadcast commentary (announcer Penny Sparks, robot commentator CAL-9000 and the stadium announcer), so its card text and its Details/search description (both kept identical) now say so. Category, picture and link are unchanged.
