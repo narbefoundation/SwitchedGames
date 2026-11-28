@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-28 - Consistency pass: All games count, card labels, one description per game, names
+
+- All games in the side bar said 32 with 39 games (the earlier fix counted only the categories). showcase.js now counts it from the game data too, and the page says 39.
+- Five cards showed fewer categories than they are filed under (NARBE Racer, Benny's Ballista, Benny's Fish Mystery, Benny's Mega Slot, and Sphere Splash said "Strategy" for "Strategy & Board"). The page is corrected, and showcase.js now writes each card's category line from its data, like the filters.
+- Each game now has one description, the same on its card, in the Details/search data and in Benny's Hub (120 characters at most). The cards no longer name other companies' games (Peggle, Battleship, Simon Says, See 'n Say).
+- "Benny's Chess & Checkers" is now "Benny's Chess and Checkers", as in Benny's Hub.
+- "NARBE House" in ordinary text (seven places on the home page, five on About, and the footer link on Privacy and Terms); "NARBE LLC" stays only in legal lines: the copyright and "a product of" lines, the sponsorship disclosure, and the Privacy and Terms pages.
+- Benny's Fish Mystery's Details note no longer calls it a pilot still in development; it describes the game.
+- Checked with an audit of every card against its data and Benny's Hub, every count, the category lists, local files and anchors, and every narbehouse.github.io and switchedgames.org link and picture live (all load).
+- Changed files: index.html, aboutus.html, privacy.html, terms.html, showcase.js and CHANGELOG.md. Website only; Electron port: NO. Requested by the owner.
+
 ## 2026-11-28 - Side bar category counts follow the games
 
 - The numbers beside each category in the side bar were typed into the page in October and never updated as games were added: Cause & Effect showed 6 (12 games) and Simulation 1 (5 games). showcase.js now counts each category from the game data when the page loads, so a new game is counted automatically, and the numbers in the page are corrected for the moment before the script runs.

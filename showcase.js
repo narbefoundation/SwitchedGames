@@ -36,6 +36,12 @@
     const age = Math.round((start - added) / 86400000);
     return age >= 0 && age < NEW_BADGE_DAYS;
   }
+  // A card's category line comes from its data, like the filters, so the two never disagree (five cards had
+  // dropped a category, e.g. NARBE Racer showed only Sports but is also filed under Arcade & Action; 2026-11-28).
+  data.forEach(game => {
+    const label = cards.get(game.id)?.querySelector('.game-category');
+    if (label) label.textContent = game.categories.map(key => categories[key] || key).join(' · ');
+  });
   data.forEach(game => {
     const art = cards.get(game.id)?.querySelector('.game-art');
     if (!art || !isNewGame(game)) return;
@@ -44,8 +50,11 @@
     badge.textContent = 'NEW GAME';
     art.after(badge);
   });
-  // Each category's count in the side bar comes from the game data, so adding a game keeps it right. (The counts
-  // were typed into the page and fell behind: Cause & Effect said 6 with 12 games, Simulation 1 with 5; 2026-11-28.)
+  // Every count in the side bar comes from the game data, so adding a game keeps them right. (They were typed into
+  // the page and fell behind: All games said 32 with 39 games, Cause & Effect 6 with 12, Simulation 1 with 5;
+  // 2026-11-28.) Favorites is counted by updateFavorites().
+  const allCount = $('[data-collection="all"] .side-count');
+  if (allCount) allCount.textContent = data.length;
   $$('[data-category-select]').forEach(button => {
     const count = button.querySelector('.side-count');
     if (count) count.textContent = data.filter(game => game.categories.includes(button.dataset.categorySelect)).length;
