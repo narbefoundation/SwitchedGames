@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-28 - Who does what: NARBE Foundation and NARBE House
+
+- The owner clarified the roles: NARBE Foundation runs the free Adaptive Switch Kit Program, keeps a list of resources, hosts a Discord community for ideas and collaboration, and puts some resources toward the shared infrastructure that keeps SwitchedGames free and open source (AI tools for open-source game development, improvements to shared website assets). Paid partnerships and sponsorships are with NARBE House (NARBE LLC) only, and nothing on the site may read as Foundation money going to NARBE House.
+- The Foundation card no longer says "Contact us for partnerships, programs, or more information"; it says what the Foundation does and that partnerships and sponsorships are with NARBE House. "Partner With Us" is now "Partner With NARBE House" and says SwitchedGames is built by NARBE House.
+- The donation text, About's Foundation card and the support pop-up (support-modal.js, which said a gift "pays for the tools we use to build these games") describe what donations fund in those terms; About no longer mentions micro grants to aligned organizations.
+- Changed files: index.html, aboutus.html, support-modal.js and CHANGELOG.md. Website only; Electron port: NO. Requested by the owner.
+
 ## 2026-11-28 - Consistency pass: All games count, card labels, one description per game, names
 
 - All games in the side bar said 32 with 39 games (the earlier fix counted only the categories). showcase.js now counts it from the game data too, and the page says 39.
