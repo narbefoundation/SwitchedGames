@@ -44,6 +44,12 @@
     badge.textContent = 'NEW GAME';
     art.after(badge);
   });
+  // Each category's count in the side bar comes from the game data, so adding a game keeps it right. (The counts
+  // were typed into the page and fell behind: Cause & Effect said 6 with 12 games, Simulation 1 with 5; 2026-11-28.)
+  $$('[data-category-select]').forEach(button => {
+    const count = button.querySelector('.side-count');
+    if (count) count.textContent = data.filter(game => game.categories.includes(button.dataset.categorySelect)).length;
+  });
   function announce(message) { $('#action-status').textContent = message; }
   function updateFavorites() {
     $('#favorite-count').textContent = favorites.size;

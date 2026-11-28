@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-28 - Side bar category counts follow the games
+
+- The numbers beside each category in the side bar were typed into the page in October and never updated as games were added: Cause & Effect showed 6 (12 games) and Simulation 1 (5 games). showcase.js now counts each category from the game data when the page loads, so a new game is counted automatically, and the numbers in the page are corrected for the moment before the script runs.
+- Changed files: index.html, showcase.js and CHANGELOG.md. Website only; Electron port: NO. Reported by the owner.
+
 ## 2026-11-28 - Add NARBE Color Splash
 
 - Add the new coloring game to the visible cards (first) and the Details/search data, category Cause & Effect, `editor` true (its Page Maker draws new pages, so it shows under Game editors), `added` 2026-11-28 so the automatic NEW GAME badge shows for 30 days. The collection now contains 39 games.
